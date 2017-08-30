@@ -4,6 +4,8 @@ import { Icon } from 'react-native-elements';
 
 //Screen Imports
 import Home from './components/home';
+import Browse from './components/browse';
+import Settings from './components/settings';
 
 const Router = TabNavigator(
   {
@@ -18,6 +20,32 @@ const Router = TabNavigator(
               size={28}
               color={tintColor} />
         ),
+      }
+    },
+    Browse: {
+      screen: Browse,
+      path: '',
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <Icon
+            name='magnify'
+            type="material-community"
+            size={28}
+            color={tintColor} />
+        )
+      }
+    },
+    Settings: {
+      screen: Settings,
+      path: '',
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <Icon
+            name="settings"
+            type="material-community"
+            size={28}
+            color={tintColor} />
+        )
       }
     },
   },
