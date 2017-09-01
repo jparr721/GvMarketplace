@@ -3,15 +3,15 @@ import { View, Text } from 'react-native';
 
 import { Header } from './common/header';
 
-class Home extends Component {
+class Sell extends Component {
   render() {
     return (
       <View>
-        <Header headerText="Home" />
-        <Text>Home Page</Text>
+        <Header headerText="Sell" />
+        <Text>Sell stuff here</Text>
       </View>
-    )
+    );
   }
 }
 
-export default Home;
+export default Sell;

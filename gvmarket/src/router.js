@@ -2,10 +2,11 @@ import React from 'react';
 import { TabNavigator, TabBarBottom } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-//Screen Imports
+// Screen Imports
 import Home from './components/home';
 import Browse from './components/browse';
 import Settings from './components/settings';
+import Sell from './components/sell';
 
 const Router = TabNavigator(
   {
@@ -20,6 +21,19 @@ const Router = TabNavigator(
               size={28}
               color={tintColor} />
         ),
+      }
+    },
+    Sell: {
+      screen: Sell,
+      path: '',
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <Icon
+            name='store'
+            type='material-community'
+            size={28}
+            color={tintColor} />
+        )
       }
     },
     Browse: {
@@ -57,7 +71,7 @@ const Router = TabNavigator(
     tabBarOptions: {
       showIcon: true,
       showLabel: false,
-      activeTintColor: '#2c3e50',
+      activeTintColor: '#d35400',
     },
   }
 );

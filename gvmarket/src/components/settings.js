@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native';
 
+import { Header } from './common/header';
+
 class Settings extends Component {
   render() {
     return (
         <View>
-          <Text style={{ paddingTop: 20 }}>Settings Page</Text>
+          <Header headerText="Settings" />
+          <Text>Settings Page</Text>
         </View>
     )
   }
