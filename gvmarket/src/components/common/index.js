@@ -5,3 +5,4 @@ export * from './headerButton';
 export * from './smallCard';
 export * from './smallHeader';
 export * from './spinner';
+export * from './newEntryDialogue';
