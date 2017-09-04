@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { TouchableOpacity, StyleSheet,View, Text, Modal} from 'react-native';
 import { Icon } from 'react-native-elements';
-import {NewEntryDialogue} from "./NewEntryDialogue";
+import { NewEntryDialogue } from './newEntryDialogue';
 
 const styles = StyleSheet.create({
   header:{
