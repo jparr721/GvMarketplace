@@ -7,7 +7,7 @@ class Sell extends Component {
   render() {
     return (
       <View>
-        <Header headerText="Sell" />
+        <Header headerText="All Listings" />
         <Text>Sell stuff here</Text>
       </View>
     );

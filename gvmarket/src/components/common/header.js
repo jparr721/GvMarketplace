@@ -11,12 +11,12 @@ const Header = (props) => {
 
 const styles = {
   container: {
-    height: 70,
+    height: 50,
     backgroundColor: '#2980b9',
   },
   textStyle: {
     textAlign: 'center',
-    paddingTop: 20,
+    paddingTop: 10,
     fontSize: 32,
     fontWeight: '500',
     flex: 1,

@@ -7,7 +7,7 @@ class Browse extends Component {
   render() {
     return (
       <View>
-        <Header headerText="Browse" />
+        <Header headerText="Search" />
         <Text>Browse Content</Text>
       </View>
     )
