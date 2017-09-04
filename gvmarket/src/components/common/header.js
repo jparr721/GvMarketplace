@@ -12,7 +12,7 @@ const Header = (props) => {
 const styles = {
   container: {
     height: 70,
-    backgroundColor: '#FBC02D',
+    backgroundColor: '#2980b9',
   },
   textStyle: {
     textAlign: 'center',

@@ -71,7 +71,7 @@ const Router = TabNavigator(
     tabBarOptions: {
       showIcon: true,
       showLabel: false,
-      activeTintColor: '#d35400',
+      activeTintColor: '#34495e',
     },
   }
 );
