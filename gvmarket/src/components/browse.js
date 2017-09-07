@@ -10,9 +10,14 @@ const styles = {
     color: '#34495e',
   },
   button: {
-    borderBottomWidth: 0.5,
-    borderColor: '#34495e',
+
   },
+  listText: {
+    fontSize: 17,
+  },
+  categories: {
+    paddingBottom: 1,
+  }
 };
 
 class Browse extends Component {
@@ -22,36 +27,36 @@ class Browse extends Component {
         <Header headerText="Browse" />
         <View style={{ flex: 1 }}>
           <ScrollView>
-            <View>
+            <View style={styles.categories}>
               <Button large full light style={styles.button}><Text style={styles.buttonText}>For Sale</Text></Button>
               <List>
-                <ListItem><Button full transparent><Text>Textbooks</Text></Button></ListItem>
-                <ListItem><Button full transparent><Text>Computers</Text></Button></ListItem>
-                <ListItem><Button full transparent><Text>Electronics</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text style={styles.listText}>Textbooks</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text style={styles.listText}>Computers</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text style={styles.listText}>Electronics</Text></Button></ListItem>
               </List>
             </View>
-            <View>
+            <View style={styles.categories}>
               <Button large full light style={styles.button}><Text style={styles.buttonText}>Tutoring</Text></Button>
               <List>
-                <ListItem><Button full transparent><Text>Biology</Text></Button></ListItem>
-                <ListItem><Button full transparent><Text>Computer Science</Text></Button></ListItem>
-                <ListItem><Button full transparent><Text>Physics</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text style={styles.listText}>Biology</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text style={styles.listText}>Computer Science</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text style={styles.listText}>Physics</Text></Button></ListItem>
               </List>
             </View>
-            <View>
+            <View style={styles.categories}>
               <Button large full light style={styles.button}><Text style={styles.buttonText}>Housing</Text></Button>
               <List>
-                <ListItem><Button full transparent><Text>Apartments / Housing</Text></Button></ListItem>
-                <ListItem><Button full transparent><Text>Roomates</Text></Button></ListItem>
-                <ListItem><Button full transparent><Text>Subletting</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text style={styles.listText}>Apartments / Housing</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text style={styles.listText}>Roomates</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text style={styles.listText}>Subletting</Text></Button></ListItem>
               </List>
             </View>
             <View>
               <Button large full light style={styles.button}><Text style={styles.buttonText}>Jobs</Text></Button>
               <List>
-                <ListItem><Button full transparent><Text>Part-time</Text></Button></ListItem>
-                <ListItem><Button full transparent><Text>Full-time</Text></Button></ListItem>
-                <ListItem><Button full transparent><Text>Internships</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text style={styles.listText}>Part-time</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text style={styles.listText}>Full-time</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text style={styles.listText}>Internships</Text></Button></ListItem>
               </List>
             </View>
           </ScrollView>
