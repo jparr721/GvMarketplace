@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, Image } from 'react-native';
 import { List, ListItem, Button } from 'native-base';
 
-import { Header, PageView, Card } from './common/index';
+import { Header, PageView, Card, ColumnGrid, SmallCard } from './common/index';
 
 const styles = {
   buttonText: {
     fontSize: 24,
-    color: '#34495e',
+    color: '#0d67a2',
     fontWeight: '700',
   },
   listText: {
@@ -15,6 +15,19 @@ const styles = {
   },
   categories: {
     paddingBottom: 1,
+  },
+  images: {
+    height: 100,
+    width: 100,
+
+  },
+  phoneImage: {
+    height: 150,
+    width: 100,
+  },
+  smCard: {
+    justifyContent: 'center',
+    alignItems: 'center',
   }
 };
 
@@ -27,35 +40,36 @@ class Browse extends Component {
           <ScrollView>
             <View style={styles.categories}>
               <Button large full light><Text style={styles.buttonText}>For Sale</Text></Button>
-              <List>
-                <ListItem><Button full transparent><Text style={styles.listText}>Textbooks</Text></Button></ListItem>
-                <ListItem><Button full transparent><Text style={styles.listText}>Computers</Text></Button></ListItem>
-                <ListItem><Button full transparent><Text style={styles.listText}>Electronics</Text></Button></ListItem>
-              </List>
+              <ScrollView horizontal={true}>
+                <SmallCard><Button full transparent><Text style={styles.listText}>Textbooks</Text></Button></SmallCard>
+                <SmallCard><Button full transparent><Text style={styles.listText}>Computers</Text></Button></SmallCard>
+                <SmallCard><Button full transparent><Text style={styles.listText}>Electronics</Text></Button></SmallCard>
+              </ScrollView>
             </View>
             <View style={styles.categories}>
               <Button large full light><Text style={styles.buttonText}>Tutoring</Text></Button>
-              <List>
-                <ListItem><Button full transparent><Text style={styles.listText}>Biology</Text></Button></ListItem>
-                <ListItem><Button full transparent><Text style={styles.listText}>Computer Science</Text></Button></ListItem>
-                <ListItem><Button full transparent><Text style={styles.listText}>Physics</Text></Button></ListItem>
-              </List>
+              <ScrollView horizontal={true}>
+                <SmallCard><Button full transparent><Text style={styles.listText}>Biology</Text></Button></SmallCard>
+                <SmallCard><Button full transparent><Text style={styles.listText}>Computer Science</Text></Button></SmallCard>
+                <SmallCard><Button full transparent><Text style={styles.listText}>Data Science</Text></Button></SmallCard>
+                <SmallCard><Button full transparent><Text style={styles.listText}>Physics</Text></Button></SmallCard>
+              </ScrollView>
             </View>
             <View style={styles.categories}>
               <Button large full light><Text style={styles.buttonText}>Housing</Text></Button>
-              <List>
-                <ListItem><Button full transparent><Text style={styles.listText}>Apartments / Housing</Text></Button></ListItem>
-                <ListItem><Button full transparent><Text style={styles.listText}>Roomates</Text></Button></ListItem>
-                <ListItem><Button full transparent><Text style={styles.listText}>Subletting</Text></Button></ListItem>
-              </List>
+              <ScrollView horizontal={true}>
+                <SmallCard><Button full transparent><Text style={styles.listText}>Apartments / Housing</Text></Button></SmallCard>
+                <SmallCard><Button full transparent><Text style={styles.listText}>Roomates</Text></Button></SmallCard>
+                <SmallCard><Button full transparent><Text style={styles.listText}>Subletting</Text></Button></SmallCard>
+              </ScrollView>
             </View>
             <View>
               <Button large full light><Text style={styles.buttonText}>Jobs</Text></Button>
-              <List>
-                <ListItem><Button full transparent><Text style={styles.listText}>Part-time</Text></Button></ListItem>
-                <ListItem><Button full transparent><Text style={styles.listText}>Full-time</Text></Button></ListItem>
-                <ListItem><Button full transparent><Text style={styles.listText}>Internships</Text></Button></ListItem>
-              </List>
+              <ScrollView horizontal={true}>
+                <SmallCard><Button full transparent><Text style={styles.listText}>Part-time</Text></Button></SmallCard>
+                <SmallCard><Button full transparent><Text style={styles.listText}>Full-time</Text></Button></SmallCard>
+                <SmallCard><Button full transparent><Text style={styles.listText}>Internships</Text></Button></SmallCard>
+              </ScrollView>
             </View>
           </ScrollView>
         </View>
