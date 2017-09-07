@@ -6,7 +6,7 @@ import { Header, PageView, Card } from './common/index';
 
 const styles = {
   buttonText: {
-    fontSize: 26,
+    fontSize: 24,
     color: '#34495e',
   },
   listText: {
