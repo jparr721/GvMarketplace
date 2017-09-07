@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, Image } from 'react-native';
 import { List, ListItem, Button } from 'native-base';
+import { SearchBar } from 'react-native-elements';
 
 import { Header, PageView, Card, ColumnGrid, SmallCard } from './common/index';
 
@@ -17,13 +18,15 @@ const styles = {
     paddingBottom: 1,
   },
   images: {
+    flex: 1,
     height: 100,
-    width: 100,
+    width: null,
 
   },
   phoneImage: {
+    flex: 1,
     height: 150,
-    width: 100,
+    width: null,
   },
   smCard: {
     justifyContent: 'center',
@@ -35,7 +38,11 @@ class Browse extends Component {
   render() {
     return (
       <PageView>
-        <Header headerText="Browse" />
+        <View style={{ paddingTop: 20 }}>
+          <SearchBar
+            lightTheme
+            placeholder="Type Here..." />
+          </View>
         <View style={{ flex: 1 }}>
           <ScrollView>
             <View style={styles.categories}>
