@@ -3,20 +3,20 @@ import { TabNavigator, TabBarBottom } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 // Screen Imports
-import Home from './components/home';
 import Browse from './components/browse';
-import Settings from './components/settings';
+import Inbox from './components/inbox';
+import Profile from './components/profile';
 import Sell from './components/sell';
 
 const Router = TabNavigator(
   {
-    Home: {
-      screen: Home,
+    Browse: {
+      screen: Browse,
       path: '',
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
             <Icon
-              name='home'
+              name="magnify"
               type="material-community"
               size={28}
               color={tintColor} />
@@ -29,33 +29,33 @@ const Router = TabNavigator(
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <Icon
-            name='store'
+            name="plus-box-outline"
             type='material-community'
             size={28}
             color={tintColor} />
         )
       }
     },
-    Browse: {
-      screen: Browse,
+    Inbox: {
+      screen: Inbox,
       path: '',
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <Icon
-            name='magnify'
+            name="message-outline"
             type="material-community"
             size={28}
             color={tintColor} />
         )
       }
     },
-    Settings: {
-      screen: Settings,
+    Profile: {
+      screen: Profile,
       path: '',
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <Icon
-            name="settings"
+            name="account-outline"
             type="material-community"
             size={28}
             color={tintColor} />
@@ -70,8 +70,7 @@ const Router = TabNavigator(
     swipeEnabled: true,
     tabBarOptions: {
       showIcon: true,
-      showLabel: false,
-      activeTintColor: '#34495e',
+      activeTintColor: '#3498db',
     },
   }
 );

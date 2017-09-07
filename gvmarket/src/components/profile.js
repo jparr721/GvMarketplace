@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { View, Text } from 'react-native';
 
 import { Header, PageView } from './common/index';
 
-class Sell extends Component {
+class Profile extends Component {
   render() {
     return (
       <PageView>
-        <Header headerText="Make A Post" />
+        <Header headerText="Profile" />
         <View style={{ flex: 1 }}>
-          <Text>Sell stuff here</Text>
+          <Text>Profile Page</Text>
         </View>
       </PageView>
-    );
+    )
   }
 }
 
-export default Sell;
+export default Profile;

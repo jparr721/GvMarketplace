@@ -3,17 +3,17 @@ import { Text, View } from 'react-native';
 
 import { Header, PageView } from './common/index';
 
-class Browse extends Component {
+class Inbox extends Component {
   render() {
     return (
       <PageView>
-        <Header headerText="Browse" />
+        <Header headerText="Inbox" />
         <View style={{ flex: 1 }}>
-          <Text>Browse Content</Text>
+          <Text>Inbox Content</Text>
         </View>
       </PageView>
     );
   }
 }
 
-export default Browse;
+export default Inbox;

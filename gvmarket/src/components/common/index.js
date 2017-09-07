@@ -6,3 +6,4 @@ export * from './smallCard';
 export * from './smallHeader';
 export * from './spinner';
 export * from './newEntryDialogue';
+export * from './pageView';

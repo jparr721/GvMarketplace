@@ -11,16 +11,17 @@ const Header = (props) => {
 
 const styles = {
   container: {
-    height: 50,
-    backgroundColor: '#2980b9',
+    flex: 0.12,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
   },
   textStyle: {
-    textAlign: 'center',
-    paddingTop: 10,
-    fontSize: 28,
-    fontWeight: '500',
+    paddingTop: 20,
+    fontSize: 26,
+    fontWeight: '700',
     flex: 1,
-    color: 'white',
+    color: '#34495e',
   },
 };
 
