@@ -21,40 +21,40 @@ class Browse extends Component {
       <PageView>
         <Header headerText="Browse" />
         <View style={{ flex: 1 }}>
-        <ScrollView>
-          <View>
-            <Button large full light style={styles.button}><Text style={styles.buttonText}>For Sale</Text></Button>
-            <List>
-              <ListItem><Button full transparent><Text>Textbooks</Text></Button></ListItem>
-              <ListItem><Button full transparent><Text>Computers</Text></Button></ListItem>
-              <ListItem><Button full transparent><Text>Electronics</Text></Button></ListItem>
-            </List>
-          </View>
-          <View>
-            <Button large full light style={styles.button}><Text style={styles.buttonText}>Tutoring</Text></Button>
-            <List>
-              <ListItem><Button full transparent><Text>Biology</Text></Button></ListItem>
-              <ListItem><Button full transparent><Text>Computer Science</Text></Button></ListItem>
-              <ListItem><Button full transparent><Text>Physics</Text></Button></ListItem>
-            </List>
-          </View>
-          <View>
-            <Button large full light style={styles.button}><Text style={styles.buttonText}>Housing</Text></Button>
-            <List>
-              <ListItem><Button full transparent><Text>Apartments / Housing</Text></Button></ListItem>
-              <ListItem><Button full transparent><Text>Roomates</Text></Button></ListItem>
-              <ListItem><Button full transparent><Text>Subletting</Text></Button></ListItem>
-            </List>
-          </View>
-          <View>
-            <Button large full light style={styles.button}><Text style={styles.buttonText}>Jobs</Text></Button>
-            <List>
-              <ListItem><Button full transparent><Text>Part-time</Text></Button></ListItem>
-              <ListItem><Button full transparent><Text>Full-time</Text></Button></ListItem>
-              <ListItem><Button full transparent><Text>Internships</Text></Button></ListItem>
-            </List>
-          </View>
-        </ScrollView>
+          <ScrollView>
+            <View>
+              <Button large full light style={styles.button}><Text style={styles.buttonText}>For Sale</Text></Button>
+              <List>
+                <ListItem><Button full transparent><Text>Textbooks</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text>Computers</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text>Electronics</Text></Button></ListItem>
+              </List>
+            </View>
+            <View>
+              <Button large full light style={styles.button}><Text style={styles.buttonText}>Tutoring</Text></Button>
+              <List>
+                <ListItem><Button full transparent><Text>Biology</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text>Computer Science</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text>Physics</Text></Button></ListItem>
+              </List>
+            </View>
+            <View>
+              <Button large full light style={styles.button}><Text style={styles.buttonText}>Housing</Text></Button>
+              <List>
+                <ListItem><Button full transparent><Text>Apartments / Housing</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text>Roomates</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text>Subletting</Text></Button></ListItem>
+              </List>
+            </View>
+            <View>
+              <Button large full light style={styles.button}><Text style={styles.buttonText}>Jobs</Text></Button>
+              <List>
+                <ListItem><Button full transparent><Text>Part-time</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text>Full-time</Text></Button></ListItem>
+                <ListItem><Button full transparent><Text>Internships</Text></Button></ListItem>
+              </List>
+            </View>
+          </ScrollView>
         </View>
       </PageView>
     );
