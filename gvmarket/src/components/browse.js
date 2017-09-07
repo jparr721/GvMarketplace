@@ -8,6 +8,7 @@ const styles = {
   buttonText: {
     fontSize: 24,
     color: '#34495e',
+    fontWeight: '700',
   },
   listText: {
     fontSize: 17,
