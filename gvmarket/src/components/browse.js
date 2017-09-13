@@ -21,7 +21,6 @@ const styles = {
     flex: 1,
     height: 100,
     width: null,
-
   },
   phoneImage: {
     flex: 1,
@@ -46,7 +45,7 @@ class Browse extends Component {
                 <SmallCard style={styles.smallerCard}><Button full transparent><Text style={styles.listText}>Computer Science</Text></Button><Image style={styles.images} source={require('./imgs/comp-sci2.png')} /></SmallCard>
                 <SmallCard style={styles.smallerCard}><Button full transparent><Text style={styles.listText}>Data Science</Text></Button><Image style={styles.images} source={require('./imgs/data-sci1.png')} /></SmallCard>
                 <SmallCard style={styles.smallerCard}><Button full transparent><Text style={styles.listText}>Physics</Text></Button><Image style={styles.images} source={require('./imgs/physics1.png')} /></SmallCard>
-                </ScrollView>
+              </ScrollView>
             </View>
             <View style={styles.categories}>
               <Button large full light><Text style={styles.buttonText}>For Sale</Text></Button>
