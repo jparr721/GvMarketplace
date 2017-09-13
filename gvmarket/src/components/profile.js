@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
 import { Button } from 'native-base';
 
-import { Header, PageView, SmallCard } from './common/index';
+import { Header, PageView, Card } from './common/index';
 
 const styles = {
   container: {
@@ -37,6 +37,36 @@ const styles = {
   },
   editProfileBtn: {
     marginLeft: -13,
+  },
+  btnList: {
+    borderTopWidth: 0.5,
+    borderTopColor: '#d3d3d3',
+  },
+  btnListText: {
+    color: '#0d67a2',
+    fontWeight: '400',
+    fontSize: 15,
+  },
+  tipTitleText: {
+    fontSize: 23,
+    color: '#0d67a2',
+    fontWeight: '600',
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingLeft: 5,
+    backgroundColor: '#e7e7e7'
+  },
+  tipText: {
+    fontSize: 16,
+    color: '#0d67a2',
+    paddingTop: 5,
+    paddingLeft: 5,
+    paddingRight: 5,
+  },
+  tipTextFinalEntry: {
+    fontSize: 16,
+    color: '#0d67a2',
+    padding: 5,
   }
 };
 
@@ -44,7 +74,7 @@ class Profile extends Component {
   render() {
     return (
       <PageView>
-        <Header headerText="" />
+      <ScrollView>
         <View style={{ flex: 1, flexDirection: 'row' }}>
           <View style={{justifyContent: 'flex-start'}}>
             <Text style={styles.nameText}>Julia< /Text>
@@ -53,6 +83,25 @@ class Profile extends Component {
           <View style={{width: 75}} />
           <View><Image style={styles.profilePic} source={require('./imgs/example-headshot.jpg')}/></View>
         </View>
+        <View style={{flex: 1, flexDirection: 'column'}}>
+          <View>
+            <Card>
+              <Text style={styles.tipTitleText}>Tips</Text>
+              <Text style={styles.tipText}>This is where tips will be cycled through.</Text>
+              <Text style={styles.tipText}>The user can continuously swipe through the cards to reveal other tips.</Text>
+              <Text style={styles.tipTextFinalEntry}>Other examples, such as how to use this application witll also be presented to the user.</Text>
+            </Card>
+          </View>
+
+          <View><Button large full transparent style={styles.btnList}><Text style={styles.btnListText}>My posts</Text></Button></View>
+          <View><Button large full transparent style={styles.btnList}><Text style={styles.btnListText}>My classes</Text></Button></View>
+          <View><Button large full transparent style={styles.btnList}><Text style={styles.btnListText}>Invite Friends</Text></Button></View>
+          <View><Button large full transparent style={styles.btnList}><Text style={styles.btnListText}>Settings</Text></Button></View>
+          <View><Button large full transparent style={styles.btnList}><Text style={styles.btnListText}>Get help</Text></Button></View>
+          <View><Button large full transparent style={styles.btnList}><Text style={styles.btnListText}>More Tips</Text></Button></View>
+          <View><Button large full transparent style={styles.btnList}><Text style={styles.btnListText}>Give us feedback</Text></Button></View>
+        </View>
+        </ScrollView>
       </PageView>
     )
   }
