@@ -22,11 +22,6 @@ const styles = {
     height: 100,
     width: null,
   },
-  phoneImage: {
-    flex: 1,
-    height: 150,
-    width: null,
-  },
 };
 
 class Browse extends Component {
