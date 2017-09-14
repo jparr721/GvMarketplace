@@ -12,7 +12,6 @@ const styles = {
     backgroundColor: 'rgba(255, 255, 255, 0.5)',
   },
   nameText: {
-
     marginTop: 32,
     marginBottom: -10,
     fontSize: 48,
