@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, Image } from 'react-native';
-import { List, ListItem, Button } from 'native-base';
+import { Button } from 'native-base';
 import { SearchBar } from 'react-native-elements';
 
-import { Header, PageView, Card, ColumnGrid, SmallCard } from './common/index';
+import { PageView, SmallCard } from './common/index';
 
 const styles = {
   buttonText: {
@@ -22,6 +22,16 @@ const styles = {
     height: 100,
     width: null,
   },
+  categoryContainers: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  categoryTitles: {
+    justifyContent: 'flex-start',
+  },
+  seeAllText: {
+    color: '#0d67a2',
+  },
 };
 
 class Browse extends Component {
@@ -34,7 +44,18 @@ class Browse extends Component {
         <View style={{ flex: 1 }}>
           <ScrollView>
             <View style={styles.categories}>
-              <Button large full light><Text style={styles.buttonText}>Tutoring</Text></Button>
+              <View style={styles.categoryContainers}>
+                <View>
+                  <Button large full transparent style={styles.categoryTitles}>
+                    <Text style={styles.buttonText}>Tutoring</Text>
+                  </Button>
+                </View>
+                <View>
+                  <Button large full transparent style={styles.categoryTitles}>
+                    <Text style={styles.seeAllText}>See all ></Text>
+                  </Button>
+                </View>
+              </View>
               <ScrollView horizontal={true}>
                 <SmallCard style={styles.smallerCard}><Button full transparent><Text style={styles.listText}>Biology</Text></Button><Image style={styles.images} source={require('./imgs/biology1.png')} /></SmallCard>
                 <SmallCard style={styles.smallerCard}><Button full transparent><Text style={styles.listText}>Computer Science</Text></Button><Image style={styles.images} source={require('./imgs/comp-sci2.png')} /></SmallCard>
@@ -43,7 +64,18 @@ class Browse extends Component {
               </ScrollView>
             </View>
             <View style={styles.categories}>
-              <Button large full light><Text style={styles.buttonText}>For Sale</Text></Button>
+              <View style={styles.categoryContainers}>
+                <View>
+                  <Button large full transparent style={styles.categoryTitles}>
+                    <Text style={styles.buttonText}>For Sale</Text>
+                  </Button>
+                </View>
+                <View>
+                  <Button large full transparent style={styles.categoryTitles}>
+                    <Text style={styles.seeAllText}>See all ></Text>
+                  </Button>
+                </View>
+            </View>
               <ScrollView horizontal={true}>
                 <SmallCard><Button full transparent><Text style={styles.listText}>Textbooks</Text></Button><Image style={styles.images} source={require('./imgs/tb1.jpg')} /></SmallCard>
                 <SmallCard><Button full transparent><Text style={styles.listText}>Computers</Text></Button><Image style={styles.images} source={require('./imgs/comp1.jpg')} /></SmallCard>
@@ -51,7 +83,18 @@ class Browse extends Component {
               </ScrollView>
             </View>
             <View style={styles.categories}>
-              <Button large full light><Text style={styles.buttonText}>Housing</Text></Button>
+              <View style={styles.categoryContainers}>
+                <View>
+                  <Button large full transparent style={styles.categoryTitles}>
+                    <Text style={styles.buttonText}>Housing</Text>
+                  </Button>
+                </View>
+                <View>
+                  <Button large full transparent style={styles.categoryTitles}>
+                    <Text style={styles.seeAllText}>See all ></Text>
+                  </Button>
+                </View>
+              </View>
               <ScrollView horizontal={true}>
                 <SmallCard><Button full transparent><Text style={styles.listText}>Apartments / Housing</Text></Button><Image style={styles.images} source={require('./imgs/apt1.jpg')} /></SmallCard>
                 <SmallCard><Button full transparent><Text style={styles.listText}>Roommates</Text></Button><Image style={styles.images} source={require('./imgs/roommates1.jpg')} /></SmallCard>
@@ -59,7 +102,18 @@ class Browse extends Component {
               </ScrollView>
             </View>
             <View>
-              <Button large full light><Text style={styles.buttonText}>Jobs</Text></Button>
+              <View style={styles.categoryContainers}>
+                <View>
+                  <Button large full transparent style={styles.categoryTitles}>
+                    <Text style={styles.buttonText}>Jobs</Text>
+                  </Button>
+                </View>
+                <View>
+                  <Button large full transparent style={styles.categoryTitles}>
+                    <Text style={styles.seeAllText}>See all ></Text>
+                  </Button>
+                </View>
+              </View>
               <ScrollView horizontal={true}>
                 <SmallCard><Button full transparent><Text style={styles.listText}>Part-time</Text></Button><Image style={styles.images} source={require('./imgs/part-time1.jpg')} /></SmallCard>
                 <SmallCard><Button full transparent><Text style={styles.listText}>Full-time</Text></Button><Image style={styles.images} source={require('./imgs/full-time1.jpg')} /></SmallCard>
