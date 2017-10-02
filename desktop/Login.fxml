@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="615.0" prefWidth="923.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login">
+   <children>
+      <Button layoutX="416.0" layoutY="338.0" mnemonicParsing="false" text="Login" />
+      <Button layoutX="364.0" layoutY="425.0" mnemonicParsing="false" text="Create Account" />
+      <Label layoutX="245.0" layoutY="168.0" text="Username:" />
+      <Label layoutX="254.0" layoutY="252.0" text="Password:" />
+      <PasswordField layoutX="380.0" layoutY="244.0" />
+      <TextField layoutX="380.0" layoutY="160.0" />
+      <ImageView fitHeight="87.0" fitWidth="586.0" layoutX="169.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@GVSU%20Marketplace.PNG" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
