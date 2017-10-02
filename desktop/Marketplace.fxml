@@ -27,16 +27,14 @@
                         </ImageView>
                      </children>
                   </AnchorPane>
-                  <Button layoutX="1355.0" layoutY="15.0" mnemonicParsing="false" text="Create Account" />
                   <ScrollPane layoutX="344.0" layoutY="198.0" prefHeight="572.0" prefWidth="877.0" />
                   <ImageView fitHeight="136.0" fitWidth="688.0" layoutX="438.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@What's%20New%20at%20GVSU.PNG" />
                      </image>
                   </ImageView>
-                  <Button layoutX="1407.0" layoutY="79.0" mnemonicParsing="false" text="Login" />
                   <AnchorPane layoutX="1342.0" layoutY="715.0" prefHeight="244.0" prefWidth="218.0" />
-                  <ImageView fitHeight="282.0" fitWidth="238.0" layoutX="14.0" layoutY="684.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="282.0" fitWidth="238.0" layoutX="1312.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@GVSU.png" />
                      </image>
