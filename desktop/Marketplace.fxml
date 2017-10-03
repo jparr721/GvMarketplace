@@ -71,6 +71,8 @@
                   <ScrollPane layoutX="984.0" layoutY="198.0" prefHeight="719.0" prefWidth="233.0" />
                   <ScrollPane layoutX="666.0" layoutY="198.0" prefHeight="719.0" prefWidth="233.0" />
                   <ScrollPane layoutX="341.0" layoutY="198.0" prefHeight="719.0" prefWidth="233.0" />
+                  <Label layoutX="587.0" layoutY="41.0" text="Search:" />
+                  <TextField layoutX="679.0" layoutY="33.0" />
                </children>
             </AnchorPane>
          </content>
