@@ -1,32 +1,60 @@
 import React, { Component } from 'react';
-import { Container, Content, Form, Item, Input, Label } from 'native-base';
-import { Header } from './common/header';
+import { View } from 'react-native';
+import firebase from 'firebase';
+import { connect } from 'react-redux';
+import { Header, Button, Spinner, Input, Card, CardSection } from './common';
+
 
 class Login extends Component {
   render() {
     return (
-      <Container style={styles.containerStyle}>
-        <Header headerText="Please Log In" />
-        <Form>
-          <Item floatingLabel>
-            <Label>Email</Label>
+      <View>
+        <Header headerText="Please Log in" />
+        <Card>
+          <CardSection>
             <Input
-              secureTextEntry={false}
-              />
-          </Item>
-          <Item floatingLabel>
-            <Label>Password</Label>
+              placeholder="GVSU Email"
+              label="Email"
+              value={this.props.email}
+              onChange={value => this.props.getEmailInput({ prop: 'email', value })}
+            />
+          </CardSection>
+          <CardSection>
             <Input
-              secureTextEntry={true}
+              secureTextEntry
+              placeholder="Password"
+              label="Password"
+              value={this.props.password}
+              onChange={value => this.props.getPasswordInput({ prop: 'password', value })}
               />
-          </Item>
-        </Form>
-      </Container>
+          </CardSection>
+          <Text style={styles.errorTextStyle}>
+           {this.state.error}
+         </Text>
+         <CardSection>
+            {this.renderButton()}
+          </CardSection>
+        </Card>
+      </View>
     );
   }
 }
 
 const styles = {
-}
+  errorTextStyle: {
+    fontSize: 20,
+    alignSelf: 'center',
+    color: 'red'
+  }
+};
 
-export default Login;
+const mapStateToProps = (state) => {
+  const { email, password } = state.login;
+
+  return { email, password };
+};
+
+
+const LoginConnection = connect(mapStateToProps)(Login);
+
+export default { LoginConnection };
