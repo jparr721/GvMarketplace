@@ -1,12 +1,19 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 const PageView = (props) => {
   return (
-    <View style={{ padding: 10, flex: 1 }}>
+    <View style={[styles.container, StyleSheet.absoluteFill]}>
       {props.children}
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 10,
+    flex: 1
+  },
+});
 
 export { PageView };

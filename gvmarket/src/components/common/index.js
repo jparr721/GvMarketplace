@@ -9,3 +9,4 @@ export * from './newEntryDialogue';
 export * from './pageView';
 export * from './input';
 export * from './cardSection';
+export * from './button';

@@ -3,40 +3,41 @@ import { LOGIN, LOGIN_SUCCESS, LOGIN_FAIL, EMAIL_FIELD_CHANGED, PASSWORD_FIELD_C
 export const initialState = {
   email: '',
   password: '',
-  isLoggingIn: false,
-  loggedIn: false,
+  error: '',
+  user: null,
+  loading: false,
 };
 
 function appReducer(state = initialState, action) {
   switch (action.type) {
-    case 'LOGIN':
+    case LOGIN:
       return {
         ...state,
-        isLoggingIn: true,
+        loading: true,
+        error: '',
       };
-    case 'LOGIN_SUCCESS':
+    case LOGIN_SUCCESS:
       return {
         ...state,
-        isLoggingIn: false,
-        loggedIn: true,
+        ...initialState,
+        user: action.payload,
       };
-    case 'LOGIN_FAIL':
+    case LOGIN_FAIL:
       return {
         ...state,
-        isLoggingIn: false,
-        loggedIn: false,
+        error: 'Authentication Failed. Try again.',
+        password: '',
+        loading: false,
       };
-    case 'EMAIL_FIELD_CHANGED':
+    case EMAIL_FIELD_CHANGED:
       return {
         ...state,
-        loggedIn: false,
-        email: action.data,
+        email: action.payload,
       };
-    case 'PASSWORD_FIELD_CHANGED':
+    case PASSWORD_FIELD_CHANGED:
       return {
         ...state,
-        loggedIn: false,
-        password: action.data,
+        password: action.payload,
       };
     default:
       return state;
