@@ -16,7 +16,7 @@ export const getEmailInput = (data) => {
   return {
     type: EMAIL_FIELD_CHANGED,
     payload: data,
-    console.log(data),
+    // console.log(data),
   };
 };
 
@@ -24,7 +24,7 @@ export const getPasswordInput = (data) => {
   return {
     type: PASSWORD_FIELD_CHANGED,
     payload: data,
-    console.log(data),
+    // console.log(data),
   };
 };
 

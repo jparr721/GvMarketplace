@@ -11,7 +11,7 @@ const Header = (props) => {
 
 const styles = {
   container: {
-    flex: 0.12,
+    paddingBottom: 20,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-start',
