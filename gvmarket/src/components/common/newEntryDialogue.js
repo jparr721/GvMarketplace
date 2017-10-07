@@ -13,7 +13,7 @@ class NewEntryDialogue extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text >Enter details or use the camera!</Text>
+        <Text>Enter details or use the camera!</Text>
       </View>
     );
   }

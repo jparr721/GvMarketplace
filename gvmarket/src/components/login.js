@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { getEmailInput, getPasswordInput, login } from '../actions';
 import { Header, Button, Spinner, Input, Card, CardSection, PageView } from './common';
-
+import Router from '../router';
 
 class Login extends Component {
   onEmailChange(text) {
@@ -17,7 +17,8 @@ class Login extends Component {
   onButtonPress() {
     // const { email, password } = this.props;
 
-    this.props.login(this.props.email, this.props.password);
+    // this.props.login(this.props.email, this.props.password);
+    return <Router />
   }
 
   renderButton() {
@@ -42,7 +43,7 @@ class Login extends Component {
               placeholder="email@mail.gvsu.edu"
               label="Email"
               onChange={this.onEmailChange.bind(this)}
-              Value={this.props.email}
+              value={this.props.email}
             />
           </CardSection>
 
@@ -52,7 +53,7 @@ class Login extends Component {
               placeholder="password"
               label="Password"
               onChange={this.onPasswordChange.bind(this)}
-              Value={this.props.password}
+              value={this.props.password}
               />
           </CardSection>
 
@@ -82,5 +83,11 @@ const mapStateToProps = (state) => {
 
   return { email, password, error, loading };
 };
+
+// const mapDispatchToProps = (dispatch) => ({
+//   onEmailChange() {
+//     dispatch(getEmailInput(text)); // here
+//   }
+// });
 
 export default connect(mapStateToProps)(Login);
