@@ -64,6 +64,7 @@ const Router = TabNavigator(
     },
   },
   {
+    intialRouteName
     tabBarPosition: 'bottom',
     tabBarComponent: TabBarBottom,
     animationEnabled: true,
