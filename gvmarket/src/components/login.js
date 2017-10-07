@@ -6,19 +6,11 @@ import { Header, Button, Spinner, Input, Card, CardSection, PageView } from './c
 import Router from '../router';
 
 class Login extends Component {
-  onEmailChange(text) {
-    this.props.onEmailChange(text);
-  }
-
-  onPasswordChange(text) {
-    this.props.onPasswordChange(text);
-  }
-
   onButtonPress() {
-    // const { email, password } = this.props;
+    const { email, password } = this.props;
 
-    // this.props.login(this.props.email, this.props.password);
-    return <Router />
+    this.props.login(email, password);
+    // return <Router />
   }
 
   renderButton() {
@@ -85,6 +77,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
+  onButtonPress(email, password) {
+    dispatch(login(email, password));
+  },
   onEmailChange(text) {
     dispatch(getEmailInput(text));
   },
@@ -93,4 +88,4 @@ const mapDispatchToProps = (dispatch) => ({
   }
 });
 
-export default connect(mapStateToProps)(Login);
+export default connect(mapDispatchToProps, mapStateToProps)(Login);
