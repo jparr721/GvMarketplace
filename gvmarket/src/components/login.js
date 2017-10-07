@@ -7,11 +7,11 @@ import Router from '../router';
 
 class Login extends Component {
   onEmailChange(text) {
-    this.props.getEmailInput(text);
+    this.props.onEmailChange(text);
   }
 
   onPasswordChange(text) {
-    this.props.getPasswordInput(text);
+    this.props.onPasswordChange(text);
   }
 
   onButtonPress() {
@@ -42,7 +42,7 @@ class Login extends Component {
             <Input
               placeholder="email@mail.gvsu.edu"
               label="Email"
-              onChange={this.onEmailChange.bind(this)}
+              onChangeText={(text) => this.props.onEmailChange(text)}
               value={this.props.email}
             />
           </CardSection>
@@ -52,7 +52,7 @@ class Login extends Component {
               secureTextEntry
               placeholder="password"
               label="Password"
-              onChange={this.onPasswordChange.bind(this)}
+              onChangeText={(text) => this.props.onPasswordChange(text)}
               value={this.props.password}
               />
           </CardSection>
@@ -84,10 +84,13 @@ const mapStateToProps = (state) => {
   return { email, password, error, loading };
 };
 
-// const mapDispatchToProps = (dispatch) => ({
-//   onEmailChange() {
-//     dispatch(getEmailInput(text)); // here
-//   }
-// });
+const mapDispatchToProps = (dispatch) => ({
+  onEmailChange(text) {
+    dispatch(getEmailInput(text));
+  },
+  onPasswordChange(text) {
+    dispatch(getPasswordInput(text));
+  }
+});
 
 export default connect(mapStateToProps)(Login);
