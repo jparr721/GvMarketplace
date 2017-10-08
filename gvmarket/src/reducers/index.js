@@ -6,6 +6,8 @@ export const initialState = {
   error: '',
   user: null,
   loading: false,
+  loggedIn: false,
+  newPostModalVisible: false,
 };
 
 function appReducer(state = initialState, action) {
@@ -14,12 +16,17 @@ function appReducer(state = initialState, action) {
       return {
         ...state,
         loading: true,
-        error: '',
+        loggedIn: false,
+        error: 'Logging in!',
       };
     case LOGIN_SUCCESS:
       return {
         ...state,
-        ...initialState,
+        email: '',
+        password: '',
+        error: '',
+        loading: false,
+        loggedIn: true,
         user: action.payload,
       };
     case LOGIN_FAIL:
@@ -27,6 +34,7 @@ function appReducer(state = initialState, action) {
         ...state,
         error: 'Authentication Failed. Try again.',
         password: '',
+        loggedIn: false,
         loading: false,
       };
     case EMAIL_FIELD_CHANGED:
@@ -39,6 +47,10 @@ function appReducer(state = initialState, action) {
         ...state,
         password: action.payload,
       };
+    case SET_NET_POST_MODAL_VISIBLE:
+      return {
+        ...state, newPostModalVisible: !newPostModalVisible
+      }
     default:
       return state;
   }

@@ -1,26 +1,18 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
 import { connect } from 'react-redux';
 import { getEmailInput, getPasswordInput, login } from '../actions';
 import { Header, Button, Spinner, Input, Card, CardSection, PageView } from './common';
-import Router from '../router';
 
 class Login extends Component {
-  onButtonPress() {
-    const { email, password } = this.props;
-
-    this.props.login(email, password);
-    // return <Router />
-  }
-
   renderButton() {
     if (this.props.loading) {
       return <Spinner size="large" />;
     }
 
     return (
-      <Button onPress={this.onButtonPress}>
-        Login
+      <Button onPress={() => this.props.onButtonPress(this.props.email, this.props.password)}>
+        Login/Register
       </Button>
     );
   }
@@ -88,4 +80,4 @@ const mapDispatchToProps = (dispatch) => ({
   }
 });
 
-export default connect(mapDispatchToProps, mapStateToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

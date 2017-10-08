@@ -11,7 +11,9 @@ const PageView = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    paddingTop: 20,
+    paddingLeft: 10,
+    paddingRight: 10,
     flex: 1
   },
 });

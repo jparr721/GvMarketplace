@@ -8,24 +8,13 @@ const styles = {
   topBar: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 20,
   },
-  mainBody: {
-    flex: 1,
-  },
-  inboxTitleText: {
-    color: '#0d67a2',
-    fontWeight: '700',
-    fontSize: 26,
-    marginTop: 15,
-  },
-  inboxEmptyText: {
-    color: '#0d67a2',
-  },
+  // mainBody: {
+  //   flex: 1,
+  // },
   mainBodyEmptyText: {
     flex: 1,
     alignItems: 'center',
-    marginTop: 210,
   },
 }
 
@@ -35,13 +24,10 @@ class Inbox extends Component {
       <PageView>
         <View style={styles.topBar}>
           <View><Button transparent><Icon name='folder-open' color='#0d67a2' /></Button></View>
+          <Header headerText="Inbox" />
           <View><Button transparent><Icon name='notifications' color='#0d67a2' /></Button></View>
         </View>
         <ScrollView>
-          <View style={styles.mainBody}>
-            <Text style={styles.inboxTitleText}>Inbox</Text>
-            <Text style={styles.inboxEmptyText}>You have no unread messages</Text>
-          </View>
           <View style={styles.mainBodyEmptyText}>
             <Icon name='textsms' color='#0d67a2' />
             <Text style={styles.inboxEmptyText}>No messages to show.</Text>

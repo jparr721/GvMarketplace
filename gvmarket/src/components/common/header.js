@@ -4,7 +4,10 @@ import { View, Text } from 'react-native';
 const Header = (props) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.textStyle}>{props.headerText}</Text>
+      <View style={styles.textWrapper}>
+        <Text style={styles.textStyle}>{props.headerText}</Text>
+      </View>
+      {props.children}
     </View>
   );
 };
@@ -15,10 +18,13 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    backgroundColor: 'rgba(255, 255, 255, 0.5)'
+  },
+  textWrapper: {
+    alignItems: 'center',
+    flex: 1,
+    height: 50,
   },
   textStyle: {
-    paddingTop: 20,
     fontSize: 26,
     fontWeight: '700',
     flex: 1,

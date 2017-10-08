@@ -8,7 +8,7 @@ export const loginFail = (dispatch) => {
 export const loginSuccess = (dispatch, user) => {
   dispatch({
     type: LOGIN_SUCCESS,
-    payload: user
+    payload: user,
   });
 };
 
@@ -16,7 +16,6 @@ export const getEmailInput = (data) => {
   return {
     type: EMAIL_FIELD_CHANGED,
     payload: data,
-    // console.log(data),
   };
 };
 
@@ -24,11 +23,10 @@ export const getPasswordInput = (data) => {
   return {
     type: PASSWORD_FIELD_CHANGED,
     payload: data,
-    // console.log(data),
   };
 };
 
-export const login = ({ email, password }) => {
+export const login = ( email, password ) => {
   return (dispatch) => {
     dispatch({ type: LOGIN });
 
@@ -42,4 +40,10 @@ export const login = ({ email, password }) => {
           .catch(() => loginFail(dispatch))
       });
   };
+};
+
+export const setNewPostModalVisible = () => {
+  return {
+    type: 'SET_NET_POST_MODAL_VISIBLE'
+  }
 };

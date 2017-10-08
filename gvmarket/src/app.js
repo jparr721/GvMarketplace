@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
 import firebase from 'firebase';
@@ -26,10 +26,17 @@ class App extends Component {
     const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
     return (
       <Provider store={store}>
-        <Login />
+        {/* { this.props.loggedIn ? <Router /> : <Login /> } */}
+        <Router />
       </Provider>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  const { loggedIn } = state;
+
+  return { loggedIn };
+};
 
 export default App;
