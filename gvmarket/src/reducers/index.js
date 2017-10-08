@@ -50,8 +50,8 @@ function appReducer(state = initialState, action) {
     case SET_NEW_POST_MODAL_VISIBLE:
       return {
         ...state,
-        newPostModalVisible: !state.newPostModalVisible
-      }
+        newPostModalVisible: !state.newPostModalVisible,
+      };
     default:
       return state;
   }

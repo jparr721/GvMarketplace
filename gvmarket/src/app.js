@@ -23,12 +23,14 @@ class App extends Component {
     firebase.initializeApp(config);
   }
   render() {
-    const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+
+    if (!this.props.loggedIn) {
+      return (
+        <Login />
+      );
+    }
     return (
-      <Provider store={store}>
-        {/* { this.props.loggedIn ? <Router /> : <Login /> } */}
-        <Router />
-      </Provider>
+      <Router />
     );
   }
 }
@@ -39,4 +41,4 @@ const mapStateToProps = (state) => {
   return { loggedIn };
 };
 
-export default App;
+export default connect(mapStateToProps)(App);

@@ -7,7 +7,6 @@ import Browse from './components/browse';
 import Inbox from './components/inbox';
 import Profile from './components/profile';
 import Sell from './components/sell';
-import Login from './components/login';
 
 const Router = TabNavigator(
   {
