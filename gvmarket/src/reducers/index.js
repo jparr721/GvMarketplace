@@ -1,4 +1,4 @@
-import { LOGIN, LOGIN_SUCCESS, LOGIN_FAIL, EMAIL_FIELD_CHANGED, PASSWORD_FIELD_CHANGED } from '../../constants';
+import { LOGIN, LOGIN_SUCCESS, LOGIN_FAIL, EMAIL_FIELD_CHANGED, PASSWORD_FIELD_CHANGED, SET_NEW_POST_MODAL_VISIBLE } from '../../constants';
 
 export const initialState = {
   email: '',
@@ -47,9 +47,10 @@ function appReducer(state = initialState, action) {
         ...state,
         password: action.payload,
       };
-    case SET_NET_POST_MODAL_VISIBLE:
+    case SET_NEW_POST_MODAL_VISIBLE:
       return {
-        ...state, newPostModalVisible: !newPostModalVisible
+        ...state,
+        newPostModalVisible: !state.newPostModalVisible
       }
     default:
       return state;

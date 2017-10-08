@@ -1,0 +1,84 @@
+import React, { Component } from 'react';
+import { Modal, TouchableOpacity, View, Text } from 'react-native';
+import { Icon, Avatar } from 'react-native-elements';
+import { connect } from 'react-redux';
+import { setNewPostModalVisible } from '../../actions';
+
+
+// common
+import { Header, PageView } from '../../components/common';
+
+class NewPostDialogueContainer extends Component {
+  render() {
+    return (
+      <PageView>
+        <Modal
+          animationtype={"slide"}
+          transparent={false}
+          visible={this.props.newPostModalVisible}
+        >
+          <View>
+            <View style={styles.header}>
+              <Header headerText="Make a new posting">
+                <TouchableOpacity
+                  style={{marginRight: 30}}
+                  onPress={() => { this.props.setNewPostModalVisible() }}>
+                  <Icon
+                    name={"arrow-left"}
+                    type="material-community"
+                    size={25}
+                    color='#0d67a2'
+                  />
+                </TouchableOpacity>
+              </Header>
+            </View>
+            <View style={{padding: 10}}>
+              <Text>Enter item details or use the camera!</Text>
+            </View>
+          </View>
+        </Modal>
+        <TouchableOpacity
+          onPress={() => this.props.setNewPostModalVisible()}>
+          <Icon
+            name={"plus"}
+            type="material-community"
+            size={25}
+            color='#0d67a2'
+          />
+        </TouchableOpacity>
+      </PageView>
+    );
+  }
+}
+
+const styles = {
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: 10,
+    paddingBottom: 10,
+    paddingTop: 20,
+    backgroundColor: '#fff'
+  },
+  headerText: {
+    color: '#0d67a2',
+    fontWeight: '700',
+    fontSize: 24,
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    newPostModalVisible: state.newPostModalVisible
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  setNewPostModalVisible() {
+    dispatch(setNewPostModalVisible());
+  }
+});
+
+const NewPostDialogue = connect(mapStateToProps, mapDispatchToProps)(NewPostDialogueContainer);
+
+export { NewPostDialogue };

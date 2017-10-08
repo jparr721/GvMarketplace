@@ -1,5 +1,5 @@
 import firebase from 'firebase';
-import { LOGIN, LOGIN_SUCCESS, LOGIN_FAIL, EMAIL_FIELD_CHANGED, PASSWORD_FIELD_CHANGED } from '../../constants';
+import { LOGIN, LOGIN_SUCCESS, LOGIN_FAIL, EMAIL_FIELD_CHANGED, PASSWORD_FIELD_CHANGED, SET_NEW_POST_MODAL_VISIBLE } from '../../constants';
 
 export const loginFail = (dispatch) => {
   dispatch({ type: LOGIN_FAIL });
@@ -44,6 +44,6 @@ export const login = ( email, password ) => {
 
 export const setNewPostModalVisible = () => {
   return {
-    type: 'SET_NET_POST_MODAL_VISIBLE'
+    type: SET_NEW_POST_MODAL_VISIBLE
   }
 };
