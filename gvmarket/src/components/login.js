@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import { getEmailInput, getPasswordInput, login } from '../actions';
 import { Header, Button, Spinner, Input, Card, CardSection, PageView } from './common';
@@ -20,35 +20,39 @@ class Login extends Component {
   render() {
     return (
       <PageView>
-        <Header headerText="Please Log in" />
-        <Card>
-          <CardSection>
-            <Input
-              placeholder="email@mail.gvsu.edu"
-              label="Email"
-              onChangeText={(text) => this.props.onEmailChange(text)}
-              value={this.props.email}
-            />
-          </CardSection>
-
-          <CardSection>
-            <Input
-              secureTextEntry
-              placeholder="password"
-              label="Password"
-              onChangeText={(text) => this.props.onPasswordChange(text)}
-              value={this.props.password}
+        <View style={{flex: 1, flexDirection: 'column'}}>
+          <View style={styles.emptySpace} />
+          <Header headerText="GV Market" />
+          <Card>
+            <CardSection>
+              <Input
+                placeholder="email@mail.gvsu.edu"
+                label="Email"
+                onChangeText={(text) => this.props.onEmailChange(text)}
+                value={this.props.email}
               />
-          </CardSection>
+            </CardSection>
 
-          <Text style={styles.errorTextStyle}>
-            {this.props.error}
-         </Text>
+            <CardSection>
+              <Input
+                secureTextEntry
+                placeholder="password"
+                label="Password"
+                onChangeText={(text) => this.props.onPasswordChange(text)}
+                value={this.props.password}
+              />
+            </CardSection>
 
-         <CardSection>
-            {this.renderButton()}
-          </CardSection>
-        </Card>
+            <Text style={styles.errorTextStyle}>
+              {this.props.error}
+            </Text>
+
+            <CardSection>
+              {this.renderButton()}
+            </CardSection>
+          </Card>
+          <View style={styles.emptySpace} />
+        </View>
       </PageView>
     );
   }
@@ -59,7 +63,12 @@ const styles = {
     fontSize: 20,
     alignSelf: 'center',
     color: 'red'
-  }
+  },
+
+  emptySpace: {
+    height: 140,
+    backgroundColor: 'white',
+  },
 };
 
 const mapStateToProps = (state) => {
