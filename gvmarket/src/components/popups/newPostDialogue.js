@@ -6,7 +6,7 @@ import { setNewPostModalVisible } from '../../actions';
 
 
 // common
-import { Header, PageView } from '../../components/common';
+import { Header, PageView, Card, CardSection, Input } from '../../components/common';
 
 class NewPostDialogueContainer extends Component {
   render() {
@@ -19,18 +19,17 @@ class NewPostDialogueContainer extends Component {
         >
           <View>
             <View style={styles.header}>
-              <Header headerText="Make a new posting">
-                <TouchableOpacity
-                  style={{marginRight: 30}}
-                  onPress={() => { this.props.setNewPostModalVisible() }}>
-                  <Icon
-                    name={"arrow-left"}
-                    type="material-community"
-                    size={25}
-                    color='#0d67a2'
-                  />
-                </TouchableOpacity>
-              </Header>
+              <TouchableOpacity
+                style={{marginRight: 30}}
+                onPress={() => { this.props.setNewPostModalVisible() }}>
+                <Icon
+                  name={"arrow-left"}
+                  type="material-community"
+                  size={25}
+                  color='#0d67a2'
+                />
+              </TouchableOpacity>
+              <Header headerText="Make a new posting" />
             </View>
             <View style={{padding: 10}}>
               <Text>Enter item details or use the camera!</Text>
@@ -46,6 +45,7 @@ class NewPostDialogueContainer extends Component {
             color='#0d67a2'
           />
         </TouchableOpacity>
+        <
       </PageView>
     );
   }

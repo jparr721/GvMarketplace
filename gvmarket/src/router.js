@@ -5,7 +5,7 @@ import { Icon } from 'react-native-elements';
 // Screen Imports
 import Browse from './components/browse';
 import Inbox from './components/inbox';
-import Profile from './components/profile';
+import Settings from './components/settings';
 import Sell from './components/sell';
 
 const Router = TabNavigator(
@@ -49,13 +49,13 @@ const Router = TabNavigator(
         )
       }
     },
-    Profile: {
-      screen: Profile,
+    Settings: {
+      screen: Settings,
       path: '',
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <Icon
-            name="account-outline"
+            name="logout"
             type="material-community"
             size={28}
             color={tintColor} />
