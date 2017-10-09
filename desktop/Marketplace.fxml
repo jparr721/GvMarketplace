@@ -129,7 +129,7 @@
                   <TextField layoutX="293.0" layoutY="407.0" />
                   <Button layoutX="15.0" layoutY="497.0" mnemonicParsing="false" text="Upload a New Photo" />
                   <Label layoutX="301.0" layoutY="505.0" text="User's Phote Path..." />
-                  <TextArea layoutX="936.0" layoutY="761.0" prefHeight="129.0" prefWidth="614.0" text="Remember to only meet with someone in a public area.&#10;If you have a concern about a user please report them&#10;using the report button below." />
+                  <TextArea editable="false" layoutX="936.0" layoutY="761.0" prefHeight="129.0" prefWidth="614.0" text="Remember to only meet with someone in a public area.&#10;If you have a concern about a user please report them&#10;using the report button below." />
                   <Button layoutX="1446.0" layoutY="903.0" mnemonicParsing="false" text="Report" />
                </children></AnchorPane>
          </content>
