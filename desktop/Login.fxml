@@ -9,17 +9,18 @@
 
 <AnchorPane prefHeight="615.0" prefWidth="923.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login">
    <children>
-      <Button layoutX="357.0" layoutY="338.0" mnemonicParsing="false" text="Login" />
-      <Button layoutX="357.0" layoutY="401.0" mnemonicParsing="false" text="Create Account" />
-      <Label layoutX="245.0" layoutY="168.0" text="Username:" />
-      <Label layoutX="254.0" layoutY="252.0" text="Password:" />
-      <PasswordField layoutX="380.0" layoutY="244.0" />
-      <TextField layoutX="380.0" layoutY="160.0" />
+      <Button layoutX="627.0" layoutY="238.0" mnemonicParsing="false" text="Login" />
+      <Button layoutX="455.0" layoutY="377.0" mnemonicParsing="false" text="Create New Account" />
+      <Label layoutX="253.0" layoutY="242.0" text="Username:" />
+      <Label layoutX="254.0" layoutY="299.0" text="Password:" />
+      <PasswordField layoutX="380.0" layoutY="295.0" />
+      <TextField layoutX="380.0" layoutY="238.0" />
       <ImageView fitHeight="87.0" fitWidth="586.0" layoutX="169.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@GVSU%20Marketplace.PNG" />
          </image>
       </ImageView>
-      <Button layoutX="474.0" layoutY="338.0" mnemonicParsing="false" text="Forgot Password?" />
+      <Button layoutX="595.0" layoutY="295.0" mnemonicParsing="false" text="Forgot Password?" />
+      <Label layoutX="281.0" layoutY="381.0" text="Don't have an Account?" />
    </children>
 </AnchorPane>
