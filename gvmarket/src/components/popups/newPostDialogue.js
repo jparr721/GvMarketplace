@@ -6,7 +6,7 @@ import { setNewPostModalVisible } from '../../actions';
 
 
 // common
-import { Header, PageView, Card, CardSection, Input } from '../../components/common';
+import { PageView, Card, CardSection, Input, Button } from '../../components/common';
 
 class NewPostDialogueContainer extends Component {
   render() {
@@ -26,13 +26,12 @@ class NewPostDialogueContainer extends Component {
                   name={"arrow-left"}
                   type="material-community"
                   size={25}
-                  color='#0d67a2'
+                  color="#0d67a2"
                 />
               </TouchableOpacity>
-              <Header headerText="Make a new posting" />
+              <Text style={{ fontSize: 28, justifyContent: 'center', alignSelf:'center' }}>Add a new post</Text>
             </View>
-            <View style={{padding: 10}}>
-              <Text>Enter item details or use the camera!</Text>
+            <View>
               <Card>
                 <CardSection>
                   <Input
@@ -59,6 +58,9 @@ class NewPostDialogueContainer extends Component {
                     onChangetext={(text) => this.props.onDescriptionChange(text)}
                     value={this.props.description}
                    />
+                </CardSection>
+                <CardSection>
+                  <Button>Make Post</Button>
                 </CardSection>
               </Card>
             </View>

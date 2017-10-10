@@ -10,3 +10,5 @@ export * from './pageView';
 export * from './input';
 export * from './cardSection';
 export * from './button';
+export * from './descriptionBox';
+export * from './searchBar';
