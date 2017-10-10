@@ -9,9 +9,6 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  // mainBody: {
-  //   flex: 1,
-  // },
   mainBodyEmptyText: {
     flex: 1,
     alignItems: 'center',
@@ -23,13 +20,13 @@ class Inbox extends Component {
     return (
       <PageView>
         <View style={styles.topBar}>
-          <View><Button transparent><Icon name='folder-open' color='#0d67a2' /></Button></View>
+          <View><Button transparent><Icon name='folder-open' color='#007aff' /></Button></View>
           <Header headerText="Inbox" />
-          <View><Button transparent><Icon name='notifications' color='#0d67a2' /></Button></View>
+          <View><Button transparent><Icon name='notifications' color='#007aff' /></Button></View>
         </View>
         <ScrollView>
           <View style={styles.mainBodyEmptyText}>
-            <Icon name='textsms' color='#0d67a2' />
+            <Icon name='textsms' color='#007aff' />
             <Text style={styles.inboxEmptyText}>No messages to show.</Text>
             <Text style={styles.inboxEmptyText}>Message a user to change that!</Text>
           </View>
@@ -40,3 +37,4 @@ class Inbox extends Component {
 }
 
 export default Inbox;
+//#0d67a2

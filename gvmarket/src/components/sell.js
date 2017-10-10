@@ -12,7 +12,7 @@ class Sell extends Component {
         <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
           <View><NewPostDialogue /></View>
           <Header headerText="Make A Post" />
-        <View><Button transparent><Icon name='notifications' color='#0d67a2' /></Button></View>
+        <View><Button transparent><Icon name='notifications' color='#007aff' /></Button></View>
         </View>
         <View style={{ flex: 1 }}>
           <Text>Sell stuff here</Text>

@@ -28,7 +28,7 @@ const styles = {
     fontSize: 26,
     fontWeight: '700',
     flex: 1,
-    color: '#0d67a2',
+    color: '#007aff',
   },
 };
 

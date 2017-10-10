@@ -26,7 +26,7 @@ class NewPostDialogueContainer extends Component {
                   name={"arrow-left"}
                   type="material-community"
                   size={25}
-                  color="#0d67a2"
+                  color="#007aff"
                 />
               </TouchableOpacity>
               <Text style={{ fontSize: 28, justifyContent: 'center', alignSelf:'center' }}>Add a new post</Text>
@@ -72,7 +72,7 @@ class NewPostDialogueContainer extends Component {
             name={"plus"}
             type="material-community"
             size={25}
-            color='#0d67a2'
+            color='#007aff'
           />
         </TouchableOpacity>
       </PageView>
@@ -90,7 +90,7 @@ const styles = {
     backgroundColor: '#fff'
   },
   headerText: {
-    color: '#0d67a2',
+    color: '#007aff',
     fontWeight: '700',
     fontSize: 24,
   }
