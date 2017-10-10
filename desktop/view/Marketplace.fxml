@@ -22,7 +22,7 @@
                      <children>
                         <ImageView fitHeight="105.0" fitWidth="394.0" layoutX="-13.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@GVSU%20Word%20Logo.png" />
+                              <Image url="@GVSU-Word-Logo.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -30,7 +30,7 @@
                   <ScrollPane layoutX="344.0" layoutY="198.0" prefHeight="572.0" prefWidth="877.0" />
                   <ImageView fitHeight="136.0" fitWidth="688.0" layoutX="438.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@What's%20New%20at%20GVSU.PNG" />
+                        <Image url="@What's-New-at-GVSU.PNG" />
                      </image>
                   </ImageView>
                   <AnchorPane layoutX="1342.0" layoutY="715.0" prefHeight="244.0" prefWidth="218.0" />
