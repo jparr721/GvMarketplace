@@ -1,35 +1,56 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, {Component}  from 'react';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Avatar, Icon } from 'react-native-elements';
+import {connect} from 'react-redux';
+import { setUserSettingsModalVisible } from '../../actions';
 
-const Header = (props) => {
-  return (
-    <View style={styles.container}>
-      <View style={styles.textWrapper}>
-        <Text style={styles.textStyle}>{props.headerText}</Text>
+class HeaderContainer extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.textWrapper}>
+          <Text style={styles.textStyle}>{this.props.headerText}</Text>
+        </View>
+        {this.props.children}
       </View>
-      {props.children}
-    </View>
-  );
-};
+    );
+  }
+}
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
-    paddingBottom: 20,
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'flex-start',
+    paddingTop: 20,
   },
   textWrapper: {
     alignItems: 'center',
     flex: 1,
-    height: 50,
+    height: 42,
   },
   textStyle: {
-    fontSize: 26,
+    fontSize: 32,
     fontWeight: '700',
     flex: 1,
     color: '#007aff',
   },
+});
+
+const mapStateToProps = (state) => {
+  return {
+  };
 };
+
+const mapDispatchToProps = (dispatch) => ({
+  displayUserMenu() {
+    dispatch(setUserSettingsModalVisible());
+  }
+
+});
+
+const Header = connect(
+  mapStateToProps,
+  mapDispatchToProps)
+(HeaderContainer);
+
 
 export { Header };

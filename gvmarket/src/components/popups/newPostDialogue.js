@@ -67,6 +67,7 @@ class NewPostDialogueContainer extends Component {
           </View>
         </Modal>
         <TouchableOpacity
+          style={{ paddingTop: 10 }}
           onPress={() => this.props.setNewPostModalVisible()}>
           <Icon
             name={"plus"}

@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 
 const PageView = (props) => {
   return (
-    <View style={[styles.container, StyleSheet.absoluteFill]}>
+    <View style={[styles.container]}>
       {props.children}
     </View>
   );
@@ -11,9 +11,6 @@ const PageView = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 20,
-    paddingLeft: 10,
-    paddingRight: 10,
     flex: 1
   },
 });

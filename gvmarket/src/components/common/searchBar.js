@@ -27,6 +27,7 @@ const styles = {
   },
   iconStyle: {
     paddingLeft: 10,
+    height: 40,
     flex: 1,
   },
   containerStyle: {
