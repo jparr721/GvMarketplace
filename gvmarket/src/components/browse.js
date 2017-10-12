@@ -1,47 +1,26 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, Image } from 'react-native';
 
-import { PageView, Button, SearchBar, Card, CardSection } from './common/index';
+import { PageView, SearchBar, Card, CardSection, Header } from './common/index';
+import { Button } from 'native-base';
+import { Icon } from 'react-native-elements'
 import { NewPostDialogue } from './popups/newPostDialogue';
 
 const styles = {
-  buttonText: {
-    fontSize: 24,
-    color: '#0d67a2',
-    fontWeight: '700',
-  },
-  listText: {
-    fontSize: 17,
-  },
-  categories: {
-    paddingBottom: 1,
-  },
-  images: {
+  container: {
+    paddingTop: 20,
     flex: 1,
-    height: 100,
-    width: null,
-  },
-  categoryContainers: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  categoryTitles: {
-    justifyContent: 'flex-start',
-  },
-  seeAllText: {
-    color: '#0d67a2',
   },
 };
 
 class Browse extends Component {
   render() {
     return (
-      <PageView>
-        <SearchBar
-          placeholder="Search...">
+      <View syle={styles.container}>
+        <Header headerText="Browse">
           <NewPostDialogue />
-        </SearchBar>
-      </PageView>
+        </Header>
+      </View>
     );
   }
 }
