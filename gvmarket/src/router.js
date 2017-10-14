@@ -6,7 +6,6 @@ import { Icon } from 'react-native-elements';
 import Browse from './components/browse';
 import Inbox from './components/inbox';
 import Settings from './components/settings';
-import Sell from './components/sell';
 
 const Router = TabNavigator(
   {
@@ -15,25 +14,12 @@ const Router = TabNavigator(
       path: '',
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-            <Icon
-              name="magnify"
-              type="material-community"
-              size={28}
-              color={tintColor} />
-        ),
-      }
-    },
-    Sell: {
-      screen: Sell,
-      path: '',
-      navigationOptions: {
-        tabBarIcon: ({ tintColor }) => (
           <Icon
-            name="plus-box-outline"
-            type='material-community'
+            name="magnify"
+            type="material-community"
             size={28}
             color={tintColor} />
-        )
+        ),
       }
     },
     Inbox: {

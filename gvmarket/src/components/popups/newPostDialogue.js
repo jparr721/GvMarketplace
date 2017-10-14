@@ -1,14 +1,46 @@
 import React, { Component } from 'react';
 import { Modal, TouchableOpacity, View, Text } from 'react-native';
-import { Icon, Avatar } from 'react-native-elements';
+import { Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
+import firebase from 'react-native-firebase';
 import { setNewPostModalVisible } from '../../actions';
-
 
 // common
 import { PageView, Card, CardSection, Input, Button } from '../../components/common';
 
 class NewPostDialogueContainer extends Component {
+  constructor() {
+    super();
+    this.ref = firebase.firestore().collection('postings');
+    this.state = { postTitle: '', price: '', description: '' };
+  }
+
+  onTitleChange(value) {
+    this.setState({ postTitle: value });
+  }
+
+  onPriceChange(value) {
+    this.setState({ price: value });
+  }
+
+  onDescriptionChange(value) {
+    this.setState({ description: value });
+  }
+
+  addPosting() {
+    this.ref.add({
+      title: this.state.postTitle,
+      price: this.state.price,
+      description: this.state.description,
+    });
+
+    this.setState({
+      postTitle: '',
+      price: '',
+      description: '',
+    });
+  }
+
   render() {
     return (
       <PageView>
@@ -26,7 +58,7 @@ class NewPostDialogueContainer extends Component {
                   name={"arrow-left"}
                   type="material-community"
                   size={25}
-                  color="#0d67a2"
+                  color="#007aff"
                 />
               </TouchableOpacity>
               <Text style={{ fontSize: 28, justifyContent: 'center', alignSelf:'center' }}>Add a new post</Text>
@@ -37,42 +69,44 @@ class NewPostDialogueContainer extends Component {
                   <Input
                     placeholder="Title"
                     label="Post title"
-                    onChangeText={(text) => this.props.onTitleChange(text)}
-                    value={this.props.postTitle}
+                    onChangeText={(text) => this.onTitleChange(text)}
+                    value={this.state.postTitle}
                   />
                 </CardSection>
                 <CardSection>
                   <Input
                     placeholder="Price"
                     label="Price ($)"
-                    onChangeText={(text) => this.props.onPriceChange(text)}
-                    value={this.props.price}
+                    onChangeText={(text) => this.onPriceChange(text)}
+                    value={this.state.price}
                   />
                 </CardSection>
-              </Card>
-              <Card>
                 <CardSection>
                   <Input
                     placeholder="Description (optional)"
                     label="Description"
-                    onChangetext={(text) => this.props.onDescriptionChange(text)}
-                    value={this.props.description}
-                   />
+                    onChangeText={(text) => this.onDescriptionChange(text)}
+                    value={this.state.description}
+                  />
                 </CardSection>
                 <CardSection>
-                  <Button>Make Post</Button>
+                  <Button
+                    onPress={() => this.addPosting()}>
+                    Make Post
+                  </Button>
                 </CardSection>
               </Card>
             </View>
           </View>
         </Modal>
         <TouchableOpacity
+          style={{ paddingTop: 10 }}
           onPress={() => this.props.setNewPostModalVisible()}>
           <Icon
             name={"plus"}
             type="material-community"
             size={25}
-            color='#0d67a2'
+            color='#007aff'
           />
         </TouchableOpacity>
       </PageView>
@@ -90,7 +124,7 @@ const styles = {
     backgroundColor: '#fff'
   },
   headerText: {
-    color: '#0d67a2',
+    color: '#007aff',
     fontWeight: '700',
     fontSize: 24,
   }

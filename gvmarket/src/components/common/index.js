@@ -12,3 +12,4 @@ export * from './cardSection';
 export * from './button';
 export * from './descriptionBox';
 export * from './searchBar';
+export * from './post';
