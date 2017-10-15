@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView, Dimensions } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { Button } from 'native-base';
 import { Header, PageView } from './common/index';
@@ -8,8 +8,18 @@ const styles = {
   topBar: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginTop: 20,
   },
-  mainBodyEmptyText: {
+  topLeftIcon: {
+    paddingLeft: 15,
+    paddingTop: 15,
+  },
+  topRightIcon: {
+    paddingRight: 15,
+    paddingTop: 15,
+  },
+  inboxEmptyText: {
+    paddingTop: Dimensions.get('window').height / 2.85,
     flex: 1,
     alignItems: 'center',
   },
@@ -20,15 +30,16 @@ class Inbox extends Component {
     return (
       <PageView>
         <View style={styles.topBar}>
-          <View><Button transparent><Icon name='folder-open' color='#007aff' /></Button></View>
+          <View style={styles.topLeftIcon}><Button transparent><Icon name='folder-open' color='#007aff' /></Button></View>
           <Header headerText="Inbox" />
-          <View><Button transparent><Icon name='notifications' color='#007aff' /></Button></View>
+          <View style={styles.topRightIcon}><Button transparent><Icon name='notifications' color='#007aff' /></Button></View>
         </View>
+        <View />
         <ScrollView>
-          <View style={styles.mainBodyEmptyText}>
+          <View style={styles.inboxEmptyText}>
             <Icon name='textsms' color='#007aff' />
-            <Text style={styles.inboxEmptyText}>No messages to show.</Text>
-            <Text style={styles.inboxEmptyText}>Message a user to change that!</Text>
+            <Text>No messages to show.</Text>
+            <Text>Message a user to change that!</Text>
           </View>
         </ScrollView>
       </PageView>
@@ -37,4 +48,3 @@ class Inbox extends Component {
 }
 
 export default Inbox;
-//#0d67a2

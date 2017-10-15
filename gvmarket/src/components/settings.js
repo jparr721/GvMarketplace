@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
-import { PageView, Card, CardSection, Button } from './common';
+import { Header, PageView, Button } from './common/index';
 
 const styles = {
   btns: {
     marginTop: 10,
-  }
+  },
 
+  mainBody: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    paddingTop: 20,
+  },
+  heading: {
+    marginTop: 20
+  },
 }
 
 
@@ -14,8 +23,11 @@ class Settings extends Component {
   render() {
     return (
       <PageView>
-        <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
-          <View />
+        <View style={styles.heading}>
+          <Header headerText='Settings' />
+        </View>
+        <View style={styles.mainBody}>
+
           <View style={styles.btns}>
             <Button>My posts</Button>
           </View>
@@ -26,6 +38,10 @@ class Settings extends Component {
 
           <View style={styles.btns}>
             <Button>Refresh my location</Button>
+          </View>
+
+          <View style={styles.btns}>
+            <Button>Light / Dark mode</Button>
           </View>
 
           <View style={styles.btns}>

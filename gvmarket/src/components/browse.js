@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList, Dimensions } from 'react-native';
 import firebase from 'react-native-firebase';
+import { Button } from 'native-base';
+import { Icon } from 'react-native-elements';
 
 import { PageView, SearchBar, Card, CardSection, Header, Spinner, Post } from './common/index';
 import { NewPostDialogue } from './popups/newPostDialogue';
@@ -20,8 +22,6 @@ const styles = {
     alignItems: 'center',
     width: Dimensions.get('window').width / 3,
     backgroundColor: 'skyblue',
-
-
   },
   textStyle: {
     paddingLeft: 10,
@@ -32,6 +32,11 @@ const styles = {
   rightButtonText: {
     color: '#007aff',
   },
+  topBar: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
+  }
 };
 
 class Browse extends Component {
@@ -79,9 +84,11 @@ class Browse extends Component {
 
     return (
       <View style={styles.container}>
-        <Header headerText="Browse">
-          <NewPostDialogue />
-        </Header>
+      <View style={styles.topBar}>
+        <Button transparent><Icon name='notifications' color='#007aff' /></Button>
+        <Header headerText="Browse"/>
+        <NewPostDialogue />
+      </View>
         <FlatList
           data={this.state.postings}
           renderItem={({ item }) => <Post {...item} />}
