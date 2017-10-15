@@ -36,6 +36,14 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 20,
+  },
+  topLeftIcon: {
+    paddingLeft: 20,
+    paddingTop: 20,
+  },
+  topRightIcon: {
+    paddingRight: 20,
+    paddingTop: 20,
   }
 };
 
@@ -83,18 +91,23 @@ class Browse extends Component {
     }
 
     return (
-      <View style={styles.container}>
+      <PageView>
       <View style={styles.topBar}>
-        <Button transparent><Icon name='notifications' color='#007aff' /></Button>
+        <View style={styles.topLeftIcon}>
+          <NewPostDialogue />
+        </View>
         <Header headerText="Browse"/>
-        <NewPostDialogue />
+        <View style={styles.topRightIcon}>
+          <Button transparent><Icon name='search' color='#007aff' /></Button>
+        </View>
       </View>
+      <View>
         <FlatList
           data={this.state.postings}
           renderItem={({ item }) => <Post {...item} />}
         />
-
       </View>
+      </PageView>
     );
   }
 }
