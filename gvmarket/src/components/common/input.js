@@ -1,6 +1,14 @@
 import React from 'react';
 import { TextInput, View, Text } from 'react-native';
 
+/**
+* Reusable input
+* @param {state} label - Label prop
+* @param {state} value - Value prop
+* @param {state} onChangeText - Change text listener prop
+* @param {state} placeholder - Placeholder text prop
+* @param {state} secureTextEntry - Secure Text entry prop
+*/
 const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => {
   const { inputStyle, labelStyle, containerStyle } = styles;
 

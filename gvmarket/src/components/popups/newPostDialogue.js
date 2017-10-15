@@ -8,25 +8,48 @@ import { setNewPostModalVisible } from '../../actions';
 // common
 import { PageView, Card, CardSection, Input, Button } from '../../components/common';
 
+/**
+* Creates the posting dialog modal
+*/
+
 class NewPostDialogueContainer extends Component {
+
+  /**
+  * Constructor to initialize state objects
+  */
   constructor() {
     super();
     this.ref = firebase.firestore().collection('postings');
     this.state = { postTitle: '', price: '', description: '' };
   }
 
+  /**
+  * Listens for the state of the title variable being changed
+  * @param {string} value - this is the value stored
+  */
   onTitleChange(value) {
     this.setState({ postTitle: value });
   }
 
+  /**
+  * Listens for the state of the price variable being changed
+  * @param {string} value - this is the value stored
+  */
   onPriceChange(value) {
     this.setState({ price: value });
   }
 
+  /**
+  * Listens for the state of the description variable being changed
+  * @param {string} value - this is the value stored
+  */
   onDescriptionChange(value) {
     this.setState({ description: value });
   }
 
+  /**
+  * Adds the value to the database
+  */
   addPosting() {
     this.ref.add({
       title: this.state.postTitle,
@@ -130,12 +153,20 @@ const styles = {
   }
 }
 
+/**
+* Maps state to the props object for reference in the Redux Store
+* @param {state} state - The state of the referenced object
+*/
 const mapStateToProps = (state) => {
   return {
     newPostModalVisible: state.newPostModalVisible
   };
 };
 
+/**
+* Maps dispatch to the props object so the Redux Store knows which function to call
+* @param {state} dispatch - The function call mechanism
+*/
 const mapDispatchToProps = (dispatch) => ({
   setNewPostModalVisible() {
     dispatch(setNewPostModalVisible());

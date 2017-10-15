@@ -1,6 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
 
+/**
+* Creates a reusable card section to be housed by the parent card
+*/
 const CardSection = (props) => {
   return (
     <View style={styles.containerStyle}>

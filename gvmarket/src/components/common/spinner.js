@@ -1,6 +1,10 @@
 import React from 'react';
 import { View, ActivityIndicator } from 'react-native';
 
+/**
+* Spinner for async loading
+* @param {props} props - General Props object
+*/
 const Spinner = (props) => {
   return (
     <View style={styles.spinnerStyle}>

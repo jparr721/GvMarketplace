@@ -1,6 +1,10 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
+/**
+* Small Card component for reuse
+* @param {props} props - General Props object
+*/
 const SmallCard = (props) => {
   return (
     <View style={styles.containerStyle}>

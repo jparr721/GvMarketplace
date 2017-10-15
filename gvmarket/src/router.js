@@ -7,6 +7,11 @@ import Browse from './components/browse';
 import Inbox from './components/inbox';
 import Settings from './components/settings';
 
+/**
+* This is the router class that handles all of the routing
+* for the entire application.
+*/
+
 const Router = TabNavigator(
   {
     Browse: {

@@ -4,6 +4,9 @@ import { Avatar, Icon } from 'react-native-elements';
 import {connect} from 'react-redux';
 import { setUserSettingsModalVisible } from '../../actions';
 
+/**
+* Creates a reusable header component
+*/
 class HeaderContainer extends Component {
   render() {
     return (

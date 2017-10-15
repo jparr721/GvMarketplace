@@ -2,6 +2,9 @@ import React, { PureComponent } from 'react';
 import { Text } from 'react-native';
 import { Button, Card, CardSection } from '../common';
 
+/**
+* Pure Component to house postings
+*/
 class Post extends PureComponent {
   render() {
     return (

@@ -1,7 +1,10 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-// Make a component
+/**
+* Small header for sub text
+* @param {props} props - General Props object
+*/
 const SmallHeader = (props) => {
   const { textStyle, viewStyle } = styles;
   return (

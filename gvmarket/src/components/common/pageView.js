@@ -1,6 +1,10 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
+/**
+* Page View component to enfore styling
+* @param {props} - General Props object
+*/
 const PageView = (props) => {
   return (
     <View style={[styles.container]}>

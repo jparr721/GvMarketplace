@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import { TextInput, View, Text } from 'react-native';
 
+/**
+* Page View component to enfore styling
+* @param {props} children - General Props object
+* @param {props} value - General Props object
+* @param {props} onChangeText - General Props object
+* @param {props} placeholder - General Props object
+*/
+
 const SearchBar = ({ children, value, onChangeText, placeholder }) => {
   return (
     <View style={styles.containerStyle}>
