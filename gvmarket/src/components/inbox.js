@@ -11,12 +11,12 @@ const styles = {
     marginTop: 20,
   },
   topLeftIcon: {
-    paddingLeft: 15,
-    paddingTop: 15,
+    paddingLeft: 20,
+    paddingTop: 20,
   },
   topRightIcon: {
-    paddingRight: 15,
-    paddingTop: 15,
+    paddingRight: 20,
+    paddingTop: 20,
   },
   inboxEmptyText: {
     paddingTop: Dimensions.get('window').height / 2.85,
