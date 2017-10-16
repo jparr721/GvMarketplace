@@ -82,7 +82,7 @@ const mapStateToProps = (state) => {
 /**
 * Handles the events when the email / password are updated and when the
 * "login / register" button is pressed.
-* @param {dispatch} - gender dispatch event
+* @param {dispatch} - general dispatch event
 */
 const mapDispatchToProps = (dispatch) => ({
   onButtonPress(email, password) {

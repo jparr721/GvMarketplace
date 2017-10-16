@@ -8,8 +8,8 @@ import { Header, PageView } from './common/index';
 /**
 * The inbox page of the application
 */
-
 class Inbox extends Component {
+
   /**
   * Contains the layout and displays the entire inbox page.
   */

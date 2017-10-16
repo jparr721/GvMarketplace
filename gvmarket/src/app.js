@@ -6,11 +6,19 @@ import firebase from 'firebase';
 
 // Import login component
 import Login from './components/login';
-
 import reducers from './reducers';
 import Router from './router';
 
+/**
+* This is the App class that initializes a connection between the app and
+* firebase along with presenting the pages of the application.
+*/
 class App extends Component {
+
+  /**
+  * When the application begins, this will establish the connection between
+  * the application and firebase.
+  */
   componentWillMount() {
     const config = {
       apiKey: 'AIzaSyB7KmlbJClMGGRlqr95cknDXlrROJOpm7k',
@@ -22,6 +30,10 @@ class App extends Component {
     };
     firebase.initializeApp(config);
   }
+  /**
+  * Displays the correct pages in the application depenging on the users
+  * login status.
+  */
   render() {
 
     if (!this.props.loggedIn) {
@@ -35,6 +47,10 @@ class App extends Component {
   }
 }
 
+/**
+* Updates the props to let the system know the status of the users login state.
+* @param {state} - a general state object
+*/
 const mapStateToProps = (state) => {
   const { loggedIn } = state;
 

@@ -1,5 +1,8 @@
 import { LOGIN, LOGIN_SUCCESS, LOGIN_FAIL, EMAIL_FIELD_CHANGED, PASSWORD_FIELD_CHANGED, SET_NEW_POST_MODAL_VISIBLE } from '../../constants';
 
+/**
+* Sets the initial state of the users activity
+*/
 export const initialState = {
   email: '',
   password: '',
@@ -10,6 +13,14 @@ export const initialState = {
   newPostModalVisible: false,
 };
 
+/**
+* Contains the logic that is to be implemented depending on the action that is
+* passed as an argument.
+* Handles logins (successes and failures), email / password field changes, and
+* the visibility of the modal window.
+* @param {state} - state of the users activity
+* @param {string} action - the action to be performed
+*/
 function appReducer(state = initialState, action) {
   switch (action.type) {
     case LOGIN:
