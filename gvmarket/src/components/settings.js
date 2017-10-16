@@ -7,6 +7,9 @@ import { Header, PageView, Button } from './common/index';
 * page yet.
 */
 class Settings extends Component {
+  /**
+  * Contains the layout and displays the entire settings page when called.
+  */
   render() {
     return (
       <PageView>

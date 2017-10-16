@@ -26,14 +26,29 @@ class Browse extends Component {
     };
   }
 
+  /**
+  * When the application officially launches, this will create a list
+  * of postings that will appear on the browse page.
+  */
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
   }
 
+  /**
+  * Right before a component is unmonted and destroyed, this method resets
+  * the unsubscribe variable of the class. This kills the communication
+  * between the application and the hosting server containing the data,
+  * firebase.
+  */
   componentWillUnmount() {
     this.unsubscribe();
   }
 
+  /**
+  *  Updates the postings that are on the browse page by pushing them
+  * into the postings array.
+  * @param {snapshot} querySnapshot - document snapshot of current contents
+  */
   onCollectionUpdate = (querySnapshot) => {
     const postings = [];
     querySnapshot.forEach((doc) => {
@@ -53,7 +68,8 @@ class Browse extends Component {
  }
 
  /**
- * Contains the layout and displays the browse page of the application.
+ * Contains the layout and displays the browse page of the application when
+ * called.
  */
   render() {
     if (this.state.load) {
