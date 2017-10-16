@@ -3,9 +3,80 @@ import { View, Text, FlatList, Dimensions } from 'react-native';
 import firebase from 'react-native-firebase';
 import { Button } from 'native-base';
 import { Icon } from 'react-native-elements';
-
 import { PageView, SearchBar, Card, CardSection, Header, Spinner, Post } from './common/index';
 import { NewPostDialogue } from './popups/newPostDialogue';
+
+
+/**
+* The browse page of the application.
+*/
+class Browse extends Component {
+  constructor() {
+    super();
+    this.ref = firebase.firestore().collection('postings');
+    this.unsubscribe = null;
+
+    this.state = {
+      load: true,
+      postings: [],
+    };
+  }
+
+  componentDidMount() {
+    this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe();
+  }
+
+  onCollectionUpdate = (querySnapshot) => {
+    const postings = [];
+    querySnapshot.forEach((doc) => {
+      const { title, price, description } = doc.data();
+      postings.push({
+        key: doc.id,
+        doc, // DocumentSnapshot
+        description,
+        price,
+        title,
+      });
+    });
+    this.setState({
+      postings,
+      load: false,
+   });
+ }
+
+ /**
+ * Contains the layout and displays the browse page of the application.
+ */
+  render() {
+    if (this.state.load) {
+      return <Spinner size="large" />;
+    }
+
+    return (
+      <PageView>
+      <View style={styles.topBar}>
+        <View style={styles.topLeftIcon}>
+          <NewPostDialogue />
+        </View>
+        <Header headerText="Browse"/>
+        <View style={styles.topRightIcon}>
+          <Button transparent><Icon name='search' color='#007aff' /></Button>
+        </View>
+      </View>
+      <View>
+        <FlatList
+          data={this.state.postings}
+          renderItem={({ item }) => <Post {...item} />}
+        />
+      </View>
+      </PageView>
+    );
+  }
+}
 
 const styles = {
   container: {
@@ -46,71 +117,6 @@ const styles = {
     paddingTop: 20,
   }
 };
-
-class Browse extends Component {
-  constructor() {
-    super();
-    this.ref = firebase.firestore().collection('postings');
-    this.unsubscribe = null;
-
-    this.state = {
-      load: true,
-      postings: [],
-    };
-  }
-
-  componentDidMount() {
-    this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe();
-  }
-
-  onCollectionUpdate = (querySnapshot) => {
-    const postings = [];
-    querySnapshot.forEach((doc) => {
-      const { title, price, description } = doc.data();
-      postings.push({
-        key: doc.id,
-        doc, // DocumentSnapshot
-        description,
-        price,
-        title,
-      });
-    });
-    this.setState({
-      postings,
-      load: false,
-   });
- }
-
-  render() {
-    if (this.state.load) {
-      return <Spinner size="large" />;
-    }
-
-    return (
-      <PageView>
-      <View style={styles.topBar}>
-        <View style={styles.topLeftIcon}>
-          <NewPostDialogue />
-        </View>
-        <Header headerText="Browse"/>
-        <View style={styles.topRightIcon}>
-          <Button transparent><Icon name='search' color='#007aff' /></Button>
-        </View>
-      </View>
-      <View>
-        <FlatList
-          data={this.state.postings}
-          renderItem={({ item }) => <Post {...item} />}
-        />
-      </View>
-      </PageView>
-    );
-  }
-}
 
 export default Browse;
 

@@ -2,30 +2,16 @@ import React, { Component } from 'react';
 import { View, ScrollView } from 'react-native';
 import { Header, PageView, Button } from './common/index';
 
-const styles = {
-  btns: {
-    marginTop: 0,
-  },
-  mainBody: {
-    flex: 1,
-    flexDirection: 'column',
-    paddingTop: 20,
-  },
-  heading: {
-    marginTop: 20
-  },
-  emptySpace: {
-    height: 33,
-  }
-}
-
-
+/**
+* The settings page of the application. No functionality implemented for this
+* page yet.
+*/
 class Settings extends Component {
   render() {
     return (
       <PageView>
         <View style={styles.heading}>
-          <Header headerText='Settings' />
+          <Header headerText="Settings" />
         </View>
         <ScrollView>
 
@@ -70,9 +56,26 @@ class Settings extends Component {
           <View style={styles.btns}>
             <Button>Delete account</Button>
           </View>
-          </ScrollView>
+        </ScrollView>
       </PageView>
     );
+  }
+}
+
+const styles = {
+  btns: {
+    marginTop: 0,
+  },
+  mainBody: {
+    flex: 1,
+    flexDirection: 'column',
+    paddingTop: 20,
+  },
+  heading: {
+    marginTop: 20
+  },
+  emptySpace: {
+    height: 33,
   }
 }
 

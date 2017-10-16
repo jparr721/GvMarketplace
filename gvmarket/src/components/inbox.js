@@ -4,28 +4,15 @@ import { Icon } from 'react-native-elements';
 import { Button } from 'native-base';
 import { Header, PageView } from './common/index';
 
-const styles = {
-  topBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 20,
-  },
-  topLeftIcon: {
-    paddingLeft: 20,
-    paddingTop: 20,
-  },
-  topRightIcon: {
-    paddingRight: 20,
-    paddingTop: 20,
-  },
-  inboxEmptyText: {
-    paddingTop: Dimensions.get('window').height / 2.85,
-    flex: 1,
-    alignItems: 'center',
-  },
-}
+
+/**
+* The inbox page of the application
+*/
 
 class Inbox extends Component {
+  /**
+  * Contains the layout and displays the entire inbox page.
+  */
   render() {
     return (
       <PageView>
@@ -45,6 +32,27 @@ class Inbox extends Component {
       </PageView>
     );
   }
+}
+
+const styles = {
+  topBar: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
+  },
+  topLeftIcon: {
+    paddingLeft: 20,
+    paddingTop: 20,
+  },
+  topRightIcon: {
+    paddingRight: 20,
+    paddingTop: 20,
+  },
+  inboxEmptyText: {
+    paddingTop: Dimensions.get('window').height / 2.85,
+    flex: 1,
+    alignItems: 'center',
+  },
 }
 
 export default Inbox;

@@ -4,7 +4,15 @@ import { connect } from 'react-redux';
 import { getEmailInput, getPasswordInput, login } from '../actions';
 import { Header, Button, Spinner, Input, Card, CardSection, PageView } from './common';
 
+/**
+* The login page of the application along with the logic for handling logins
+* using firebase.
+*/
 class Login extends Component {
+
+  /**
+  * Renders the spinning icons when the user attempts to login/register.
+  */
   renderButton() {
     if (this.props.loading) {
       return <Spinner size="large" />;
@@ -17,6 +25,9 @@ class Login extends Component {
     );
   }
 
+  /**
+  * Contains the layout and displays the entire login page.
+  */
   render() {
     return (
       <PageView>
@@ -58,6 +69,32 @@ class Login extends Component {
   }
 }
 
+/**
+* Updates the properties of the login page which consists of the inputted email
+* and password along with loading state and possible errors.
+* @param {state} - the state of the login
+*/
+const mapStateToProps = (state) => {
+  const { email, password, error, loading } = state;
+
+  return { email, password, error, loading };
+};
+
+/**
+*
+*/
+const mapDispatchToProps = (dispatch) => ({
+  onButtonPress(email, password) {
+    dispatch(login(email, password));
+  },
+  onEmailChange(text) {
+    dispatch(getEmailInput(text));
+  },
+  onPasswordChange(text) {
+    dispatch(getPasswordInput(text));
+  }
+});
+
 const styles = {
   errorTextStyle: {
     fontSize: 20,
@@ -70,23 +107,5 @@ const styles = {
     backgroundColor: 'white',
   },
 };
-
-const mapStateToProps = (state) => {
-  const { email, password, error, loading } = state;
-
-  return { email, password, error, loading };
-};
-
-const mapDispatchToProps = (dispatch) => ({
-  onButtonPress(email, password) {
-    dispatch(login(email, password));
-  },
-  onEmailChange(text) {
-    dispatch(getEmailInput(text));
-  },
-  onPasswordChange(text) {
-    dispatch(getPasswordInput(text));
-  }
-});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
