@@ -11,6 +11,10 @@ import { NewPostDialogue } from './popups/newPostDialogue';
 * The browse page of the application.
 */
 class Browse extends Component {
+
+  /*
+  * Constructor to initialize state objects
+  */
   constructor() {
     super();
     this.ref = firebase.firestore().collection('postings');

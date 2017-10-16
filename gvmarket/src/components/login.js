@@ -5,13 +5,13 @@ import { getEmailInput, getPasswordInput, login } from '../actions';
 import { Header, Button, Spinner, Input, Card, CardSection, PageView } from './common';
 
 /**
-* The login page of the application along with the logic for handling logins
-* using firebase.
+* The login page of the application. Contains all the code for the user
+* interface visuals along with event handlers for user login.
 */
 class Login extends Component {
 
   /**
-  * Renders the spinning icons when the user attempts to login/register.
+  * Renders the spinning icon when the user attempts to login / register.
   */
   renderButton() {
     if (this.props.loading) {
@@ -26,7 +26,7 @@ class Login extends Component {
   }
 
   /**
-  * Contains the layout and displays the entire login page.
+  * Presents the layout and displays the entire login page.
   */
   render() {
     return (
@@ -70,9 +70,8 @@ class Login extends Component {
 }
 
 /**
-* Updates the properties of the login page which consists of the inputted email
-* and password along with loading state and possible errors.
-* @param {state} - the state of the login
+* Updates the following prop values: email, password, error, loading.
+* @param {state} - general state object
 */
 const mapStateToProps = (state) => {
   const { email, password, error, loading } = state;
@@ -81,7 +80,9 @@ const mapStateToProps = (state) => {
 };
 
 /**
-*
+* Handles the events when the email / password are updated and when the
+* "login / register" button is pressed.
+* @param {dispatch} - gender dispatch event
 */
 const mapDispatchToProps = (dispatch) => ({
   onButtonPress(email, password) {
