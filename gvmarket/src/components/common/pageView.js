@@ -1,12 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 
-const PageView = (props) => {
+const PageView = (props) =;> {
   return (
-    <View style={{ padding: 10, flex: 1 }}>
+    <View; style={;{ 10, flex;: 1 }}>
       {props.children}
-    </View>
-  );
-};
-
+    </View>;
+)
+}
 export { PageView };

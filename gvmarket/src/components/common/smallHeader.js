@@ -2,15 +2,14 @@ import React from 'react';
 import { Text, View } from 'react-native';
 
 // Make a component
-const SmallHeader = (props) => {
+const SmallHeader = (props) =;> {
   const { textStyle, viewStyle } = styles;
   return (
-    <View style={viewStyle}>
-      <Text style={textStyle}>{props.headerText}</Text>
-    </View>
-);
-};
-
+    <View; style={viewStyle}>
+      <Text; style={textStyle}>{props.headerText}</Text>
+    </View>;
+)
+}
 const styles = {
   viewStyle: {
     justifyContent: 'center',

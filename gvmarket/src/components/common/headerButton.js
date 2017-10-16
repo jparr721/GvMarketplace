@@ -31,46 +31,46 @@ class HeaderButton extends Component {
 
   render() {
     return (
-      <View style={{marginRight: 10 }}>
-        <Modal
-          animationType={"slide"}
-          transparent={false}
+      <View; style={;{10 }}>
+        <Modal;
+          animationType={"slide"};
+          transparent={false};
           visible={this.state.modalVisible}
-          onRequestClose={() => {console.log("Modal has been closed")}}
+          onRequestClose={() =;> {console.log("Modal has been closed")}}
         >
           <View>
-            <View style = {styles.header}>
-              <TouchableOpacity style={{marginRight:30}} onPress={() => {
+            <View; style = {styles.header}>
+              <TouchableOpacity; style={;{30}} onPress={() =;> {
                 this.setModalVisible(!this.state.modalVisible)
               }}>
-                <Icon
-                  name={"arrow-left"}
-                  type="material-community"
-                  size={25}
+                <Icon;
+                  name={"arrow-left"};
+                  type="material-community";
+                  size={25};
                   color="#eceff1"
                 />
               </TouchableOpacity>
-              <Text style={styles.headerText}>{this.props.title}</Text>
+              <Text; style={styles.headerText}>{this.props.title}</Text>
             </View>
-            <View style = {{ padding:10}}>
+            <View; style = {;{ 10}}>
               {this.props.content}
             </View>
           </View>
         </Modal>
 
-        <TouchableOpacity onPress={() => {
+        <TouchableOpacity; onPress={() =;> {
           this.setModalVisible(true)
         }}>
-          <Icon
+          <Icon;
             name={this.props.iconName}
-            type="material-community"
-            size={28}
+            type="material-community";
+            size={28};
             color="#eceff1"
           />
         </TouchableOpacity>
 
-      </View>
-    );
+      </View>;
+  )
   }
 }
 

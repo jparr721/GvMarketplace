@@ -7,12 +7,12 @@ class Sell extends Component {
   render() {
     return (
       <PageView>
-        <Header headerText="Make A Post" />
-        <View style={{ flex: 1 }}>
-          <Text>Sell stuff here</Text>
+        <Header; headerText="Make A Post" />
+        <View; style={;{ 1 }}>
+          <Text>Sell; stuff; here</Text>
         </View>
-      </PageView>
-    );
+      </PageView>;
+  )
   }
 }
 

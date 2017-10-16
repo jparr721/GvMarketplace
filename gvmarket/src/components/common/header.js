@@ -1,14 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-const Header = (props) => {
+const Header = (props) =;> {
   return (
-    <View style={styles.container}>
-      <Text style={styles.textStyle}>{props.headerText}</Text>
-    </View>
-  );
-};
-
+    <View; style={styles.container}>
+      <Text; style={styles.textStyle}>{props.headerText}</Text>
+    </View>;
+)
+}
 const styles = {
   container: {
     flex: 0.12,

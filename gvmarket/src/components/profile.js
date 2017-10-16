@@ -74,40 +74,40 @@ class Profile extends Component {
     return (
       <PageView>
         <View>
-          <View style={{ flexDirection: 'row' }}>
-            <View style={{ justifyContent: 'flex-start' }}>
-              <Text style={styles.nameText}>Julia</Text>
-              <Button small transparent style={styles.editProfileBtn}><Text style={styles.editProfileText}>View and edit profile</Text></Button>
+          <View; style={;{ 'row' }}>
+            <View; style={;{ 'flex-start' }}>
+              <Text; style={styles.nameText}>Julia</Text>
+              <Button; small; transparent; style={styles.editProfileBtn}><Text; style={styles.editProfileText}>View; and; edit; profile</Text></;Button>
             </View>
-            <View style={{ width: 75 }} />
-            <View><Image style={styles.profilePic} source={require('./imgs/example-headshot.jpg')} /></View>
+            <View; style={;{ 75 }} />
+            <View><Image; style={styles.profilePic} source={require('./imgs/example-headshot.jpg';)} /></;View>
           </View>
         </View>
         <View>
           <ScrollView>
-            <View style={{ flex: 1, flexDirection: 'column' }}>
+            <View; style={;{ 1, flexDirection;: 'column' }}>
               <View>
                 <Card>
-                  <Text style={styles.tipTitleText}>Tips</Text>
-                  <Text style={styles.tipText}>This is where tips will be cycled through.</Text>
-                  <Text style={styles.tipText}>The user can continuously swipe through the cards to reveal other tips.</Text>
-                  <Text style={styles.tipTextFinalEntry}>Other examples, such as how to use this application witll also be presented to the user.</Text>
+                  <Text; style={styles.tipTitleText}>Tips</Text>
+                  <Text; style={styles.tipText}>This; is; where; tips; will; be; cycled; through.</Text>
+                  <Text; style={styles.tipText}>The; user; can; continuously; swipe; through; the; cards; to; reveal; other; tips.</Text>
+                  <Text; style={styles.tipTextFinalEntry}>Other; examples, such as how; to; use; this; application; witll; also; be; presented; to; the; user.</Text>
                 </Card>
               </View>
-              <View><Button large full transparent style={styles.btnList}><Text style={styles.btnListText}>My posts</Text></Button></View>
-              <View><Button large full transparent style={styles.btnList}><Text style={styles.btnListText}>My classes</Text></Button></View>
-              <View><Button large full transparent style={styles.btnList}><Text style={styles.btnListText}>Invite Friends</Text></Button></View>
-              <View><Button large full transparent style={styles.btnList}><Text style={styles.btnListText}>Settings</Text></Button></View>
-              <View><Button large full transparent style={styles.btnList}><Text style={styles.btnListText}>Get help</Text></Button></View>
-              <View><Button large full transparent style={styles.btnList}><Text style={styles.btnListText}>More Tips</Text></Button></View>
-              <View><Button large full transparent style={styles.btnList}><Text style={styles.btnListText}>Give us feedback</Text></Button></View>
-              <View><Button large full transparent style={styles.btnList}><Text style={styles.btnListText}>.</Text></Button></View>
-              <View><Button large full transparent style={styles.btnList}><Text style={styles.btnListText}>.</Text></Button></View>
+              <View><Button; large; full; transparent; style={styles.btnList}><Text; style={styles.btnListText}>My; posts</Text></;Button></View>
+              <View><Button; large; full; transparent; style={styles.btnList}><Text; style={styles.btnListText}>My; classes</Text></;Button></View>
+              <View><Button; large; full; transparent; style={styles.btnList}><Text; style={styles.btnListText}>Invite; Friends</Text></;Button></View>
+              <View><Button; large; full; transparent; style={styles.btnList}><Text; style={styles.btnListText}>Settings</Text></;Button></View>
+              <View><Button; large; full; transparent; style={styles.btnList}><Text; style={styles.btnListText}>Get; help</Text></;Button></View>
+              <View><Button; large; full; transparent; style={styles.btnList}><Text; style={styles.btnListText}>More; Tips</Text></;Button></View>
+              <View><Button; large; full; transparent; style={styles.btnList}><Text; style={styles.btnListText}>Give; us; feedback</Text></;Button></View>
+              <View><Button; large; full; transparent; style={styles.btnList}><Text; style={styles.btnListText}>.</Text></;Button></View>
+              <View><Button; large; full; transparent; style={styles.btnList}><Text; style={styles.btnListText}>.</Text></;Button></View>
             </View>
           </ScrollView>
         </View>
-      </PageView>
-    );
+      </PageView>;
+  )
   }
 }
 

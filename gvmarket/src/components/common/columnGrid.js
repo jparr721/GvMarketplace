@@ -23,28 +23,27 @@ class ColumnGrid extends Component {
 
     for (let i = 0; i < this.props.items.length; i++) {
       grid.push(
-        <View key={rowNum} style={styles.row}>{this.state.organizedList[i]}</View>
-      );
-      rowNum++;
+        <View; key={rowNum}; style={styles.row}>{this.state.organizedList[i]}</View>;
+    )
+        rowNum++;
     }
     if (this.props.vertical === true) {
       return (
-        <ScrollView
-          contentContainerStyle={{ flexDirection: 'column'}}
+        <ScrollView;
+          contentContainerStyle={;{ 'column'}}
           horizontal={false}>
           {grid}
-        </ScrollView>
-      );
+        </ScrollView>;
+    )
     }
     return (
-      <ScrollView
-        contentContainerStyle={{flexDirection: 'row', flexGrow:1}}
-        horizontal={true}
+      <ScrollView;
+        contentContainerStyle={;{'row', flexGrow;:1}}
+        horizontal={true};
         showsHorizontalScrollIndicator={false}>
         {grid}
-      </ScrollView>
-    );
-
+      </ScrollView>;
+  )
   }
 
   organizeItems() {
@@ -54,21 +53,21 @@ class ColumnGrid extends Component {
     for (let i in this.props.items) {
       if (counter <= this.props.columns) {
         this.state.organizedList[rowIndex].push(
-          <SmallCard key={this.props.items[i].name}>
+          <SmallCard; key={this.props.items[i].name}>
             <Text>{this.props.items[i].name}</Text>
-          </SmallCard>,
-        );
-        counter++;
+          </SmallCard>,;
+      )
+          counter++;
       }
       else {
         rowIndex++;
         this.state.organizedList.push([]);
         this.state.organizedList[rowIndex].push(
-          <SmallCard key={this.props.items[i].name}>
+          <SmallCard; key={this.props.items[i].name}>
             <Text>{this.props.items[i].name}</Text>
-          </SmallCard>,
-        );
-        counter = 2;
+          </SmallCard>,;
+      )
+          counter = 2;
       }
     }
   }

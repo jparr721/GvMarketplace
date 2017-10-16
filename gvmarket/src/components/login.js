@@ -5,28 +5,28 @@ import { Header } from './common/header';
 class Login extends Component {
   render() {
     return (
-      <Container style={styles.containerStyle}>
-        <Header headerText="Please Log In" />
+      <Container; style={styles.containerStyle}>
+        <Header; headerText="Please Log In" />
         <Form>
-          <Item floatingLabel>
+          <Item; floatingLabel>
             <Label>Email</Label>
-            <Input
-              secureTextEntry={false}
+            <Input;
+              secureTextEntry={false};
               />
           </Item>
-          <Item floatingLabel>
+          <Item; floatingLabel>
             <Label>Password</Label>
-            <Input
-              secureTextEntry={true}
+            <Input;
+              secureTextEntry={true};
               />
           </Item>
         </Form>
-      </Container>
-    );
+      </Container>;
+  )
   }
 }
 
 const styles = {
-}
+};
 
 export default Login;

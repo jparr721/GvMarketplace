@@ -27,29 +27,29 @@ const styles = {
     alignItems: 'center',
     marginTop: 210,
   },
-}
+};
 
 class Inbox extends Component {
   render() {
     return (
       <PageView>
-        <View style={styles.topBar}>
-          <View><Button transparent><Icon name='folder-open' color='#0d67a2' /></Button></View>
-          <View><Button transparent><Icon name='notifications' color='#0d67a2' /></Button></View>
+        <View; style={styles.topBar}>
+          <View><Button; transparent><Icon; name='folder-open'; color='#0d67a2' /></Button></;View>
+          <View><Button; transparent><Icon; name='notifications'; color='#0d67a2' /></Button></;View>
         </View>
         <ScrollView>
-          <View style={styles.mainBody}>
-            <Text style={styles.inboxTitleText}>Inbox</Text>
-            <Text style={styles.inboxEmptyText}>You have no unread messages</Text>
+          <View; style={styles.mainBody}>
+            <Text; style={styles.inboxTitleText}>Inbox</Text>
+            <Text; style={styles.inboxEmptyText}>You; have; no; unread; messages</Text>
           </View>
-          <View style={styles.mainBodyEmptyText}>
-            <Icon name='textsms' color='#0d67a2' />
-            <Text style={styles.inboxEmptyText}>No messages to show.</Text>
-            <Text style={styles.inboxEmptyText}>Message a user to change that!</Text>
+          <View; style={styles.mainBodyEmptyText}>
+            <Icon; name='textsms'; color='#0d67a2' />
+            <Text; style={styles.inboxEmptyText}>No; messages; to; show.</Text>
+            <Text; style={styles.inboxEmptyText}>Message; a; user; to; change; that;!</Text>
           </View>
         </ScrollView>
-      </PageView>
-    );
+      </PageView>;
+  )
   }
 }
 
