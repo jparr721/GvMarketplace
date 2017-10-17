@@ -80,7 +80,7 @@ class NewPostDialogueContainer extends Component {
                 <Icon
                   name={"arrow-left"}
                   type="material-community"
-                  size={40}
+                  size={24}
                   color="#007aff"
                 />
               </TouchableOpacity>
@@ -141,7 +141,7 @@ class NewPostDialogueContainer extends Component {
           <Icon
             name={'plus'}
             type="material-community"
-            size={40}
+            size={24}
             color="#007aff"
           />
         </TouchableOpacity>

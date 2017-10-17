@@ -84,7 +84,7 @@ class Browse extends Component {
           </View>
           <Header headerText="Browse"/>
           <View style={styles.topRightIcon}>
-            <Button transparent><Icon name='search' color='#007aff' size={40} /></Button>
+            <Button transparent><Icon name='search' color='#007aff' size={24} /></Button>
           </View>
         </View>
         <View style={{flex: 1}}>

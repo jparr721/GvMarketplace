@@ -23,7 +23,6 @@ class LoginTitleContainer extends Component {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    paddingTop: 0,
   },
   textWrapper: {
     alignItems: 'center',
@@ -31,7 +30,7 @@ const styles = StyleSheet.create({
     height: 50,
   },
   textStyle: {
-    fontSize: 48,
+    fontSize: 36,
     fontWeight: '700',
     flex: 1,
     color: '#007aff',

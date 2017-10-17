@@ -32,34 +32,33 @@ class Login extends Component {
     return (
       <PageView>
         <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-
           <LoginTitle headerText="GV Market" />
-          <LoginCard>
-            <ButtonCard>
-              <LoginInput
-                placeholder="email@mail.gvsu.edu"
-                onChangeText={(text) => this.props.onEmailChange(text)}
-                value={this.props.email}
-              />
-            </ButtonCard>
+          <ButtonCard>
+            <Input
+              label="Email"
+              placeholder="email@mail.gvsu.edu"
+              onChangeText={(text) => this.props.onEmailChange(text)}
+              value={this.props.email}
+            />
+          </ButtonCard>
 
-            <ButtonCard>
-              <LoginInput
-                secureTextEntry
-                placeholder="password"
-                onChangeText={(text) => this.props.onPasswordChange(text)}
-                value={this.props.password}
-              />
-            </ButtonCard>
+          <ButtonCard>
+            <Input
+              label="Password"
+              secureTextEntry
+              placeholder="password"
+              onChangeText={(text) => this.props.onPasswordChange(text)}
+              value={this.props.password}
+            />
+          </ButtonCard>
 
-            <ButtonCard>
-              {this.renderButton()}
-            </ButtonCard>
+          <ButtonCard>
+            {this.renderButton()}
+          </ButtonCard>
 
-            <Text style={styles.errorTextStyle}>
-              {this.props.error}
-            </Text>
-          </LoginCard>
+          <Text style={styles.errorTextStyle}>
+            {this.props.error}
+          </Text>
           <View style={styles.emptySpace} />
         </View>
       </PageView>
