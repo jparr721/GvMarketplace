@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, Dimensions } from 'react-native';
+import { View, Text, FlatList, Dimensions, StyleSheet } from 'react-native';
 import firebase from 'react-native-firebase';
 import { Button } from 'native-base';
 import { Icon } from 'react-native-elements';
@@ -78,21 +78,21 @@ class Browse extends Component {
 
     return (
       <PageView>
-      <View style={styles.topBar}>
-        <View style={styles.topLeftIcon}>
-          <NewPostDialogue />
+        <View style={styles.topBar}>
+          <View style={styles.topLeftIcon}>
+            <NewPostDialogue />
+          </View>
+          <Header headerText="Browse"/>
+          <View style={styles.topRightIcon}>
+            <Button transparent><Icon name='search' color='#007aff' /></Button>
+          </View>
         </View>
-        <Header headerText="Browse"/>
-        <View style={styles.topRightIcon}>
-          <Button transparent><Icon name='search' color='#007aff' /></Button>
+        <View style={{flex: 1}}>
+          <FlatList
+            data={this.state.postings}
+            renderItem={({ item }) => <Post {...item} />}
+          />
         </View>
-      </View>
-      <View>
-        <FlatList
-          data={this.state.postings}
-          renderItem={({ item }) => <Post {...item} />}
-        />
-      </View>
       </PageView>
     );
   }
