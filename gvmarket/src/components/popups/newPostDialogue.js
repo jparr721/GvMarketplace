@@ -6,7 +6,7 @@ import firebase from 'react-native-firebase';
 import { setNewPostModalVisible } from '../../actions';
 
 // common
-import { PageView, Card, CardSection, Input, Button } from '../../components/common';
+import { PageView, Card, CardSection, Input, Button, ButtonCard, LoginCard } from '../../components/common/index';
 
 /**
 * Creates the posting dialog modal
@@ -84,41 +84,42 @@ class NewPostDialogueContainer extends Component {
                   color="#007aff"
                 />
               </TouchableOpacity>
-              <Text style={{ fontSize: 28, justifyContent: 'center', alignSelf:'center' }}>Add a new post</Text>
+              <Text style={{ flex: 1, fontSize: 28, justifyContent: 'center', alignSelf:'center' }}>Make a post</Text>
             </View>
-            <View>
-              <Card>
-                <CardSection>
+            <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
+                <ButtonCard>
                   <Input
                     placeholder="Title"
                     label="Post title"
                     onChangeText={(text) => this.onTitleChange(text)}
                     value={this.state.postTitle}
                   />
-                </CardSection>
-                <CardSection>
+                </ButtonCard>
+
+                <ButtonCard>
                   <Input
                     placeholder="Price"
                     label="Price ($)"
                     onChangeText={(text) => this.onPriceChange(text)}
                     value={this.state.price}
                   />
-                </CardSection>
-                <CardSection>
+                </ButtonCard>
+
+                <ButtonCard>
                   <Input
                     placeholder="Description (optional)"
                     label="Description"
                     onChangeText={(text) => this.onDescriptionChange(text)}
                     value={this.state.description}
                   />
-                </CardSection>
-                <CardSection>
+                </ButtonCard>
+
+                <ButtonCard>
                   <Button
                     onPress={() => this.addPosting()}>
-                    Make Post
+                    Publish
                   </Button>
-                </CardSection>
-              </Card>
+                </ButtonCard>
             </View>
           </View>
         </Modal>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput, View, Text } from 'react-native';
+import { TextInput, View, Text, Dimensions } from 'react-native';
 
 /**
 * Reusable input
@@ -34,7 +34,8 @@ const styles = {
     paddingLeft: 5,
     fontSize: 24,
     lineHeight: 23,
-    flex: 2,
+    flex: 1,
+    width: Dimensions.get('window').width,
   },
   containerStyle: {
     height: 40,

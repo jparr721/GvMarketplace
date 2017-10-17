@@ -51,10 +51,8 @@ class Settings extends Component {
   }
 }
 
+
 const styles = {
-  btns: {
-    marginTop: 0,
-  },
   mainBody: {
     flex: 1,
     flexDirection: 'column',
