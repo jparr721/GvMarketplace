@@ -72,7 +72,7 @@ class NewPostDialogueContainer extends Component {
           transparent={false}
           visible={this.props.newPostModalVisible}
         >
-          <View>
+          <View style={{ flex: 1 }}>
             <View style={styles.header}>
               <TouchableOpacity
                 style={{marginRight: 30}}
@@ -86,40 +86,51 @@ class NewPostDialogueContainer extends Component {
               </TouchableOpacity>
               <Text style={{ flex: 1, fontSize: 28, justifyContent: 'center', alignSelf:'center' }}>Make a post</Text>
             </View>
-            <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
-                <ButtonCard>
-                  <Input
-                    placeholder="Title"
-                    label="Post title"
-                    onChangeText={(text) => this.onTitleChange(text)}
-                    value={this.state.postTitle}
-                  />
-                </ButtonCard>
+            <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between'}}>
+              <ButtonCard>
+                <Input
+                  placeholder="Title"
+                  label="Post title"
+                  onChangeText={(text) => this.onTitleChange(text)}
+                  value={this.state.postTitle}
+                />
+              </ButtonCard>
 
-                <ButtonCard>
-                  <Input
-                    placeholder="Price"
-                    label="Price ($)"
-                    onChangeText={(text) => this.onPriceChange(text)}
-                    value={this.state.price}
-                  />
-                </ButtonCard>
+              <ButtonCard>
+                <Input
+                  placeholder="Price"
+                  label="Price ($)"
+                  onChangeText={(text) => this.onPriceChange(text)}
+                  value={this.state.price}
+                />
+              </ButtonCard>
 
-                <ButtonCard>
-                  <Input
-                    placeholder="Description (optional)"
-                    label="Description"
-                    onChangeText={(text) => this.onDescriptionChange(text)}
-                    value={this.state.description}
-                  />
-                </ButtonCard>
+              <ButtonCard>
+                <Input
+                  placeholder="Description (optional)"
+                  label="Description"
+                  onChangeText={(text) => this.onDescriptionChange(text)}
+                  value={this.state.description}
+                />
+              </ButtonCard>
 
-                <ButtonCard>
-                  <Button
-                    onPress={() => this.addPosting()}>
-                    Publish
-                  </Button>
-                </ButtonCard>
+              <ButtonCard>
+                <Button>
+                  Add picture
+                </Button>
+              </ButtonCard>
+
+              <ButtonCard>
+                <Button>
+                </Button>
+              </ButtonCard>
+
+              <ButtonCard>
+                <Button onPress={() => this.addPosting()}>
+                  Publish
+                </Button>
+              </ButtonCard>
+
             </View>
           </View>
         </Modal>
@@ -127,10 +138,10 @@ class NewPostDialogueContainer extends Component {
           style={{ paddingTop: 10 }}
           onPress={() => this.props.setNewPostModalVisible()}>
           <Icon
-            name={"plus"}
+            name={'plus'}
             type="material-community"
             size={40}
-            color='#007aff'
+            color="#007aff"
           />
         </TouchableOpacity>
       </PageView>
