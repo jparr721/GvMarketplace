@@ -79,13 +79,15 @@ class Browse extends Component {
     return (
       <PageView>
       <View style={styles.topBar}>
-        <View style={styles.topLeftIcon}>
-          <NewPostDialogue />
-        </View>
+      <View style={styles.topLeftIcon}>
+        <Button transparent><Icon name='search' color='#007aff' size={40}/></Button>
+      </View>
         <Header headerText="Browse"/>
         <View style={styles.topRightIcon}>
-          <Button transparent><Icon name='search' color='#007aff' /></Button>
+          <NewPostDialogue />
         </View>
+
+
       </View>
       <View>
         <FlatList
@@ -130,11 +132,10 @@ const styles = {
   },
   topLeftIcon: {
     paddingLeft: 20,
-    paddingTop: 20,
+    paddingTop: 10,
   },
   topRightIcon: {
     paddingRight: 20,
-    paddingTop: 20,
   }
 };
 
