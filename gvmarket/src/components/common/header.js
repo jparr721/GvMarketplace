@@ -23,16 +23,15 @@ class HeaderContainer extends Component {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    paddingTop: 20,
   },
   textWrapper: {
     alignItems: 'center',
     flex: 1,
-    height: 42,
+    height: 60,
   },
   textStyle: {
-    fontSize: 32,
-    fontWeight: '700',
+    fontSize: 50,
+    fontWeight: '500',
     flex: 1,
     color: '#007aff',
   },

@@ -78,6 +78,7 @@ class Browse extends Component {
 
     return (
       <PageView>
+<<<<<<< HEAD
         <View style={styles.topBar}>
           <View style={styles.topLeftIcon}>
             <NewPostDialogue />
@@ -93,6 +94,25 @@ class Browse extends Component {
             renderItem={({ item }) => <Post {...item} />}
           />
         </View>
+=======
+      <View style={styles.topBar}>
+      <View style={styles.topLeftIcon}>
+        <Button transparent><Icon name='search' color='#007aff' size={40}/></Button>
+      </View>
+        <Header headerText="Browse"/>
+        <View style={styles.topRightIcon}>
+          <NewPostDialogue />
+        </View>
+
+
+      </View>
+      <View>
+        <FlatList
+          data={this.state.postings}
+          renderItem={({ item }) => <Post {...item} />}
+        />
+      </View>
+>>>>>>> 97c2afa81ecd4c46458dece3a9bc9e47ba14f719
       </PageView>
     );
   }
@@ -130,11 +150,10 @@ const styles = {
   },
   topLeftIcon: {
     paddingLeft: 20,
-    paddingTop: 20,
+    paddingTop: 10,
   },
   topRightIcon: {
     paddingRight: 20,
-    paddingTop: 20,
   }
 };
 
