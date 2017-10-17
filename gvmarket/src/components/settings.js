@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, ScrollView } from 'react-native';
-import { Header, PageView, Button } from './common/index';
+import { View, ScrollView, FlatList, Text } from 'react-native';
+import { Header, PageView, Button, ButtonCard, DeleteAccountButton } from './common/index';
 
 /**
 * The settings page of the application. No functionality implemented for this
@@ -13,53 +13,39 @@ class Settings extends Component {
   render() {
     return (
       <PageView>
+
         <View style={styles.heading}>
           <Header headerText="Settings" />
         </View>
-        <ScrollView>
-
-          <View style={styles.emptySpace} />
-
-          <View style={styles.btns}>
+        <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
+          <ButtonCard>
             <Button>My posts</Button>
-          </View>
+          </ButtonCard>
 
-          <View style={styles.emptySpace} />
-
-          <View style={styles.btns}>
+          <ButtonCard>
             <Button>My watchlist</Button>
-          </View>
+          </ButtonCard>
 
-          <View style={styles.emptySpace} />
-
-          <View style={styles.btns}>
+          <ButtonCard>
             <Button>Refresh my location</Button>
-          </View>
+          </ButtonCard>
 
-          <View style={styles.emptySpace} />
-
-          <View style={styles.btns}>
+          <ButtonCard>
             <Button>Light / Dark mode</Button>
-          </View>
+          </ButtonCard>
 
-          <View style={styles.emptySpace} />
-
-          <View style={styles.btns}>
+          <ButtonCard>
             <Button>Feedback</Button>
-          </View>
+          </ButtonCard>
 
-          <View style={styles.emptySpace} />
-
-          <View style={styles.btns}>
+          <ButtonCard>
             <Button>Logout</Button>
-          </View>
+          </ButtonCard>
 
-          <View style={styles.emptySpace} />
-
-          <View style={styles.btns}>
-            <Button>Delete account</Button>
-          </View>
-        </ScrollView>
+          <ButtonCard>
+            <DeleteAccountButton>Delete account</DeleteAccountButton>
+          </ButtonCard>
+        </View>
       </PageView>
     );
   }

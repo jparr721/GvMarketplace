@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import { getEmailInput, getPasswordInput, login } from '../actions';
-import { Header, Button, Spinner, Input, Card, CardSection, PageView } from './common';
+import { Header, Button, Spinner, Input, Card, CardSection, PageView, ButtonCard, LoginCard, LoginTitle, LoginInput } from './common';
 
 /**
 * The login page of the application. Contains all the code for the user
@@ -31,37 +31,35 @@ class Login extends Component {
   render() {
     return (
       <PageView>
-        <View style={{flex: 1, flexDirection: 'column'}}>
-          <View style={styles.emptySpace} />
-          <Header headerText="GV Market" />
-          <Card>
-            <CardSection>
-              <Input
+        <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
+
+          <LoginTitle headerText="GV Market" />
+          <LoginCard>
+            <ButtonCard>
+              <LoginInput
                 placeholder="email@mail.gvsu.edu"
-                label="Email"
                 onChangeText={(text) => this.props.onEmailChange(text)}
                 value={this.props.email}
               />
-            </CardSection>
+            </ButtonCard>
 
-            <CardSection>
-              <Input
+            <ButtonCard>
+              <LoginInput
                 secureTextEntry
                 placeholder="password"
-                label="Password"
                 onChangeText={(text) => this.props.onPasswordChange(text)}
                 value={this.props.password}
               />
-            </CardSection>
+            </ButtonCard>
+
+            <ButtonCard>
+              {this.renderButton()}
+            </ButtonCard>
 
             <Text style={styles.errorTextStyle}>
               {this.props.error}
             </Text>
-
-            <CardSection>
-              {this.renderButton()}
-            </CardSection>
-          </Card>
+          </LoginCard>
           <View style={styles.emptySpace} />
         </View>
       </PageView>
@@ -103,10 +101,6 @@ const styles = {
     color: 'red'
   },
 
-  emptySpace: {
-    height: 140,
-    backgroundColor: 'white',
-  },
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

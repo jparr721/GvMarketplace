@@ -17,14 +17,14 @@ class Inbox extends Component {
     return (
       <PageView>
         <View style={styles.topBar}>
-          <View style={styles.topLeftIcon}><Button transparent><Icon name='folder-open' color='#007aff' /></Button></View>
+          <View style={styles.topLeftIcon}><Button transparent><Icon name='folder-open' color='#007aff' size={40} /></Button></View>
           <Header headerText="Inbox" />
-          <View style={styles.topRightIcon}><Button transparent><Icon name='notifications' color='#007aff' /></Button></View>
+          <View style={styles.topRightIcon}><Button transparent><Icon name='notifications' color='#007aff' size={40} /></Button></View>
         </View>
         <View />
         <ScrollView>
           <View style={styles.inboxEmptyText}>
-            <Icon name='textsms' color='#007aff' />
+            <Icon name='textsms' color='#007aff' size={35} />
             <Text>No messages to show.</Text>
             <Text>Message a user to change that!</Text>
           </View>
@@ -42,11 +42,11 @@ const styles = {
   },
   topLeftIcon: {
     paddingLeft: 20,
-    paddingTop: 20,
+    paddingTop: 10,
   },
   topRightIcon: {
     paddingRight: 20,
-    paddingTop: 20,
+    paddingTop: 10,
   },
   inboxEmptyText: {
     paddingTop: Dimensions.get('window').height / 2.85,
