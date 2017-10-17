@@ -16,3 +16,4 @@ export * from './buttonCard';
 export * from './loginCard';
 export * from './loginTitle';
 export * from './loginInput';
+export * from './deleteAccountButton';
