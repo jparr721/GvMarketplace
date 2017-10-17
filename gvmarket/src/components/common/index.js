@@ -12,3 +12,7 @@ export * from './cardSection';
 export * from './button';
 export * from './searchBar';
 export * from './post';
+export * from './buttonCard';
+export * from './loginCard';
+export * from './loginTitle';
+export * from './loginInput';
