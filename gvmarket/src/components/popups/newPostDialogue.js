@@ -139,10 +139,10 @@ class NewPostDialogueContainer extends Component {
           style={{ paddingTop: 10 }}
           onPress={() => this.props.setNewPostModalVisible()}>
           <Icon
-            name={"plus"}
+            name={'plus'}
             type="material-community"
             size={40}
-            color='#007aff'
+            color="#007aff"
           />
         </TouchableOpacity>
       </PageView>
