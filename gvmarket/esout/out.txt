@@ -1,0 +1,226 @@
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/actions/index.js[24m
+  [2m57:22[22m  [31merror[39m    There should be no spaces inside this paren  [2mspace-in-parens[22m
+  [2m57:40[22m  [31merror[39m    There should be no spaces inside this paren  [2mspace-in-parens[22m
+  [2m64:9[22m   [33mwarning[39m  Unexpected console statement                 [2mno-console[22m
+  [2m68:44[22m  [31merror[39m    Missing semicolon                            [2msemi[22m
+  [2m78:37[22m  [31merror[39m    Missing trailing comma                       [2mcomma-dangle[22m
+  [2m79:4[22m   [31merror[39m    Missing semicolon                            [2msemi[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/app.js[24m
+   [2m2:10[22m  [31merror[39m  'Provider' is defined but never used         [2mno-unused-vars[22m
+   [2m3:10[22m  [31merror[39m  'createStore' is defined but never used      [2mno-unused-vars[22m
+   [2m3:23[22m  [31merror[39m  'applyMiddleware' is defined but never used  [2mno-unused-vars[22m
+   [2m4:8[22m   [31merror[39m  'ReduxThunk' is defined but never used       [2mno-unused-vars[22m
+   [2m9:8[22m   [31merror[39m  'reducers' is defined but never used         [2mno-unused-vars[22m
+  [2m16:29[22m  [31merror[39m  Block must not be padded by blank lines      [2mpadded-blocks[22m
+  [2m37:12[22m  [31merror[39m  Block must not be padded by blank lines      [2mpadded-blocks[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/browse.js[24m
+  [2m52:22[22m  [31merror[39m  Parsing error: Unexpected token =
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/common/button.js[24m
+   [2m8:38[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+  [2m26:22[22m  [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+  [2m36:19[22m  [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+  [2m37:4[22m   [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/common/buttonCard.js[24m
+   [2m9:18[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+  [2m25:25[22m  [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+  [2m26:4[22m   [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/common/card.js[24m
+   [2m9:18[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+  [2m28:18[22m  [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/common/cardSection.js[24m
+   [2m9:18[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+  [2m23:25[22m  [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+  [2m24:4[22m   [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/common/deleteAccountButton.js[24m
+   [2m8:38[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+  [2m26:22[22m  [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+  [2m33:19[22m  [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+  [2m34:4[22m   [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/common/header.js[24m
+   [2m1:15[22m  [31merror[39m  A space is required after '{'                                                              [2mobject-curly-spacing[22m
+   [2m1:25[22m  [31merror[39m  A space is required before '}'                                                             [2mobject-curly-spacing[22m
+   [2m1:28[22m  [31merror[39m  Multiple spaces found before 'from'                                                        [2mno-multi-spaces[22m
+   [2m2:34[22m  [31merror[39m  'TouchableOpacity' is defined but never used                                               [2mno-unused-vars[22m
+   [2m3:10[22m  [31merror[39m  'Avatar' is defined but never used                                                         [2mno-unused-vars[22m
+   [2m3:18[22m  [31merror[39m  'Icon' is defined but never used                                                           [2mno-unused-vars[22m
+   [2m4:8[22m   [31merror[39m  A space is required after '{'                                                              [2mobject-curly-spacing[22m
+   [2m4:16[22m  [31merror[39m  A space is required before '}'                                                             [2mobject-curly-spacing[22m
+  [2m13:20[22m  [31merror[39m  'styles' was used before it was defined                                                    [2mno-use-before-define[22m
+  [2m14:22[22m  [31merror[39m  'styles' was used before it was defined                                                    [2mno-use-before-define[22m
+  [2m15:24[22m  [31merror[39m  'styles' was used before it was defined                                                    [2mno-use-before-define[22m
+  [2m40:26[22m  [31merror[39m  'state' is defined but never used                                                          [2mno-unused-vars[22m
+  [2m45:28[22m  [31merror[39m  Unexpected parentheses around single function argument having a body with no curly braces  [2marrow-parens[22m
+  [2m48:4[22m   [31merror[39m  Missing trailing comma                                                                     [2mcomma-dangle[22m
+  [2m54:21[22m  [31merror[39m  Unexpected space between function name and paren                                           [2mno-spaced-func[22m
+  [2m54:21[22m  [31merror[39m  Unexpected space between function name and paren                                           [2mfunc-call-spacing[22m
+  [2m55:1[22m   [31merror[39m  Unexpected newline between function and ( of function call                                 [2mno-unexpected-multiline[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/common/input.js[24m
+  [2m13:54[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+  [2m38:12[22m  [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+  [2m43:12[22m  [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+  [2m49:25[22m  [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+  [2m50:4[22m   [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/common/loginButton.js[24m
+   [2m8:38[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+  [2m26:22[22m  [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+  [2m33:19[22m  [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+  [2m34:4[22m   [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/common/loginCard.js[24m
+   [2m9:18[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+  [2m20:18[22m  [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/common/loginInput.js[24m
+   [2m2:27[22m  [31merror[39m  'Text' is defined but never used                 [2mno-unused-vars[22m
+  [2m13:23[22m  [31merror[39m  'labelStyle' is assigned a value but never used  [2mno-unused-vars[22m
+  [2m13:54[22m  [31merror[39m  'styles' was used before it was defined          [2mno-use-before-define[22m
+  [2m44:4[22m   [31merror[39m  Missing trailing comma                           [2mcomma-dangle[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/common/loginTitle.js[24m
+   [2m1:15[22m  [31merror[39m  A space is required after '{'                                                              [2mobject-curly-spacing[22m
+   [2m1:25[22m  [31merror[39m  A space is required before '}'                                                             [2mobject-curly-spacing[22m
+   [2m1:28[22m  [31merror[39m  Multiple spaces found before 'from'                                                        [2mno-multi-spaces[22m
+   [2m2:34[22m  [31merror[39m  'TouchableOpacity' is defined but never used                                               [2mno-unused-vars[22m
+   [2m3:10[22m  [31merror[39m  'Avatar' is defined but never used                                                         [2mno-unused-vars[22m
+   [2m3:18[22m  [31merror[39m  'Icon' is defined but never used                                                           [2mno-unused-vars[22m
+   [2m4:8[22m   [31merror[39m  A space is required after '{'                                                              [2mobject-curly-spacing[22m
+   [2m4:16[22m  [31merror[39m  A space is required before '}'                                                             [2mobject-curly-spacing[22m
+  [2m13:20[22m  [31merror[39m  'styles' was used before it was defined                                                    [2mno-use-before-define[22m
+  [2m14:22[22m  [31merror[39m  'styles' was used before it was defined                                                    [2mno-use-before-define[22m
+  [2m15:24[22m  [31merror[39m  'styles' was used before it was defined                                                    [2mno-use-before-define[22m
+  [2m40:26[22m  [31merror[39m  'state' is defined but never used                                                          [2mno-unused-vars[22m
+  [2m45:28[22m  [31merror[39m  Unexpected parentheses around single function argument having a body with no curly braces  [2marrow-parens[22m
+  [2m48:4[22m   [31merror[39m  Missing trailing comma                                                                     [2mcomma-dangle[22m
+  [2m54:21[22m  [31merror[39m  Unexpected space between function name and paren                                           [2mno-spaced-func[22m
+  [2m54:21[22m  [31merror[39m  Unexpected space between function name and paren                                           [2mfunc-call-spacing[22m
+  [2m55:1[22m   [31merror[39m  Unexpected newline between function and ( of function call                                 [2mno-unexpected-multiline[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/common/pageView.js[24m
+  [2m10:19[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+  [2m18:12[22m  [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/common/post.js[24m
+   [2m3:10[22m  [31merror[39m  'Button' is defined but never used       [2mno-unused-vars[22m
+  [2m13:24[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+  [2m16:24[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+  [2m19:24[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/common/searchBar.js[24m
+   [2m1:17[22m  [31merror[39m  'Component' is defined but never used    [2mno-unused-vars[22m
+   [2m2:27[22m  [31merror[39m  'Text' is defined but never used         [2mno-unused-vars[22m
+  [2m14:18[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+  [2m15:20[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+  [2m19:16[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+  [2m46:4[22m   [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+  [2m47:2[22m   [31merror[39m  Missing semicolon                        [2msemi[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/common/smallCard.js[24m
+  [2m10:18[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/common/smallHeader.js[24m
+   [2m9:36[22m  [31merror[39m  'styles' was used before it was defined       [2mno-use-before-define[22m
+  [2m14:1[22m   [31merror[39m  Expected indentation of 2 spaces but found 0  [2mindent[22m
+  [2m21:25[22m  [31merror[39m  Missing trailing comma                        [2mcomma-dangle[22m
+  [2m27:4[22m   [31merror[39m  Missing trailing comma                        [2mcomma-dangle[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/common/spinner.js[24m
+  [2m10:18[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+  [2m13:4[22m   [31merror[39m  Missing semicolon                        [2msemi[22m
+  [2m20:25[22m  [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+  [2m21:4[22m   [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/inbox.js[24m
+  [2m11:31[22m  [31merror[39m  Block must not be padded by blank lines                  [2mpadded-blocks[22m
+  [2m19:22[22m  [31merror[39m  'styles' was used before it was defined                  [2mno-use-before-define[22m
+  [2m20:1[22m   [31merror[39m  Line 20 exceeds the maximum line length of 100           [2mmax-len[22m
+  [2m20:24[22m  [31merror[39m  'styles' was used before it was defined                  [2mno-use-before-define[22m
+  [2m20:75[22m  [31merror[39m  Unexpected usage of singlequote                          [2mjsx-quotes[22m
+  [2m20:95[22m  [31merror[39m  Unexpected usage of singlequote                          [2mjsx-quotes[22m
+  [2m22:1[22m   [31merror[39m  Expected indentation of 10 spaces but found 8            [2mindent[22m
+  [2m22:1[22m   [31merror[39m  Line 22 exceeds the maximum line length of 100           [2mmax-len[22m
+  [2m22:9[22m   [31merror[39m  Expected indentation of 10 space characters but found 8  [2mreact/jsx-indent[22m
+  [2m22:22[22m  [31merror[39m  'styles' was used before it was defined                  [2mno-use-before-define[22m
+  [2m22:74[22m  [31merror[39m  Unexpected usage of singlequote                          [2mjsx-quotes[22m
+  [2m22:96[22m  [31merror[39m  Unexpected usage of singlequote                          [2mjsx-quotes[22m
+  [2m26:24[22m  [31merror[39m  'styles' was used before it was defined                  [2mno-use-before-define[22m
+  [2m27:24[22m  [31merror[39m  Unexpected usage of singlequote                          [2mjsx-quotes[22m
+  [2m27:40[22m  [31merror[39m  Unexpected usage of singlequote                          [2mjsx-quotes[22m
+  [2m56:2[22m   [31merror[39m  Missing semicolon                                        [2msemi[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/login.js[24m
+    [2m5:10[22m   [31merror[39m  'Header' is defined but never used                                                         [2mno-unused-vars[22m
+    [2m5:42[22m   [31merror[39m  'Card' is defined but never used                                                           [2mno-unused-vars[22m
+    [2m5:48[22m   [31merror[39m  'CardSection' is defined but never used                                                    [2mno-unused-vars[22m
+    [2m5:83[22m   [31merror[39m  'LoginCard' is defined but never used                                                      [2mno-unused-vars[22m
+    [2m5:106[22m  [31merror[39m  'LoginInput' is defined but never used                                                     [2mno-unused-vars[22m
+   [2m11:31[22m   [31merror[39m  Block must not be padded by blank lines                                                    [2mpadded-blocks[22m
+   [2m34:22[22m   [31merror[39m  A space is required after '{'                                                              [2mobject-curly-spacing[22m
+   [2m40:29[22m   [31merror[39m  Unexpected parentheses around single function argument having a body with no curly braces  [2marrow-parens[22m
+   [2m50:29[22m   [31merror[39m  Unexpected parentheses around single function argument having a body with no curly braces  [2marrow-parens[22m
+   [2m59:24[22m   [31merror[39m  'styles' was used before it was defined                                                    [2mno-use-before-define[22m
+   [2m62:24[22m   [31merror[39m  'styles' was used before it was defined                                                    [2mno-use-before-define[22m
+   [2m84:28[22m   [31merror[39m  Unexpected parentheses around single function argument having a body with no curly braces  [2marrow-parens[22m
+   [2m93:4[22m    [31merror[39m  Missing trailing comma                                                                     [2mcomma-dangle[22m
+  [2m100:17[22m   [31merror[39m  Missing trailing comma                                                                     [2mcomma-dangle[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/popups/newPostDialogue.js[24m
+    [2m9:20[22m  [31merror[39m  'Card' is defined but never used                                                                                    [2mno-unused-vars[22m
+    [2m9:26[22m  [31merror[39m  'CardSection' is defined but never used                                                                             [2mno-unused-vars[22m
+    [2m9:66[22m  [31merror[39m  'LoginCard' is defined but never used                                                                               [2mno-unused-vars[22m
+   [2m15:50[22m  [31merror[39m  Block must not be padded by blank lines                                                                             [2mpadded-blocks[22m
+   [2m71:26[22m  [31merror[39m  Strings must use singlequote                                                                                        [2mquotes[22m
+   [2m76:26[22m  [31merror[39m  'styles' was used before it was defined                                                                             [2mno-use-before-define[22m
+   [2m78:24[22m  [31merror[39m  A space is required after '{'                                                                                       [2mobject-curly-spacing[22m
+   [2m78:40[22m  [31merror[39m  A space is required before '}'                                                                                      [2mobject-curly-spacing[22m
+   [2m79:69[22m  [31merror[39m  Missing semicolon                                                                                                   [2msemi[22m
+   [2m79:72[22m  [31merror[39m  The closing bracket must be aligned with the line containing the opening tag (expected column 15 on the next line)  [2mreact/jsx-closing-bracket-location[22m
+   [2m81:25[22m  [31merror[39m  Strings must use singlequote                                                                                        [2mquotes[22m
+   [2m87:89[22m  [31merror[39m  Missing space before value for key 'alignSelf'                                                                      [2mkey-spacing[22m
+   [2m94:33[22m  [31merror[39m  Unexpected parentheses around single function argument having a body with no curly braces                           [2marrow-parens[22m
+  [2m103:33[22m  [31merror[39m  Unexpected parentheses around single function argument having a body with no curly braces                           [2marrow-parens[22m
+  [2m112:33[22m  [31merror[39m  Unexpected parentheses around single function argument having a body with no curly braces                           [2marrow-parens[22m
+  [2m131:52[22m  [31merror[39m  The closing bracket must be aligned with the line containing the opening tag (expected column 17 on the next line)  [2mreact/jsx-closing-bracket-location[22m
+  [2m140:62[22m  [31merror[39m  The closing bracket must be aligned with the line containing the opening tag (expected column 9 on the next line)   [2mreact/jsx-closing-bracket-location[22m
+  [2m160:28[22m  [31merror[39m  Missing trailing comma                                                                                              [2mcomma-dangle[22m
+  [2m166:4[22m   [31merror[39m  Missing trailing comma                                                                                              [2mcomma-dangle[22m
+  [2m167:2[22m   [31merror[39m  Missing semicolon                                                                                                   [2msemi[22m
+  [2m175:51[22m  [31merror[39m  Missing trailing comma                                                                                              [2mcomma-dangle[22m
+  [2m183:28[22m  [31merror[39m  Unexpected parentheses around single function argument having a body with no curly braces                           [2marrow-parens[22m
+  [2m186:4[22m   [31merror[39m  Missing trailing comma                                                                                              [2mcomma-dangle[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/components/settings.js[24m
+   [2m2:16[22m  [31merror[39m  'ScrollView' is defined but never used   [2mno-unused-vars[22m
+   [2m2:28[22m  [31merror[39m  'FlatList' is defined but never used     [2mno-unused-vars[22m
+   [2m2:38[22m  [31merror[39m  'Text' is defined but never used         [2mno-unused-vars[22m
+  [2m17:22[22m  [31merror[39m  'styles' was used before it was defined  [2mno-use-before-define[22m
+  [2m62:18[22m  [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+  [2m66:4[22m   [31merror[39m  Missing trailing comma                   [2mcomma-dangle[22m
+  [2m67:2[22m   [31merror[39m  Missing semicolon                        [2msemi[22m
+
+[4m/Users/Jarred/Desktop/Programming/CIS-350/GvMarketplace/gvmarket/src/router.js[24m
+   [2m6:20[22m  [31merror[39m  Parse errors in imported module './components/browse': Unexpected token = (52:22)                                   [2mimport/no-named-as-default[22m
+   [2m6:20[22m  [31merror[39m  Parse errors in imported module './components/browse': Unexpected token = (52:22)                                   [2mimport/no-named-as-default-member[22m
+  [2m26:31[22m  [31merror[39m  The closing bracket must be aligned with the line containing the opening tag (expected column 11 on the next line)  [2mreact/jsx-closing-bracket-location[22m
+  [2m28:8[22m   [31merror[39m  Missing trailing comma                                                                                              [2mcomma-dangle[22m
+  [2m39:31[22m  [31merror[39m  The closing bracket must be aligned with the line containing the opening tag (expected column 11 on the next line)  [2mreact/jsx-closing-bracket-location[22m
+  [2m40:10[22m  [31merror[39m  Missing trailing comma                                                                                              [2mcomma-dangle[22m
+  [2m41:8[22m   [31merror[39m  Missing trailing comma                                                                                              [2mcomma-dangle[22m
+  [2m52:31[22m  [31merror[39m  The closing bracket must be aligned with the line containing the opening tag (expected column 11 on the next line)  [2mreact/jsx-closing-bracket-location[22m
+  [2m53:10[22m  [31merror[39m  Missing trailing comma                                                                                              [2mcomma-dangle[22m
+  [2m54:8[22m   [31merror[39m  Missing trailing comma                                                                                              [2mcomma-dangle[22m
+  [2m66:4[22m   [31merror[39m  Missing trailing comma                                                                                              [2mcomma-dangle[22m
+
+[31m[1m✖ 172 problems (171 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m[31m[1m  100 errors, 0 warnings potentially fixable with the `--fix` option.[22m[39m
+[31m[1m[22m[39m
