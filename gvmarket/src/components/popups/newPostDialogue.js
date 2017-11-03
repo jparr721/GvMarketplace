@@ -3,6 +3,7 @@ import { Modal, TouchableOpacity, View, Text } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
+import fb from 'firebase';
 import { setNewPostModalVisible } from '../../actions';
 
 // common
@@ -19,8 +20,10 @@ class NewPostDialogueContainer extends Component {
   */
   constructor() {
     super();
+    let user = fb.auth().currentUser;
+    let name = user.email;
     this.ref = firebase.firestore().collection('postings');
-    this.state = { postTitle: '', price: '', description: '' };
+    this.state = { postTitle: '', price: '', description: '', user: name };
   }
 
   /**
@@ -55,12 +58,14 @@ class NewPostDialogueContainer extends Component {
       title: this.state.postTitle,
       price: this.state.price,
       description: this.state.description,
+      user: this.state.user,
     });
 
     this.setState({
       postTitle: '',
       price: '',
       description: '',
+      user: this.state.user,
     });
   }
 
@@ -68,7 +73,7 @@ class NewPostDialogueContainer extends Component {
     return (
       <PageView>
         <Modal
-          animationtype={"slide"}
+          animationtype={'slide'}
           transparent={false}
           visible={this.props.newPostModalVisible}
         >
@@ -86,52 +91,37 @@ class NewPostDialogueContainer extends Component {
               </TouchableOpacity>
               <Text style={{ flex: 1, fontSize: 28, justifyContent: 'center', alignSelf:'center' }}>Make a post</Text>
             </View>
-            <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
-              <ButtonCard>
-                <Input
-                  placeholder="Title"
-                  label="Post title"
-                  onChangeText={(text) => this.onTitleChange(text)}
-                  value={this.state.postTitle}
-                />
-              </ButtonCard>
-
-              <ButtonCard>
-                <Input
-                  placeholder="Price"
-                  label="Price ($)"
-                  onChangeText={(text) => this.onPriceChange(text)}
-                  value={this.state.price}
-                />
-              </ButtonCard>
-
-              <ButtonCard>
-                <Input
-                  placeholder="Description (optional)"
-                  label="Description"
-                  onChangeText={(text) => this.onDescriptionChange(text)}
-                  value={this.state.description}
-                />
-              </ButtonCard>
-
-              <ButtonCard>
-                <Button>
-                  Add photo
-                </Button>
-              </ButtonCard>
-
-              <ButtonCard>
-                <Button>
-                  Add photo
-                </Button>
-              </ButtonCard>
-
-              <ButtonCard>
-                <Button
-                  onPress={() => this.addPosting()}>
-                  Publish
-                </Button>
-              </ButtonCard>
+            <View style={{ flex: 1, flexDirection: 'column'}}>
+              <Card>
+                <CardSection>
+                  <Input
+                    placeholder="Title"
+                    label="Post title"
+                    onChangeText={(text) => this.onTitleChange(text)}
+                    value={this.state.postTitle}
+                  />
+                </CardSection>
+                <CardSection>
+                  <Input
+                    placeholder="Price"
+                    label="Price ($)"
+                    onChangeText={(text) => this.onPriceChange(text)}
+                    value={this.state.price}
+                    />
+                </CardSection>
+                <CardSection>
+                  <Input
+                    placeholder="Description (optional)"
+                    label="Description"
+                    onChangeText={(text) => this.onDescriptionChange(text)}
+                    value={this.state.description}
+                  />
+                </CardSection>
+            </Card>
+              <Button
+                onPress={() => this.addPosting()}>
+                Publish
+              </Button>
             </View>
           </View>
         </Modal>
@@ -163,7 +153,7 @@ const styles = {
     color: '#007aff',
     fontWeight: '700',
     fontSize: 24,
-  }
+  },
 }
 
 /**

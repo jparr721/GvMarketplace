@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Text } from 'react-native';
+import { Icon } from 'react-native-elements';
 import { Button, Card, CardSection } from '../common';
 
 /**
@@ -17,6 +18,9 @@ class Post extends PureComponent {
         </CardSection>
         <CardSection>
           <Text style={styles.pricing}>${this.props.price}</Text>
+        </CardSection>
+        <CardSection>
+          <Text>User: {this.props.user}</Text>
         </CardSection>
       </Card>
     );
@@ -36,6 +40,9 @@ const styles = {
     fontSize: 18,
     color: '#05b711',
   },
+  user: {
+    fontSize: 16,
+  }
 };
 
 export { Post };

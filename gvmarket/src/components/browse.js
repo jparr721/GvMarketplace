@@ -52,13 +52,14 @@ class Browse extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const postings = [];
     querySnapshot.forEach((doc) => {
-      const { title, price, description } = doc.data();
+      const { title, price, description, user } = doc.data();
       postings.push({
         key: doc.id,
         doc, // DocumentSnapshot
         description,
         price,
         title,
+        user,
       });
     });
     this.setState({
