@@ -1,5 +1,11 @@
 import firebase from 'firebase';
-import { LOGIN, LOGIN_SUCCESS, LOGIN_FAIL, EMAIL_FIELD_CHANGED, PASSWORD_FIELD_CHANGED, SET_NEW_POST_MODAL_VISIBLE } from '../../constants';
+import { LOGIN, 
+  LOGIN_SUCCESS, 
+  LOGIN_FAIL, 
+  EMAIL_FIELD_CHANGED, 
+  PASSWORD_FIELD_CHANGED, 
+  SET_NEW_POST_MODAL_VISIBLE,
+  SET_NEW_EMAIL_MODAL_VISIBLE } from '../../constants';
 
 /**
 * When a failed login attempt occurs, the LOGIN_FAIL variable is updated
@@ -78,3 +84,12 @@ export const setNewPostModalVisible = () => {
     type: SET_NEW_POST_MODAL_VISIBLE
   }
 };
+/**
+* Makes the new email modal visible when called.
+*/
+export const setNewEmailModalVisible = () => {
+  return {
+    type: SET_NEW_POST_EMAIL_VISIBLE
+  }
+};
+

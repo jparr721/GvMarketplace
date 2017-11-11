@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Text } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { Button, Card, CardSection } from '../common';
 
@@ -11,7 +11,16 @@ class Post extends PureComponent {
     return (
       <Card>
         <CardSection>
-          <Text style={styles.postTitle}>{this.props.title}</Text>
+          <View style={styles.buttonLayout}>
+            <Text style={styles.postTitle}>{this.props.title}</Text>
+            <TouchableOpacity>
+              <Icon
+                name="delete-forever"
+                type="material-community"
+                size={28}
+                color="#f75a45" />
+              </TouchableOpacity>
+          </View>
         </CardSection>
         <CardSection>
           <Text style={styles.postBody}>{this.props.description}</Text>
@@ -20,7 +29,16 @@ class Post extends PureComponent {
           <Text style={styles.pricing}>${this.props.price}</Text>
         </CardSection>
         <CardSection>
-          <Text>User: {this.props.user}</Text>
+          <View style={styles.buttonLayout}>
+            <Text>User: {this.props.user}</Text>
+            <TouchableOpacity>
+              <Icon
+                name="message-plus"
+                type="material-community"
+                size={28}
+                color="#17c10b" />
+              </TouchableOpacity>
+          </View>
         </CardSection>
       </Card>
     );
@@ -40,9 +58,12 @@ const styles = {
     fontSize: 18,
     color: '#05b711',
   },
-  user: {
-    fontSize: 16,
-  }
+  buttonLayout: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+  },
 };
 
 export { Post };
