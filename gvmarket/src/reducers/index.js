@@ -1,8 +1,8 @@
-import { LOGIN, 
-  LOGIN_SUCCESS, 
-  LOGIN_FAIL, 
-  EMAIL_FIELD_CHANGED, 
-  PASSWORD_FIELD_CHANGED, 
+import { LOGIN,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+  EMAIL_FIELD_CHANGED,
+  PASSWORD_FIELD_CHANGED,
   SET_NEW_POST_MODAL_VISIBLE,
   SET_NEW_EMAIL_MODAL_VISIBLE } from '../../constants';
 
@@ -73,7 +73,7 @@ function appReducer(state = initialState, action) {
     case SET_NEW_EMAIL_MODAL_VISIBLE:
       return {
         ...state,
-        newEmailModalVisible: !newEmailModalVisible,
+        newEmailModalVisible: !state.newEmailModalVisible,
       }
     default:
       return state;

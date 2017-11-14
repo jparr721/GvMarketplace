@@ -7,7 +7,7 @@ import fb from 'firebase';
 import { setNewPostModalVisible } from '../../actions';
 
 // common
-import { PageView, Card, CardSection, Input, Button, ButtonCard, LoginCard } from '../../components/common/index';
+import { PageView, Card, CardSection, Input, Button } from '../../components/common/index';
 
 /**
 * Creates the posting dialog modal
@@ -73,7 +73,7 @@ class NewPostDialogueContainer extends Component {
     return (
       <PageView>
         <Modal
-          animationtype={'slide'}
+          animationType={'slide'}
           transparent={false}
           visible={this.props.newPostModalVisible}
         >
@@ -89,7 +89,7 @@ class NewPostDialogueContainer extends Component {
                   color="#007aff"
                 />
               </TouchableOpacity>
-              <Text style={{ flex: 1, fontSize: 28, justifyContent: 'center', alignSelf:'center' }}>Make a post</Text>
+              <Text style={styles.headerText}>Make a post</Text>
             </View>
             <View style={{ flex: 1, flexDirection: 'column'}}>
               <Card>
@@ -143,15 +143,14 @@ class NewPostDialogueContainer extends Component {
 const styles = {
   header: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     paddingLeft: 10,
     paddingBottom: 10,
-    paddingTop: 20,
-    backgroundColor: '#fff'
+    paddingTop: 30,
+    backgroundColor: '#A0A0A0'
   },
   headerText: {
-    color: '#007aff',
-    fontWeight: '700',
+    color: '#000',
     fontSize: 24,
   },
 }

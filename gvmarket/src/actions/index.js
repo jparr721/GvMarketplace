@@ -89,7 +89,7 @@ export const setNewPostModalVisible = () => {
 */
 export const setNewEmailModalVisible = () => {
   return {
-    type: SET_NEW_POST_EMAIL_VISIBLE
+    type: SET_NEW_EMAIL_MODAL_VISIBLE
   }
 };
 

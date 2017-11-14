@@ -1,12 +1,29 @@
 import React, { PureComponent } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { Icon } from 'react-native-elements';
+import firebase from 'react-native-firebase';
+import fb from 'firebase';
+
+// common
 import { Button, Card, CardSection } from '../common';
+
+// popups
+import { NewEmailDialogue } from '../popups/newEmailDialogue';
 
 /**
 * Pure Component to house postings
 */
 class Post extends PureComponent {
+
+  constructor() {
+    super();
+    this.ref;
+  }
+
+  deleteItem() {
+    this.ref.delete();
+  }
+
   render() {
     return (
       <Card>
@@ -31,13 +48,7 @@ class Post extends PureComponent {
         <CardSection>
           <View style={styles.buttonLayout}>
             <Text>User: {this.props.user}</Text>
-            <TouchableOpacity>
-              <Icon
-                name="message-plus"
-                type="material-community"
-                size={28}
-                color="#17c10b" />
-              </TouchableOpacity>
+            <NewEmailDialogue /> 
           </View>
         </CardSection>
       </Card>
@@ -47,7 +58,6 @@ class Post extends PureComponent {
 const styles = {
   postTitle: {
     fontSize: 28,
-    alignSelf: 'center',
     color: '#007aff',
   },
   postBody: {
