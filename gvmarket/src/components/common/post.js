@@ -17,11 +17,8 @@ class Post extends PureComponent {
 
   constructor() {
     super();
-    this.ref;
-  }
-
-  deleteItem() {
-    this.ref.delete();
+    let user = fb.auth().currentUser;
+    let id = firebase.firestore().collection('postings').doc('Stuff');
   }
 
   render() {
@@ -30,7 +27,7 @@ class Post extends PureComponent {
         <CardSection>
           <View style={styles.buttonLayout}>
             <Text style={styles.postTitle}>{this.props.title}</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => console.log(this.id) }>
               <Icon
                 name="delete-forever"
                 type="material-community"

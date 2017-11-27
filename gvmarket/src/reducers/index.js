@@ -4,7 +4,8 @@ import { LOGIN,
   EMAIL_FIELD_CHANGED,
   PASSWORD_FIELD_CHANGED,
   SET_NEW_POST_MODAL_VISIBLE,
-  SET_NEW_EMAIL_MODAL_VISIBLE } from '../../constants';
+  SET_NEW_EMAIL_MODAL_VISIBLE,
+  REMOVE_POSTING } from '../../constants';
 
 /**
 * Sets the initial state of the users activity
@@ -13,6 +14,7 @@ export const initialState = {
   email: '',
   password: '',
   error: '',
+  deleted: false,
   user: null,
   loading: false,
   loggedIn: false,
@@ -74,6 +76,11 @@ function appReducer(state = initialState, action) {
       return {
         ...state,
         newEmailModalVisible: !state.newEmailModalVisible,
+      }
+    case REMOVE_POSTING:
+      return {
+        ...state,
+        deleted: true
       }
     default:
       return state;

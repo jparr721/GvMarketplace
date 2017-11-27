@@ -5,7 +5,8 @@ import { LOGIN,
   EMAIL_FIELD_CHANGED, 
   PASSWORD_FIELD_CHANGED, 
   SET_NEW_POST_MODAL_VISIBLE,
-  SET_NEW_EMAIL_MODAL_VISIBLE } from '../../constants';
+  SET_NEW_EMAIL_MODAL_VISIBLE,
+  REMOVE_POSTING } from '../../constants';
 
 /**
 * When a failed login attempt occurs, the LOGIN_FAIL variable is updated
@@ -92,4 +93,13 @@ export const setNewEmailModalVisible = () => {
     type: SET_NEW_EMAIL_MODAL_VISIBLE
   }
 };
+/**
+* Signals for a post to be deleted
+*/
+export const removePosting = (title) => {
+  return {
+    type: REMOVE_POSTING,
+    payoad: title,
+  };
+}
 
