@@ -21,14 +21,15 @@ class App extends Component {
   */
   componentWillMount() {
     const config = {
-      apiKey: 'AIzaSyB7KmlbJClMGGRlqr95cknDXlrROJOpm7k',
-      authDomain: 'market-df395.firebaseapp.com',
-      databaseURL: 'https://market-df395.firebaseio.com',
-      projectId: 'market-df395',
-      storageBucket: 'market-df395.appspot.com',
-      messagingSenderId: '924347597165',
+      apiKey: 'AIzaSyCFd26P9F9YpIBoptxQ7vGp0hizF_WVpJI',
+      authDomain: 'marketplace-7a251.firebaseapp.com',
+      databaseURL: 'https://marketplace-7a251.firebaseio.com',
+      projectId: 'marketplace-7a251',
+      storageBucket: 'marketplace-7a251.appspot.com',
+      messagingSenderId: '35201999805'
     };
     firebase.initializeApp(config);
+
   }
   /**
   * Displays the correct pages in the application depenging on the users

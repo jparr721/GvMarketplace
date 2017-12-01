@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Modal, TouchableOpacity, View, Text } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
-import firebase from 'react-native-firebase';
+import axios from 'axios';
 import fb from 'firebase';
 import { setNewPostModalVisible } from '../../actions';
 
@@ -22,7 +22,6 @@ class NewPostDialogueContainer extends Component {
     super();
     let user = fb.auth().currentUser;
     let name = user.email;
-    this.ref = firebase.firestore().collection('postings');
     this.state = { postTitle: '', price: '', description: '', user: name };
   }
 
@@ -54,12 +53,17 @@ class NewPostDialogueContainer extends Component {
   * Adds the value to the database
   */
   addPosting() {
-    this.ref.add({
+    axios.put(`https://marketplace-7a251.firebaseio.com/Postings/${this.state.postTitle}.json`, {
+      id: this.state.user+this.state.postTitle,
       title: this.state.postTitle,
       price: this.state.price,
       description: this.state.description,
       user: this.state.user,
-    });
+    }).then((res) => {
+      console.log(res);
+    }).catch((e) => {
+      console.log(e);
+    })
 
     this.setState({
       postTitle: '',

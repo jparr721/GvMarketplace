@@ -9,6 +9,7 @@ import { Button, Card, CardSection } from '../common';
 
 // popups
 import { NewEmailDialogue } from '../popups/newEmailDialogue';
+import { DeletePostDialogue } from '../popups/deletePostDialogue';
 
 /**
 * Pure Component to house postings
@@ -17,8 +18,6 @@ class Post extends PureComponent {
 
   constructor() {
     super();
-    let user = fb.auth().currentUser;
-    let id = firebase.firestore().collection('postings').doc('Stuff');
   }
 
   render() {
@@ -27,13 +26,7 @@ class Post extends PureComponent {
         <CardSection>
           <View style={styles.buttonLayout}>
             <Text style={styles.postTitle}>{this.props.title}</Text>
-            <TouchableOpacity onPress={() => console.log(this.id) }>
-              <Icon
-                name="delete-forever"
-                type="material-community"
-                size={28}
-                color="#f75a45" />
-              </TouchableOpacity>
+            <DeletePostDialogue />
           </View>
         </CardSection>
         <CardSection>
