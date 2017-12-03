@@ -21,7 +21,7 @@ export const initialState = {
   loggedIn: false,
   newPostModalVisible: false,
   newEmailModalVisible: false,
-  setDeletePostModalVisible: false,
+  deletePostModalVisible: false,
 };
 
 /**
@@ -78,12 +78,12 @@ function appReducer(state = initialState, action) {
       return {
         ...state,
         newEmailModalVisible: !state.newEmailModalVisible,
-      }
+      };
     case SET_DELETE_MODAL_VISIBLE:
       return {
         ...state,
-        setDeletePostModalVisible: !state.setDeletePostModalVisible,
-      }
+        deletePostModalVisible: !state.deletePostModalVisible,
+      };
     default:
       return state;
   }

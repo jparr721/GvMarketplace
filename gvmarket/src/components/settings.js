@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { View, ScrollView, FlatList, Text } from 'react-native';
-import { Header, PageView, Button, ButtonCard, DeleteAccountButton } from './common/index';
+import firebase from 'firebase';
+
+// Common
+import { Header, PageView, Button, ButtonCard } from './common/index';
 
 /**
 * The settings page of the application. No functionality implemented for this
@@ -19,31 +22,7 @@ class Settings extends Component {
         </View>
         <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
           <ButtonCard>
-            <Button>My posts</Button>
-          </ButtonCard>
-
-          <ButtonCard>
-            <Button>My watchlist</Button>
-          </ButtonCard>
-
-          <ButtonCard>
-            <Button>Refresh my location</Button>
-          </ButtonCard>
-
-          <ButtonCard>
-            <Button>Light / Dark mode</Button>
-          </ButtonCard>
-
-          <ButtonCard>
-            <Button>Feedback</Button>
-          </ButtonCard>
-
-          <ButtonCard>
-            <Button>Logout</Button>
-          </ButtonCard>
-
-          <ButtonCard>
-            <DeleteAccountButton>Delete account</DeleteAccountButton>
+            <Button onPress={() => firebase.auth().signOut()}>Log Out</Button>
           </ButtonCard>
         </View>
       </PageView>

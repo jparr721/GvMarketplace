@@ -3,8 +3,11 @@ import { View, Text, FlatList, Dimensions, StyleSheet } from 'react-native';
 import firebase from 'react-native-firebase';
 import { Button } from 'native-base';
 import { Icon } from 'react-native-elements';
+import axios from 'axios';
+
 import { PageView, SearchBar, Card, CardSection, Header, Spinner, Post } from './common/index';
 import { NewPostDialogue } from './popups/newPostDialogue';
+import { DeletePostDialogue } from './popups/deletePostDialogue';
 
 
 /**
@@ -31,7 +34,8 @@ class Browse extends Component {
   * of postings that will appear on the browse page.
   */
   componentDidMount() {
-    this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
+    // this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
+    this.loadPosts();
   }
 
   /**
@@ -41,7 +45,7 @@ class Browse extends Component {
   * firebase.
   */
   componentWillUnmount() {
-    this.unsubscribe();
+    //this.unsubscribe();
   }
 
   /**
@@ -49,24 +53,30 @@ class Browse extends Component {
   * into the postings array.
   * @param {snapshot} querySnapshot - document snapshot of current contents
   */
-  onCollectionUpdate = (querySnapshot) => {
+  loadPosts() {
     const postings = [];
-    querySnapshot.forEach((doc) => {
-      const { title, price, description, user } = doc.data();
-      postings.push({
-        key: doc.id,
-        doc, // DocumentSnapshot
-        description,
-        price,
-        title,
-        user,
-      });
-    });
-    this.setState({
-      postings,
-      load: false,
-   });
- }
+    axios.get('https://marketplace-7a251.firebaseio.com/Postings.json')
+      .then((data) => {
+        for (key in data.data) {
+          if(data.data.hasOwnProperty(key)) {
+            postings.push({
+              key: data.data.id,
+              description: data.data.description, 
+              price: data.data.price, 
+              title: data.data.title,
+              user: data.data.user,
+            });
+          }
+        }
+        this.setState({
+          postings: postings,
+          load: false,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+    }
 
  /**
  * Contains the layout and displays the browse page of the application when
@@ -85,13 +95,14 @@ class Browse extends Component {
           </View>
           <Header headerText="Browse"/>
           <View style={styles.topRightIcon}>
-            <Button transparent><Icon name='search' color='#007aff' size={24} /></Button>
+            <DeletePostDialogue />
           </View>
         </View>
         <View style={{flex: 1}}>
           <FlatList
             data={this.state.postings}
             renderItem={({ item }) => <Post {...item} />}
+            keyExtractor={(item, index) => index}
           />
         </View>
       </PageView>

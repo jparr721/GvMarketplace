@@ -26,7 +26,6 @@ class Post extends PureComponent {
         <CardSection>
           <View style={styles.buttonLayout}>
             <Text style={styles.postTitle}>{this.props.title}</Text>
-            <DeletePostDialogue />
           </View>
         </CardSection>
         <CardSection>

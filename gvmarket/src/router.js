@@ -4,7 +4,6 @@ import { Icon } from 'react-native-elements';
 
 // Screen Imports
 import Browse from './components/browse';
-import Inbox from './components/inbox';
 import Settings from './components/settings';
 
 /**
@@ -25,19 +24,6 @@ const Router = TabNavigator(
             size={28}
             color={tintColor} />
         ),
-      }
-    },
-    Inbox: {
-      screen: Inbox,
-      path: '',
-      navigationOptions: {
-        tabBarIcon: ({ tintColor }) => (
-          <Icon
-            name="message-outline"
-            type="material-community"
-            size={28}
-            color={tintColor} />
-        )
       }
     },
     Settings: {

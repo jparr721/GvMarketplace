@@ -50,7 +50,7 @@ class DeletePostDialogueContainer extends Component {
 				<Modal
 					animationType={'slide'}
 					transparent={false}
-					visible={this.props.deletePostModalVisible}
+					visible={ this.props.deletePostModalVisible }
 				>
 					<View style={{ flex: 1 }}>
             <View style={ styles.header }>
@@ -123,7 +123,7 @@ const styles = {
 */
 const mapStateToProps = (state) => {
   return {
-    newDeletePostModalVisible: state.newDeletePostModalVisible,
+    deletePostModalVisible: state.deletePostModalVisible,
   };
 };
 

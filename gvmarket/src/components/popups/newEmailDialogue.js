@@ -18,7 +18,6 @@ class NewEmailDialogueContainer extends Component {
   **/
   constructor() {
     super();
-    this.ref = firebase.firestore().collection('postings');
     this.state = { subject: '', body: '', emailAddr: 'jparr721@gmail.com' };
   }
 
