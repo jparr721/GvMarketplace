@@ -38,52 +38,23 @@ class Browse extends Component {
   }
 
   /**
-  * Right before a component is unmonted and destroyed, this method resets
-  * the unsubscribe variable of the class. This kills the communication
-  * between the application and the hosting server containing the data,
-  * firebase.
-  */
-  componentWillUnmount() {
-    //this.unsubscribe();
-  }
-
-  /**
   *  Updates the postings that are on the browse page by pushing them
   * into the postings array.
   * @param {snapshot} querySnapshot - document snapshot of current contents
   */
-  // loadPosts() {
-  //   const postings = [];
-  //   axios.get('https://marketplace-7a251.firebaseio.com/Postings.json')
-  //     .then((data) => {
-  //         postings.push({
-  //           key: data.id,
-  //           description: data.description, 
-  //           price: data.price, 
-  //           title: data.title,
-  //           user: data.user,
-  //         });
-  //       this.setState({
-  //         postings,
-  //         load: false,
-  //       });
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     })
-  //   }
   loadPosts() {
-    axios.get('https://marketplace-7a251.firebaseio.com/Postings.json')
-      .then((data) => {
-        const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+    return fetch('https://marketplace-7a251.firebaseio.com/Postings.json')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2 });
         this.setState({
           load: false,
-          items: ds.cloneWithRows(data),
-        })
+          dataSource: ds.cloneWithRows(responseJson),
+        });
       })
       .catch((err) => {
         // Alert.alert(err);
-      })
+      });
   }
  /**
  * Contains the layout and displays the browse page of the application when
@@ -107,7 +78,7 @@ class Browse extends Component {
         </View>
         <View style={{flex: 1}}>
           <ListView
-            dataSource={this.state.items}
+            dataSource={this.state.dataSource}
             renderRow={item => <Post {...item} />}
             />
         </View>
