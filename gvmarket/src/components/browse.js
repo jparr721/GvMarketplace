@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, Dimensions, StyleSheet } from 'react-native';
+import { View, Text, FlatList, Dimensions, StyleSheet, ListView, Alert } from 'react-native';
 import firebase from 'react-native-firebase';
 import { Button } from 'native-base';
 import { Icon } from 'react-native-elements';
@@ -20,12 +20,11 @@ class Browse extends Component {
   */
   constructor() {
     super();
-    this.ref = firebase.firestore().collection('postings');
+    
     this.unsubscribe = null;
 
     this.state = {
       load: true,
-      postings: [],
     };
   }
 
@@ -53,31 +52,39 @@ class Browse extends Component {
   * into the postings array.
   * @param {snapshot} querySnapshot - document snapshot of current contents
   */
+  // loadPosts() {
+  //   const postings = [];
+  //   axios.get('https://marketplace-7a251.firebaseio.com/Postings.json')
+  //     .then((data) => {
+  //         postings.push({
+  //           key: data.id,
+  //           description: data.description, 
+  //           price: data.price, 
+  //           title: data.title,
+  //           user: data.user,
+  //         });
+  //       this.setState({
+  //         postings,
+  //         load: false,
+  //       });
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     })
+  //   }
   loadPosts() {
-    const postings = [];
     axios.get('https://marketplace-7a251.firebaseio.com/Postings.json')
       .then((data) => {
-        for (key in data.data) {
-          if(data.data.hasOwnProperty(key)) {
-            postings.push({
-              key: data.data.id,
-              description: data.data.description, 
-              price: data.data.price, 
-              title: data.data.title,
-              user: data.data.user,
-            });
-          }
-        }
+        const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
         this.setState({
-          postings: postings,
           load: false,
-        });
+          items: ds.cloneWithRows(data),
+        })
       })
       .catch((err) => {
-        console.log(err);
+        // Alert.alert(err);
       })
-    }
-
+  }
  /**
  * Contains the layout and displays the browse page of the application when
  * called.
@@ -99,11 +106,10 @@ class Browse extends Component {
           </View>
         </View>
         <View style={{flex: 1}}>
-          <FlatList
-            data={this.state.postings}
-            renderItem={({ item }) => <Post {...item} />}
-            keyExtractor={(item, index) => index}
-          />
+          <ListView
+            dataSource={this.state.items}
+            renderRow={item => <Post {...item} />}
+            />
         </View>
       </PageView>
     );

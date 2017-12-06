@@ -18,16 +18,16 @@ class NewEmailDialogueContainer extends Component {
   **/
   constructor() {
     super();
-    this.state = { subject: '', body: '', emailAddr: 'jparr721@gmail.com' };
+    this.state = { subject: '', body: '', emailAddr: '' };
   }
 
   /**
  * Listens for change in state of email subject
  * @param {string} value - this is the stored value
  **/
- onSubjectChange(value) {
+  onSubjectChange(value) {
    this.setState({ subject: value });
- }
+  }
 
  /**
  * Listens for change in state of email body
@@ -35,6 +35,14 @@ class NewEmailDialogueContainer extends Component {
  **/
  onBodyChange(value) {
    this.setState({ body: value });
+ }
+
+ /**
+ * Listens for change in the state of the emaila ddress
+ * @param {string} value - This is the stored email
+ **/
+ onEmailChange(value) {
+    this.setState({ emailAddr: value });
  }
 
  sendEmail() {
@@ -82,7 +90,12 @@ class NewEmailDialogueContainer extends Component {
                   />
               </CardSection>
               <CardSection>
-                <Text>{this.state.emailAddr}</Text>
+                <Input
+                  placeholder="Email address"
+                  label="Email"
+                  onChangeText={(text) => this.onEmailChange(text)}
+                  value={this.state.emailAddr}
+                  />
               </CardSection>
               <CardSection>
                 <Button onPress={() => this.sendEmail()}>
