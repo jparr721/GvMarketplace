@@ -56,6 +56,7 @@ class Browse extends Component {
         // Alert.alert(err);
       });
   }
+  
  /**
  * Contains the layout and displays the browse page of the application when
  * called.
