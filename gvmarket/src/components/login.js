@@ -35,6 +35,8 @@ class Login extends Component {
           <LoginTitle headerText="GV Market" />
           <ButtonCard>
             <Input
+              keyboardType='email-address'
+              returnKeyType='next'
               label="Email"
               placeholder="email@mail.gvsu.edu"
               onChangeText={(text) => this.props.onEmailChange(text)}
@@ -44,11 +46,12 @@ class Login extends Component {
 
           <ButtonCard>
             <Input
+              returnKeyType='go'
               label="Password"
               secureTextEntry
               placeholder="password"
               onChangeText={(text) => this.props.onPasswordChange(text)}
-              value={this.props.password}
+              value={this.props.password} 
             />
           </ButtonCard>
 
