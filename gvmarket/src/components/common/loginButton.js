@@ -22,6 +22,7 @@ const styles = {
     color: '#007aff',
     fontSize: 16,
     fontWeight: '400',
+    fontFamily: 'Avenir',
     paddingTop: 10,
     paddingBottom: 10
   },

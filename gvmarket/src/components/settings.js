@@ -35,13 +35,10 @@ const styles = {
   mainBody: {
     flex: 1,
     flexDirection: 'column',
-    paddingTop: 20,
+    paddingTop: 20
   },
   heading: {
     marginTop: 20
-  },
-  emptySpace: {
-    height: 33,
   }
 }
 

@@ -107,6 +107,7 @@ class NewPostDialogueContainer extends Component {
                 </CardSection>
                 <CardSection>
                   <Input
+                    keyboardType="numeric"
                     placeholder="Price"
                     label="Price ($)"
                     onChangeText={(text) => this.onPriceChange(text)}

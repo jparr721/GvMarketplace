@@ -56,6 +56,7 @@ class Browse extends Component {
         // Alert.alert(err);
       });
   }
+  
  /**
  * Contains the layout and displays the browse page of the application when
  * called.
@@ -122,7 +123,6 @@ const styles = {
   },
   topRightIcon: {
     paddingRight: 20,
-    paddingTop: 10,
   }
 };
 

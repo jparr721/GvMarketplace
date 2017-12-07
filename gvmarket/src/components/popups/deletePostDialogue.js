@@ -112,6 +112,7 @@ const styles = {
   },
   warningText: {
     fontSize: 22,
+    fontFamily: 'Avenir',
     color: '#f3e826',
     alignItems: 'center',
   },

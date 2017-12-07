@@ -37,7 +37,7 @@ class Post extends PureComponent {
         <CardSection>
           <View style={styles.buttonLayout}>
             <Text>User: {this.props.user}</Text>
-            <NewEmailDialogue /> 
+            <NewEmailDialogue style={styles.emailIcon}/> 
           </View>
         </CardSection>
       </Card>
@@ -47,14 +47,17 @@ class Post extends PureComponent {
 const styles = {
   postTitle: {
     fontSize: 28,
+    fontFamily: 'Avenir',
     color: '#007aff',
   },
   postBody: {
     fontSize: 18,
     color: '#39414f',
+    fontFamily: 'Avenir'
   },
   pricing: {
     fontSize: 18,
+    fontFamily: 'Avenir',
     color: '#05b711',
   },
   buttonLayout: {
@@ -63,6 +66,9 @@ const styles = {
     alignItems: 'flex-start',
     justifyContent: 'space-between',
   },
+  emailIcon: {
+    paddingLeft: 30,
+  }
 };
 
 export { Post };

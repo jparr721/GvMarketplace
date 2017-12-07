@@ -45,8 +45,12 @@ class NewEmailDialogueContainer extends Component {
     this.setState({ emailAddr: value });
  }
 
+/**
+* Displays the email dialogue for the user 
+* to enter the name of the person they wish to contact.
+*/
  sendEmail() {
-   Linking.openURL(`mailto:${this.state.emailAddr}&subject=${this.state.subject}&body=${this.state.body}`);
+   Linking.openURL(`mailto:${this.state.emailAddr}?subject=${this.state.subject}&body=${this.state.body}`);
  }
 
  render() {
@@ -123,7 +127,7 @@ const styles = {
   header: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    paddingLeft: 10,
+    paddingLeft: 30,
     paddingBottom: 10,
     paddingTop: 30,
     backgroundColor: '#17c10b'

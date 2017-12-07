@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     flex: 1,
     color: '#007aff',
+    fontFamily: 'Avenir',
   },
 });
 
