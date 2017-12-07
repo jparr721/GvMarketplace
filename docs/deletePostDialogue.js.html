@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: deletePostDialogue.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: deletePostDialogue.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { Component } from 'react';
+import { Modal, TouchableOpacity, View, Text } from 'react-native';
+import { Icon } from 'react-native-elements';
+import { connect } from 'react-redux';
+import axios from 'axios';
+import firebase from 'firebase';
+import { setDeletePostModalVisible } from '../../actions';
+
+// common
+import { PageView, Card, CardSection, Input, Button } from '../../components/common/index';
+
+/**
+*	Creates dialogue to delete a post
+**/
+
+class DeletePostDialogueContainer extends Component {
+	constructor(){
+		super();
+		let user = firebase.auth().currentUser;
+		let name = user.email;
+		this.state = { title: '', user: name, delete: false };
+	}
+
+	onTitleChange(value) {
+		this.setState({ title: value });
+	}
+
+  showDeleteButton() {
+    if (this.state.title != '') {
+      this.state.delete = true;
+    }
+    return (this.state.delete) ? &lt;Button onPress={() => this.deletePost()}>Delete Post&lt;/Button> : &lt;CardSection />
+  }
+
+	deletePost() {
+    axios.delete(`https://marketplace-7a251.firebaseio.com/Postings/${this.state.title}.json`).then((res) => {
+      console.log(res);
+    }).catch((err) => {
+      console.log(err);
+    });
+
+    this.setState({
+      title: '',
+    });
+	}
+
+	render() {
+		return (
+			&lt;PageView>
+				&lt;Modal
+					animationType={'slide'}
+					transparent={false}
+					visible={ this.props.deletePostModalVisible }
+				>
+					&lt;View style={{ flex: 1 }}>
+            &lt;View style={ styles.header }>
+              &lt;TouchableOpacity
+                style={{ marginRight: 30 }}
+                onPress={() => this.props.setDeletePostModalVisible() }>
+                  &lt;Icon
+                    name={'arrow-left'}
+                    type='material-community'
+                    size={24}
+                    color="#007aff" />
+              &lt;/TouchableOpacity>
+              &lt;Text style={ styles.headerText }>Are you sure?&lt;/Text>
+            &lt;/View>
+            &lt;View style={{flex: 1, flexDirection: 'column' }}>
+              &lt;Card>
+                &lt;CardSection>
+                  &lt;Text style={ styles.warningText }>Deleting a post can result in a lost sale, please enter the post name to be sure.&lt;/Text>
+                &lt;/CardSection>
+                &lt;CardSection>
+                  &lt;Input  
+                    placeholder="Title"
+                    label="Post Title"
+                    onChangeText={(text) => this.onTitleChange(text)}
+                    value={this.state.title}
+                    />
+                &lt;/CardSection>
+              &lt;/Card>
+              {this.showDeleteButton()}
+            &lt;/View>
+          &lt;/View>
+        &lt;/Modal>
+        &lt;TouchableOpacity
+          style={{ paddingTop: 10 }}
+          onPress={() => this.props.setDeletePostModalVisible()}>
+          &lt;Icon
+            name='delete-forever'
+            type='material-community'
+            size={28}
+            color='#f75a45' />
+          &lt;/TouchableOpacity>
+			&lt;/PageView>
+		);
+	}
+}
+
+const styles = {
+  header: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    paddingLeft: 10,
+    paddingBottom: 10,
+    paddingTop: 30,
+    backgroundColor: '#f75a45',
+  },
+  headerText: {
+    color: '#fff',
+    fontSize: 28,
+  },
+  warningText: {
+    fontSize: 22,
+    color: '#f3e826',
+    alignItems: 'center',
+  },
+}
+
+/**
+* Maps state to the props object for reference in the Redux Store
+* @param {state} state - The state of the referenced object
+*/
+const mapStateToProps = (state) => {
+  return {
+    deletePostModalVisible: state.deletePostModalVisible,
+  };
+};
+
+/**
+* Maps dispatch to the props object so the Redux Store knows which function to call
+* @param {state} dispatch - The function call mechanism
+*/
+const mapDispatchToProps = (dispatch) => ({
+  setDeletePostModalVisible() {
+    dispatch(setDeletePostModalVisible());
+  }
+});
+
+const DeletePostDialogue = connect(mapStateToProps, mapDispatchToProps)(DeletePostDialogueContainer);
+
+export { DeletePostDialogue };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li><li><a href="Browse.html">Browse</a></li><li><a href="DeletePostDialogueContainer.html">DeletePostDialogueContainer</a></li><li><a href="HeaderContainer.html">HeaderContainer</a></li><li><a href="Login.html">Login</a></li><li><a href="LoginTitleContainer.html">LoginTitleContainer</a></li><li><a href="NewEmailDialogueContainer.html">NewEmailDialogueContainer</a></li><li><a href="NewPostDialogueContainer.html">NewPostDialogueContainer</a></li><li><a href="Post.html">Post</a></li><li><a href="Settings.html">Settings</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Button">Button</a></li><li><a href="global.html#ButtonCard">ButtonCard</a></li><li><a href="global.html#Card">Card</a></li><li><a href="global.html#CardSection">CardSection</a></li><li><a href="global.html#DeleteAccountButton">DeleteAccountButton</a></li><li><a href="global.html#getEmailInput">getEmailInput</a></li><li><a href="global.html#getPasswordInput">getPasswordInput</a></li><li><a href="global.html#Input">Input</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#LoginButton">LoginButton</a></li><li><a href="global.html#LoginCard">LoginCard</a></li><li><a href="global.html#loginFail">loginFail</a></li><li><a href="global.html#LoginInput">LoginInput</a></li><li><a href="global.html#loginSuccess">loginSuccess</a></li><li><a href="global.html#mapDispatchToProps">mapDispatchToProps</a></li><li><a href="global.html#mapStateToProps">mapStateToProps</a></li><li><a href="global.html#PageView">PageView</a></li><li><a href="global.html#Router">Router</a></li><li><a href="global.html#SearchBar">SearchBar</a></li><li><a href="global.html#setNewEmailModalVisible">setNewEmailModalVisible</a></li><li><a href="global.html#setNewPostModalVisible">setNewPostModalVisible</a></li><li><a href="global.html#SmallCard">SmallCard</a></li><li><a href="global.html#SmallHeader">SmallHeader</a></li><li><a href="global.html#Spinner">Spinner</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Dec 07 2017 16:03:06 GMT-0500 (EST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

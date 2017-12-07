@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: newPostDialogue.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: newPostDialogue.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { Component } from 'react';
+import { Modal, TouchableOpacity, View, Text } from 'react-native';
+import { Icon } from 'react-native-elements';
+import { connect } from 'react-redux';
+import axios from 'axios';
+import fb from 'firebase';
+import { setNewPostModalVisible } from '../../actions';
+
+// common
+import { PageView, Card, CardSection, Input, Button } from '../../components/common/index';
+
+/**
+* Creates the posting dialog modal
+*/
+
+class NewPostDialogueContainer extends Component {
+
+  /**
+  * Constructor to initialize state objects
+  */
+  constructor() {
+    super();
+    let user = fb.auth().currentUser;
+    let name = user.email;
+    this.state = { postTitle: '', price: '', description: '', user: name };
+  }
+
+  /**
+  * Listens for the state of the title variable being changed
+  * @param {string} value - this is the value stored
+  */
+  onTitleChange(value) {
+    this.setState({ postTitle: value });
+  }
+
+  /**
+  * Listens for the state of the price variable being changed
+  * @param {string} value - this is the value stored
+  */
+  onPriceChange(value) {
+    this.setState({ price: value });
+  }
+
+  /**
+  * Listens for the state of the description variable being changed
+  * @param {string} value - this is the value stored
+  */
+  onDescriptionChange(value) {
+    this.setState({ description: value });
+  }
+
+  /**
+  * Adds the value to the database
+  */
+  addPosting() {
+    axios.put(`https://marketplace-7a251.firebaseio.com/Postings/${this.state.postTitle}.json`, {
+      id: this.state.user+this.state.postTitle,
+      title: this.state.postTitle,
+      price: this.state.price,
+      description: this.state.description,
+      user: this.state.user,
+    }).then((res) => {
+      console.log(res);
+    }).catch((e) => {
+      console.log(e);
+    })
+
+    this.setState({
+      postTitle: '',
+      price: '',
+      description: '',
+      user: this.state.user,
+    });
+  }
+
+  render() {
+    return (
+      &lt;PageView>
+        &lt;Modal
+          animationType={'slide'}
+          transparent={false}
+          visible={this.props.newPostModalVisible}
+        >
+          &lt;View style={{ flex: 1 }}>
+            &lt;View style={styles.header}>
+              &lt;TouchableOpacity
+                style={{marginRight: 30}}
+                onPress={() => { this.props.setNewPostModalVisible() }}>
+                &lt;Icon
+                  name={"arrow-left"}
+                  type="material-community"
+                  size={24}
+                  color="#007aff"
+                />
+              &lt;/TouchableOpacity>
+              &lt;Text style={styles.headerText}>Make a post&lt;/Text>
+            &lt;/View>
+            &lt;View style={{ flex: 1, flexDirection: 'column'}}>
+              &lt;Card>
+                &lt;CardSection>
+                  &lt;Input
+                    placeholder="Title"
+                    label="Post title"
+                    onChangeText={(text) => this.onTitleChange(text)}
+                    value={this.state.postTitle}
+                  />
+                &lt;/CardSection>
+                &lt;CardSection>
+                  &lt;Input
+                    placeholder="Price"
+                    label="Price ($)"
+                    onChangeText={(text) => this.onPriceChange(text)}
+                    value={this.state.price}
+                    />
+                &lt;/CardSection>
+                &lt;CardSection>
+                  &lt;Input
+                    placeholder="Description (optional)"
+                    label="Description"
+                    onChangeText={(text) => this.onDescriptionChange(text)}
+                    value={this.state.description}
+                  />
+                &lt;/CardSection>
+            &lt;/Card>
+              &lt;Button
+                onPress={() => this.addPosting()}>
+                Publish
+              &lt;/Button>
+            &lt;/View>
+          &lt;/View>
+        &lt;/Modal>
+        &lt;TouchableOpacity
+          style={{ paddingTop: 10 }}
+          onPress={() => this.props.setNewPostModalVisible()}>
+          &lt;Icon
+            name={'plus'}
+            type="material-community"
+            size={24}
+            color="#007aff"
+          />
+        &lt;/TouchableOpacity>
+      &lt;/PageView>
+    );
+  }
+}
+
+const styles = {
+  header: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    paddingLeft: 10,
+    paddingBottom: 10,
+    paddingTop: 30,
+    backgroundColor: '#A0A0A0'
+  },
+  headerText: {
+    color: '#000',
+    fontSize: 24,
+  },
+}
+
+/**
+* Maps state to the props object for reference in the Redux Store
+* @param {state} state - The state of the referenced object
+*/
+const mapStateToProps = (state) => {
+  return {
+    newPostModalVisible: state.newPostModalVisible
+  };
+};
+
+/**
+* Maps dispatch to the props object so the Redux Store knows which function to call
+* @param {state} dispatch - The function call mechanism
+*/
+const mapDispatchToProps = (dispatch) => ({
+  setNewPostModalVisible() {
+    dispatch(setNewPostModalVisible());
+  }
+});
+
+const NewPostDialogue = connect(mapStateToProps, mapDispatchToProps)(NewPostDialogueContainer);
+
+export { NewPostDialogue };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li><li><a href="Browse.html">Browse</a></li><li><a href="DeletePostDialogueContainer.html">DeletePostDialogueContainer</a></li><li><a href="HeaderContainer.html">HeaderContainer</a></li><li><a href="Login.html">Login</a></li><li><a href="LoginTitleContainer.html">LoginTitleContainer</a></li><li><a href="NewEmailDialogueContainer.html">NewEmailDialogueContainer</a></li><li><a href="NewPostDialogueContainer.html">NewPostDialogueContainer</a></li><li><a href="Post.html">Post</a></li><li><a href="Settings.html">Settings</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Button">Button</a></li><li><a href="global.html#ButtonCard">ButtonCard</a></li><li><a href="global.html#Card">Card</a></li><li><a href="global.html#CardSection">CardSection</a></li><li><a href="global.html#DeleteAccountButton">DeleteAccountButton</a></li><li><a href="global.html#getEmailInput">getEmailInput</a></li><li><a href="global.html#getPasswordInput">getPasswordInput</a></li><li><a href="global.html#Input">Input</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#LoginButton">LoginButton</a></li><li><a href="global.html#LoginCard">LoginCard</a></li><li><a href="global.html#loginFail">loginFail</a></li><li><a href="global.html#LoginInput">LoginInput</a></li><li><a href="global.html#loginSuccess">loginSuccess</a></li><li><a href="global.html#mapDispatchToProps">mapDispatchToProps</a></li><li><a href="global.html#mapStateToProps">mapStateToProps</a></li><li><a href="global.html#PageView">PageView</a></li><li><a href="global.html#Router">Router</a></li><li><a href="global.html#SearchBar">SearchBar</a></li><li><a href="global.html#setNewEmailModalVisible">setNewEmailModalVisible</a></li><li><a href="global.html#setNewPostModalVisible">setNewPostModalVisible</a></li><li><a href="global.html#SmallCard">SmallCard</a></li><li><a href="global.html#SmallHeader">SmallHeader</a></li><li><a href="global.html#Spinner">Spinner</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Dec 07 2017 16:03:06 GMT-0500 (EST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

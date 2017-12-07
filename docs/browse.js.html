@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: browse.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: browse.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { Component } from 'react';
+import { View, Text, FlatList, Dimensions, StyleSheet, ListView, Alert } from 'react-native';
+import firebase from 'react-native-firebase';
+import { Button } from 'native-base';
+import { Icon } from 'react-native-elements';
+import axios from 'axios';
+
+import { PageView, SearchBar, Card, CardSection, Header, Spinner, Post } from './common/index';
+import { NewPostDialogue } from './popups/newPostDialogue';
+import { DeletePostDialogue } from './popups/deletePostDialogue';
+
+
+/**
+* The browse page of the application.
+*/
+class Browse extends Component {
+
+  /*
+  * Constructor to initialize state objects
+  */
+  constructor() {
+    super();
+    
+    this.unsubscribe = null;
+
+    this.state = {
+      load: true,
+    };
+  }
+
+  /**
+  * When the application officially launches, this will create a list
+  * of postings that will appear on the browse page.
+  */
+  componentDidMount() {
+    // this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
+    this.loadPosts();
+  }
+
+  /**
+  *  Updates the postings that are on the browse page by pushing them
+  * into the postings array.
+  * @param {snapshot} querySnapshot - document snapshot of current contents
+  */
+  loadPosts() {
+    return fetch('https://marketplace-7a251.firebaseio.com/Postings.json')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2 });
+        this.setState({
+          load: false,
+          dataSource: ds.cloneWithRows(responseJson),
+        });
+      })
+      .catch((err) => {
+        // Alert.alert(err);
+      });
+  }
+ /**
+ * Contains the layout and displays the browse page of the application when
+ * called.
+ */
+  render() {
+    if (this.state.load) {
+      return &lt;Spinner size="large" />;
+    }
+
+    return (
+      &lt;PageView>
+        &lt;View style={styles.topBar}>
+          &lt;View style={styles.topLeftIcon}>
+            &lt;NewPostDialogue />
+          &lt;/View>
+          &lt;Header headerText="Browse"/>
+          &lt;View style={styles.topRightIcon}>
+            &lt;DeletePostDialogue />
+          &lt;/View>
+        &lt;/View>
+        &lt;View style={{flex: 1}}>
+          &lt;ListView
+            dataSource={this.state.dataSource}
+            renderRow={item => &lt;Post {...item} />}
+            />
+        &lt;/View>
+      &lt;/PageView>
+    );
+  }
+}
+
+const styles = {
+  container: {
+    paddingTop: 20,
+    flex: 1,
+  },
+  oneThirdScreen: {
+    width: Dimensions.get('window').width / 3,
+    backgroundColor: '#FFF',
+  },
+  rightThird: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: Dimensions.get('window').width / 3,
+    backgroundColor: 'skyblue',
+  },
+  textStyle: {
+    paddingLeft: 10,
+    paddingTop: 10,
+    fontSize: 24,
+    color: '#007aff',
+  },
+  rightButtonText: {
+    color: '#007aff',
+  },
+  topBar: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
+  },
+  topLeftIcon: {
+    paddingLeft: 20,
+  },
+  topRightIcon: {
+    paddingRight: 20,
+    paddingTop: 10,
+  }
+};
+
+export default Browse;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li><li><a href="Browse.html">Browse</a></li><li><a href="DeletePostDialogueContainer.html">DeletePostDialogueContainer</a></li><li><a href="HeaderContainer.html">HeaderContainer</a></li><li><a href="Login.html">Login</a></li><li><a href="LoginTitleContainer.html">LoginTitleContainer</a></li><li><a href="NewEmailDialogueContainer.html">NewEmailDialogueContainer</a></li><li><a href="NewPostDialogueContainer.html">NewPostDialogueContainer</a></li><li><a href="Post.html">Post</a></li><li><a href="Settings.html">Settings</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Button">Button</a></li><li><a href="global.html#ButtonCard">ButtonCard</a></li><li><a href="global.html#Card">Card</a></li><li><a href="global.html#CardSection">CardSection</a></li><li><a href="global.html#DeleteAccountButton">DeleteAccountButton</a></li><li><a href="global.html#getEmailInput">getEmailInput</a></li><li><a href="global.html#getPasswordInput">getPasswordInput</a></li><li><a href="global.html#Input">Input</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#LoginButton">LoginButton</a></li><li><a href="global.html#LoginCard">LoginCard</a></li><li><a href="global.html#loginFail">loginFail</a></li><li><a href="global.html#LoginInput">LoginInput</a></li><li><a href="global.html#loginSuccess">loginSuccess</a></li><li><a href="global.html#mapDispatchToProps">mapDispatchToProps</a></li><li><a href="global.html#mapStateToProps">mapStateToProps</a></li><li><a href="global.html#PageView">PageView</a></li><li><a href="global.html#Router">Router</a></li><li><a href="global.html#SearchBar">SearchBar</a></li><li><a href="global.html#setNewEmailModalVisible">setNewEmailModalVisible</a></li><li><a href="global.html#setNewPostModalVisible">setNewPostModalVisible</a></li><li><a href="global.html#SmallCard">SmallCard</a></li><li><a href="global.html#SmallHeader">SmallHeader</a></li><li><a href="global.html#Spinner">Spinner</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Dec 07 2017 16:03:06 GMT-0500 (EST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

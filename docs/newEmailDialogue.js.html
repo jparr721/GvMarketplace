@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: newEmailDialogue.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: newEmailDialogue.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { Component } from 'react';
+import { Modal, TouchableOpacity, View, Text, Linking } from 'react-native';
+import { Icon } from 'react-native-elements';
+import { connect } from 'react-redux';
+import firebase from 'react-native-firebase';
+import fb from 'firebase';
+import { setNewEmailModalVisible } from '../../actions';
+
+// Common
+import { PageView, Card, CardSection, Input, Button } from '../../components/common/index';
+
+/**
+* Create new Email Modal
+**/
+class NewEmailDialogueContainer extends Component {
+  /**
+  * Constructor to initialize state objects
+  **/
+  constructor() {
+    super();
+    this.state = { subject: '', body: '', emailAddr: '' };
+  }
+
+  /**
+ * Listens for change in state of email subject
+ * @param {string} value - this is the stored value
+ **/
+  onSubjectChange(value) {
+   this.setState({ subject: value });
+  }
+
+ /**
+ * Listens for change in state of email body
+ * @param {string} value - this is the stored value
+ **/
+ onBodyChange(value) {
+   this.setState({ body: value });
+ }
+
+ /**
+ * Listens for change in the state of the emaila ddress
+ * @param {string} value - This is the stored email
+ **/
+ onEmailChange(value) {
+    this.setState({ emailAddr: value });
+ }
+
+ sendEmail() {
+   Linking.openURL(`mailto:${this.state.emailAddr}&amp;subject=${this.state.subject}&amp;body=${this.state.body}`);
+ }
+
+ render() {
+  return (
+    &lt;PageView>
+      &lt;Modal
+        animationType={'slide'}
+        transparent={false}
+        visible={this.props.newEmailModalVisible}
+        >
+        &lt;View style={{ flex: 1 }}>
+          &lt;View style={styles.header}>
+            &lt;TouchableOpacity
+                style={{marginRight: 30}}
+                onPress={() => { this.props.setNewEmailModalVisible() }}>
+                &lt;Icon
+                  name={"arrow-left"}
+                  type="material-community"
+                  size={24}
+                  color="#007aff"
+                />
+            &lt;/TouchableOpacity>
+            &lt;Text style={styles.headerText}>New Email&lt;/Text>
+          &lt;/View>
+          &lt;View style={{ flex: 1, flexDirection: 'column' }}>
+            &lt;Card>
+              &lt;CardSection>
+                &lt;Input
+                  placeholder="Email Subject"
+                  label="Subject"
+                  onChangeText={(text) => this.onSubjectChange(text)}
+                  value={this.state.subject}
+                  />
+              &lt;/CardSection>
+              &lt;CardSection>
+                &lt;Input
+                  placeholder="Say something nice"
+                  label="Message"
+                  onChangeText={(text) => this.onBodyChange(text)}
+                  value={this.state.body}
+                  />
+              &lt;/CardSection>
+              &lt;CardSection>
+                &lt;Input
+                  placeholder="Email address"
+                  label="Email"
+                  onChangeText={(text) => this.onEmailChange(text)}
+                  value={this.state.emailAddr}
+                  />
+              &lt;/CardSection>
+              &lt;CardSection>
+                &lt;Button onPress={() => this.sendEmail()}>
+                  Send Email
+                &lt;/Button>
+              &lt;/CardSection>
+            &lt;/Card>
+          &lt;/View>
+        &lt;/View>
+      &lt;/Modal>
+      &lt;TouchableOpacity
+        onPress={() => this.props.setNewEmailModalVisible()}>
+        &lt;Icon
+          name="message-plus"
+          type="material-community"
+          size={28}
+          color="#17c10b" />
+      &lt;/TouchableOpacity>
+    &lt;/PageView>
+  );
+ }
+}
+
+const styles = {
+  header: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    paddingLeft: 10,
+    paddingBottom: 10,
+    paddingTop: 30,
+    backgroundColor: '#17c10b'
+  },
+  headerText: {
+    color: '#000',
+    fontSize: 24,
+  },
+}
+
+/**
+* Maps state to the props object for reference in the Redux Store
+* @param {state} state - The state of the referenced object
+*/
+const mapStateToProps = (state) => {
+  return {
+    newEmailModalVisible: state.newEmailModalVisible
+  };
+};
+
+/**
+* Maps dispatch to the props object so the Redux Store knows which function to call
+* @param {state} dispatch - The function call mechanism
+*/
+const mapDispatchToProps = (dispatch) => ({
+  setNewEmailModalVisible() {
+    dispatch(setNewEmailModalVisible());
+  }
+});
+
+const NewEmailDialogue = connect(mapStateToProps, mapDispatchToProps)(NewEmailDialogueContainer);
+
+export { NewEmailDialogue };</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li><li><a href="Browse.html">Browse</a></li><li><a href="DeletePostDialogueContainer.html">DeletePostDialogueContainer</a></li><li><a href="HeaderContainer.html">HeaderContainer</a></li><li><a href="Login.html">Login</a></li><li><a href="LoginTitleContainer.html">LoginTitleContainer</a></li><li><a href="NewEmailDialogueContainer.html">NewEmailDialogueContainer</a></li><li><a href="NewPostDialogueContainer.html">NewPostDialogueContainer</a></li><li><a href="Post.html">Post</a></li><li><a href="Settings.html">Settings</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Button">Button</a></li><li><a href="global.html#ButtonCard">ButtonCard</a></li><li><a href="global.html#Card">Card</a></li><li><a href="global.html#CardSection">CardSection</a></li><li><a href="global.html#DeleteAccountButton">DeleteAccountButton</a></li><li><a href="global.html#getEmailInput">getEmailInput</a></li><li><a href="global.html#getPasswordInput">getPasswordInput</a></li><li><a href="global.html#Input">Input</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#LoginButton">LoginButton</a></li><li><a href="global.html#LoginCard">LoginCard</a></li><li><a href="global.html#loginFail">loginFail</a></li><li><a href="global.html#LoginInput">LoginInput</a></li><li><a href="global.html#loginSuccess">loginSuccess</a></li><li><a href="global.html#mapDispatchToProps">mapDispatchToProps</a></li><li><a href="global.html#mapStateToProps">mapStateToProps</a></li><li><a href="global.html#PageView">PageView</a></li><li><a href="global.html#Router">Router</a></li><li><a href="global.html#SearchBar">SearchBar</a></li><li><a href="global.html#setNewEmailModalVisible">setNewEmailModalVisible</a></li><li><a href="global.html#setNewPostModalVisible">setNewPostModalVisible</a></li><li><a href="global.html#SmallCard">SmallCard</a></li><li><a href="global.html#SmallHeader">SmallHeader</a></li><li><a href="global.html#Spinner">Spinner</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Dec 07 2017 16:03:06 GMT-0500 (EST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
