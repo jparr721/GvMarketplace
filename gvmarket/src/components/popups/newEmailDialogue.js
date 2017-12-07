@@ -50,7 +50,7 @@ class NewEmailDialogueContainer extends Component {
 * to enter the name of the person they wish to contact.
 */
  sendEmail() {
-   Linking.openURL(`mailto:${this.state.emailAddr}&subject=${this.state.subject}&body=${this.state.body}`);
+   Linking.openURL(`mailto:${this.state.emailAddr}?subject=${this.state.subject}&body=${this.state.body}`);
  }
 
  render() {
