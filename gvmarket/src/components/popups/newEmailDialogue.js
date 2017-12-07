@@ -127,7 +127,7 @@ const styles = {
   header: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    paddingLeft: 10,
+    paddingLeft: 30,
     paddingBottom: 10,
     paddingTop: 30,
     backgroundColor: '#17c10b'

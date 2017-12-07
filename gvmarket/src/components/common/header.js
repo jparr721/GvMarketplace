@@ -27,10 +27,11 @@ const styles = StyleSheet.create({
   textWrapper: {
     alignItems: 'center',
     flex: 1,
-    height: 40,
+    height: 40
   },
   textStyle: {
     fontSize: 36,
+    fontFamily: 'Avenir',
     fontWeight: '500',
     flex: 1,
     color: '#007aff',

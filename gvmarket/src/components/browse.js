@@ -123,7 +123,6 @@ const styles = {
   },
   topRightIcon: {
     paddingRight: 20,
-    paddingTop: 10,
   }
 };
 

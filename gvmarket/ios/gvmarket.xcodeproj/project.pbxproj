@@ -37,7 +37,6 @@
 		2D02E4C71E0B4AEC006451C7 /* libRCTText-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E941DF850E9000B6D8A /* libRCTText-tvOS.a */; };
 		2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */; };
 		2D02E4C91E0B4AEC006451C7 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
-		2DCD954D1E0B4F2C00145EB5 /* gvmarketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* gvmarketTests.m */; };
 		547F2EC78E4245908940EAC8 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C357019F895E4B008B34AD3D /* Entypo.ttf */; };
 		57A85ACF7D484622A337314B /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB79BE3222344C7FB8696125 /* MaterialIcons.ttf */; };
 		5B727EA485764556860A988B /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FBABC20318F4A7B93C32424 /* Ionicons.ttf */; };
@@ -1414,7 +1413,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* gvmarketTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
