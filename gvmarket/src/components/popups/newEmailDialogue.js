@@ -46,7 +46,7 @@ class NewEmailDialogueContainer extends Component {
  }
 
  sendEmail() {
-   Linking.openURL(`mailto:${this.state.emailAddr}&subject=${this.state.subject}&body=${this.state.body}`);
+   Linking.openURL(`mailto:${this.state.emailAddr}?subject=${this.state.subject}&body=${this.state.body}`);
  }
 
  render() {
